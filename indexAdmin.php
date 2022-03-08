@@ -10,7 +10,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 try 
 {
 
-    $backController = new \ProjetBlogKercode\Controllers\adminController();//objet controler
+    $backController = new \ProjetBlogKercode\Controllers\adminController();//objet controler, on instancie la class adminController (copie de la class adminController)
+    //on le stocke dans une variable pour pouvoir l'utiliser
 
     
     if (isset($_GET['action'])) { //$_GET donne les valeurs des informations indiquées dans l'url
@@ -26,7 +27,7 @@ try
 
     } else {
         $backController->createPageAdmin();
-        
+
     }
 
 
