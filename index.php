@@ -1,18 +1,24 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="app/Public/style.css">
-    <title>Projet-Blog</title>
-</head>
-<body>
-    <header>
-        <h1>Mon Blog</h1>
-        <h1>Mon Blog</h1>
+<?php
+//empty — Détermine si une variable est vide
+//isset — Détermine si une variable est déclarée et est différente de null
+session_start();
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+try{
+    $frontController = new \ProjetBlogKercode\Controllers\FrontController();//objet controler
+
+    if(isset($_GET['action'])){
+        if($_GET['action'] == 'contact'){
+            $frontController->contact();
+        }
+
+       
         
-    </header>
-    
-</body>
-</html>
+    }else{
+        $frontController->home();
+    }
+
+} catch(Exception $e){
+    require 'app/Views/front/errorLoading.php';
+}

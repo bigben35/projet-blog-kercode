@@ -18,4 +18,10 @@ class adminController
 
         require 'app/Views/Admin/createAdmin.php';
     }
+
+    // connexion à la page de connexion
+    function connexionAdmin()
+    {
+        require 'app/Views/Admin/connexionAdmin.php';
+    }
 }

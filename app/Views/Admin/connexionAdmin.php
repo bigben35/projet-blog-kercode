@@ -8,22 +8,22 @@
 
 <body>
 
-    <h1 align="center">Connexion Administrateur</h1>
+    <h1>Connexion Administrateur</h1>
     <div id="inscription">
-        <div align="center">
+        <div>
             <form action="indexAdmin.php?action=connexionAdmin" method="post">
                 <table>
                     <tr>
-                        <td align="right"><label for="nom">email :</label></td>
-                        <td><input type="text" placeholder="votre email" name="mail" id="pseudo"></td>
+                        <td><label for="nom">email :</label></td>
+                        <td><input type="text" placeholder="votre email" name="mail" id="pseudo-admin"></td>
                     </tr>
                     <tr>
-                        <td align="right"><label for="password">Mot de passe :</label></td>
-                        <td><input type="password" placeholder="votre mot de passe" name="pass" id="pass"></td>
+                        <td><label for="password">Mot de passe :</label></td>
+                        <td><input type="password" placeholder="votre mot de passe" name="password" id="password-admin"></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td align="center"><br><input type="submit"></td>
+                        <td><br><input type="submit"></td>
                     </tr>
                 </table>
             </form>
