@@ -1,4 +1,9 @@
-<?php ob_start(); ?>
+<?php 
+
+    $title = "Page Contact";
+    $description = "";
+
+ob_start(); ?>
 <form action="index.php?action=contactPost" method="post">   
             <h2>Contactez-nous</h2>
             <div class="bloc-form">

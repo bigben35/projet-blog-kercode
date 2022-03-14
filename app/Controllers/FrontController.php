@@ -6,7 +6,7 @@ class FrontController
 {
     function home()
     {
-        require "app/Views/front/homeView.php";
+        require "app/Views/front/home.php";
     }
 
     function contact()

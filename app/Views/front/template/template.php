@@ -5,38 +5,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="<?= $description ?>">
     <link rel="stylesheet" href="app/Public/style.css">
-    <title>Projet-Blog</title>
+    <title><?= $title ?></title>
 </head>
 
 <body>
+    <!-- HEADER  -->
     <header>
-        <nav class="navbar">
-            <div class="blog-title">Islande en Tête</div>
-            <div class="btn-burger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <div class="navbar-links">
-                <ul class="nav-list">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Témoignages</a></li>
-                    <li><a href="#">Météo</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Shop</a></li>
-                </ul>
-            </div>
-        </nav>
-
-
+        <div class="container">
+            <!-- NAV  -->
+            <nav class="navbar">
+                <div class="blog-title">Islande en Tête</div>
+                <!-- MENU BURGER  -->
+                <div class="btn-burger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <div class="navbar-links">
+                    <ul class="nav-list">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Témoignages</a></li>
+                        <li><a href="#">Météo</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <!-- <li><a href="#">Shop</a></li> -->
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <?= $content; ?>
+    <!-- CONTENU DE LA PAGE  -->
+    <main>
+        <?= $content ?>
+    </main>
 
-    <footer>
+    <!-- FOOTER  -->
+    <footer class="container">
         <p>Copyright &copy; 2022 -Kercode- Tous droits réservés.</p>
     </footer>
 
