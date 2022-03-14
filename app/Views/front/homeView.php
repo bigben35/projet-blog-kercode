@@ -1,1 +1,7 @@
-<h1>page home</h1>
+<?php ob_start(); ?>
+
+
+
+
+<?php $content = ob_get_clean(); ?>
+<?php require 'template/template.php';
