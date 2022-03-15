@@ -18,8 +18,7 @@ let suivant = document.querySelector('.suivant');
 
 function enleverImageActive(){
     for (let i = 0; i < imgNumber; i++) {
-        imgSlider[i].classList.remove('active');
-        
+        imgSlider[i].classList.remove('active'); 
     }
 }
 

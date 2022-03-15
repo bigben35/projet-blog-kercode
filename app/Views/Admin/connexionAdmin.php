@@ -14,7 +14,7 @@
             <form action="indexAdmin.php?action=connexionAdmin" method="post">
                 <table>
                     <tr>
-                        <td><label for="nom">email :</label></td>
+                        <td><label for="mail">email :</label></td>
                         <td><input type="text" placeholder="votre email" name="mail" id="pseudo-admin" required></td>
                     </tr>
                     <tr>

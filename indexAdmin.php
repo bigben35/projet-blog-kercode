@@ -1,4 +1,3 @@
-<h1>hello</h1>
 <?php
 //empty — Détermine si une variable est vide
 //isset — Détermine si une variable est déclarée et est différente de null
@@ -16,6 +15,7 @@ try
     
     if (isset($_GET['action'])) { //$_GET donne les valeurs des informations indiquées dans l'url
         
+        // création d'un administrateur 
         if($_GET['action'] == 'createAdmin'){
             $firstname = $_POST['firstname'];
             $mail = $_POST['mail'];
@@ -25,6 +25,7 @@ try
             $backController->createAdmin($firstname, $mail, $password);
         }
 
+        // connexion administrateur 
         elseif ($_GET['action'] == 'connexionAdmin'){
             $mail = htmlspecialchars($_POST['mail']);   //htmlspecialchars — Convertit les caractères spéciaux en entités HTML
             $password = $_POST['password'];

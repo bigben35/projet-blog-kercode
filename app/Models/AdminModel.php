@@ -13,4 +13,13 @@ class AdminModel extends Manager
     
         return $req;
     }
+
+    public function recupPassword($mail, $password)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT * FROM admin_login WHERE mail = ?');
+        $req->execute(array($mail));
+
+        return $req;
+    }
 }
