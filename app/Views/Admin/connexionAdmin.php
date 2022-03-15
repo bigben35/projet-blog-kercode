@@ -15,11 +15,11 @@
                 <table>
                     <tr>
                         <td><label for="nom">email :</label></td>
-                        <td><input type="text" placeholder="votre email" name="mail" id="pseudo-admin"></td>
+                        <td><input type="text" placeholder="votre email" name="mail" id="pseudo-admin" required></td>
                     </tr>
                     <tr>
                         <td><label for="password">Mot de passe :</label></td>
-                        <td><input type="password" placeholder="votre mot de passe" name="password" id="password-admin"></td>
+                        <td><input type="password" placeholder="votre mot de passe" name="password" id="password-admin" required></td>
                     </tr>
                     <tr>
                         <td></td>
