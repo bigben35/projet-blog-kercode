@@ -6,6 +6,8 @@ class FrontController
 {
     function home()
     {
+        $slider = new \ProjetBlogKercode\Models\UserModel();
+        $slides = $slider->getSlides();
         require "app/Views/front/home.php";
     }
 

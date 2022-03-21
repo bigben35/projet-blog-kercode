@@ -38,7 +38,7 @@ try
         }
 
     } else {
-        $backController->createPageAdmin();
+        $backController->connexionAdmin();
 
     }
 

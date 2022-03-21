@@ -1,5 +1,5 @@
 {
-    "name": "kercode/projet-blog_kercode",
+    "name": "kercode/projet-blog-kercode",
     "autoload": {
         "psr-4": {
             "ProjetBlogKercode\\": "./app/"

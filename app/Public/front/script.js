@@ -50,4 +50,4 @@ setInterval( () => {
     }
     enleverImageActive();
     imgSlider[step].classList.add('active');
-}, 5000)
+}, 3000)
