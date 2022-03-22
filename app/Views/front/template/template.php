@@ -15,8 +15,17 @@
     <!-- HEADER  -->
     <header>
         <div class="container">
+            <div id="connect">
+                <div class="admin-connect">
+                    <i class="fa-solid fa-circle-user"></i>
+                </div>
+                <div class="icon-connect"></div>
+            </div>
             <!-- NAV  -->
             <nav class="navbar">
+                <!-- <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div> -->
                 <div class="blog-title">Islande en Tête</div>
                 <!-- MENU BURGER  -->
                 <div class="btn-burger">
@@ -26,11 +35,11 @@
                 </div>
                 <div class="navbar-links">
                     <ul class="nav-list">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Témoignages</a></li>
-                        <li><a href="#">Météo</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="index.php?action=blog">Blog</a></li>
+                        <li><a href="index.php?action=temoignage">Témoignages</a></li>
+                        <li><a href="index.php?action=meteo">Météo</a></li>
+                        <li><a href="index.php?action=contact">Contact</a></li>
                         <!-- <li><a href="#">Shop</a></li> -->
                     </ul>
                 </div>

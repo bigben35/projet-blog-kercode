@@ -36,6 +36,14 @@ header{
     margin: 0 auto;
 
 }
+#connect{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: end;
+    padding: 0.5rem 2rem;
+    font-size: 1.3rem;
+}
 /* ------------NAVIGATION ------------*/
 .blog-title{
     font-size: 1.5rem;
@@ -86,7 +94,7 @@ header{
 /*--------------------- MENU BURGER --------------------------- */
 .btn-burger{
     position: absolute;
-    top: 1.25rem;
+    top: 4rem;
     right: 1.5rem;
     display: flex;
     flex-direction: column;
