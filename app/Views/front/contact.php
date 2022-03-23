@@ -8,7 +8,7 @@ ob_start(); ?>
             <h2>Contactez-nous</h2>
             <div class="bloc-form">
                 <label for="name">Nom :</label>
-                <input type="text" id="name" name="name" placeholder="Votre Nom" required>
+                <input type="text" id="name" name="lastname" placeholder="Votre Nom" required>
             </div>
             <div class="bloc-form">
                 <label for="firstname">Prénom :</label>
