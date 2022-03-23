@@ -56,7 +56,8 @@
         <p>Copyright &copy; <?= date("Y"); ?> -Kercode- Tous droits réservés.</p>
     </footer>
 
-    <script src="app/Public/front/script.js" defer></script>
+    <script src="app/Public/front/js/script.js" defer></script>
+    <script src="app/Public/front/js/meteo.js" defer></script>
 </body>
 
 </html>

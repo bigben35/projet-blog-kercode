@@ -150,6 +150,74 @@ header{
 }
 
 
+
+/* ----------------------PAGE METEO  ---------------------*/
+.bloc-app-meteo{
+    display: grid;
+    grid-template: 125px 300px 100px / repeat(8, 12.5%);
+    margin: 100px auto 0;
+    position: relative;
+    border: 1px solid black;
+    background-color: var(--mainLightColor);
+}
+.titre-meteo{
+    /* deb row/deb col/ fin row/ fin col  */
+    grid-area: 1 / 1 / 2 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;
+}
+.bloc-logo-info{
+    grid-area: 2 / 1 / 3 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bloc-logo{
+    width: 50%;
+}
+.bloc-logo img{
+    width: 80%;
+}
+.bloc-info{
+    width: 50%;
+}
+.bloc-info .temps{
+    font-size: 2rem;
+}
+.bloc-info .temps::first-letter{
+    text-transform: capitalize;
+}
+.bloc-info .temperature{
+    font-size: 3rem;
+}
+.bloc-info .localisation{
+    font-size: 2rem;
+    word-wrap: break-word;
+}
+.jour-bloc-prevision{
+    grid-area: 4 / 1 / 5 / -1;
+}
+.jour-bloc-prevision{
+    display: grid;
+    grid-template: 100px / repeat(7, 1fr);
+}
+.bloc-jour{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top: 1px solid #f1f1f1;
+    font-size: 1.2rem;
+}
+.bloc-jour:not(:last-child){
+    border-right: 1px solid #f1f1f1;
+}
+.bloc-jour p{
+    margin: 5px;
+}
+
 /* ----------------MEDIA QUERIES----------------- */
 
 @media screen and (min-width: 1024px){
