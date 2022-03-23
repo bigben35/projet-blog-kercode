@@ -2,12 +2,12 @@
 
 namespace ProjetBlogKercode\Controllers;
 
-class adminController
+class AdminController extends Controller
 {
     // connexion à la page connexion
     function createPageAdmin()
     {
-        require 'app/Views/admin/createAdmin.php';
+        require 'app/Views/Admin/createAdmin.php';
     }
 
     //création de l'administrateur
@@ -16,13 +16,13 @@ class adminController
         $userManager = new \ProjetBlogKercode\Models\AdminModel();
         $user = $userManager->createAdmin($firstname, $mail, $password);
 
-        require 'app/Views/admin/createAdmin.php';
+        require 'app/Views/Admin/createAdmin.php';
     }
 
     // connexion à la page de connexion
     function connexionAdmin()
     {
-        require 'app/Views/admin/connexionAdmin.php';
+        require 'app/Views/Admin/connexionAdmin.php';
     }
 
     function connexion($mail, $password)
@@ -43,7 +43,7 @@ class adminController
 
         if ($isPasswordOk) {
 
-            require 'app/Views/admin/dashboard.php';
+            require 'app/Views/Admin/dashboard.php';
         } 
         
         else {

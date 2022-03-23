@@ -35,9 +35,9 @@
                 </div>
                 <div class="navbar-links">
                     <ul class="nav-list">
-                        <li><a href="/">Home</a></li>
+                        <li><a href="index.php?action=home">Home</a></li>
                         <li><a href="index.php?action=blog">Blog</a></li>
-                        <li><a href="index.php?action=temoignage">Témoignages</a></li>
+                        <li><a href="index.php?action=temoignages">Témoignages</a></li>
                         <li><a href="index.php?action=meteo">Météo</a></li>
                         <li><a href="index.php?action=contact">Contact</a></li>
                         <!-- <li><a href="#">Shop</a></li> -->
@@ -54,7 +54,7 @@
 
     <!-- FOOTER  -->
     <footer class="container">
-        <p>Copyright &copy; 2022 -Kercode- Tous droits réservés.</p>
+        <p>Copyright &copy; <?= date("Y"); ?> -Kercode- Tous droits réservés.</p>
     </footer>
 
     <script src="app/Public/front/script.js" defer></script>

@@ -9,7 +9,20 @@ try{
     $frontController = new \ProjetBlogKercode\Controllers\FrontController();//objet controler
 
     if(isset($_GET['action'])){
-        if($_GET['action'] == 'contact'){
+        
+        if($_GET['action'] == 'blog'){
+            $frontController->blog();
+        }
+
+        elseif($_GET['action'] == 'temoignages'){
+            $frontController->temoignage();
+        }
+
+        elseif($_GET['action'] == 'meteo'){
+            $frontController->meteo();
+        }
+        
+        elseif($_GET['action'] == 'contact'){
             $frontController->contact();
         }
 
@@ -35,5 +48,5 @@ try{
     }
 
 } catch(Exception $e){
-    require 'app/Views/front/errorLoading.php';
+    require 'app/Views/Front/errorLoading.php';
 }

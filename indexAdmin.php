@@ -45,5 +45,5 @@ try
 
 } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
-        require 'app/Views/front/errorLoading.php'; 
+        require 'app/Views/Front/errorLoading.php'; 
 }
