@@ -6,6 +6,21 @@ btnBurger.addEventListener('click', () => {
     navbarLinks.classList.toggle('active');
 })
 
+// CLASS ACTIVE NAVIGATION 
+
+let menuActive = document.querySelector('.nav-list').getElementsByTagName('a');
+console.log(location.href);
+
+for (let i = 0; i < menuActive.length; i++) {
+    if (menuActive[i].href === location.href){
+        menuActive[0].classList.remove('active');
+        menuActive[i].classList.add('active');
+    }
+    };
+    
+
+
+// ---------------PAGE HOME ----------------------
 
 // ANIMATION SLIDER 
 let imgSlider = document.getElementsByClassName('imgSlider');
@@ -51,3 +66,4 @@ setInterval( () => {
     enleverImageActive();
     imgSlider[step].classList.add('active');
 }, 3000)
+

@@ -35,12 +35,11 @@
                 </div>
                 <div class="navbar-links">
                     <ul class="nav-list">
-                        <li><a href="index.php?action=home">Home</a></li>
-                        <li><a href="index.php?action=blog">Blog</a></li>
-                        <li><a href="index.php?action=temoignages">Témoignages</a></li>
-                        <li><a href="index.php?action=meteo">Météo</a></li>
-                        <li><a href="index.php?action=contact">Contact</a></li>
-                        <!-- <li><a href="#">Shop</a></li> -->
+                        <li><a href="index.php?action=home" class="nav-link active">Home</a></li>
+                        <li><a href="index.php?action=blog" class="nav-link">Blog</a></li>
+                        <li><a href="index.php?action=temoignages" class="nav-link">Témoignages</a></li>
+                        <li><a href="index.php?action=meteo" class="nav-link">Météo</a></li>
+                        <li><a href="index.php?action=contact" class="nav-link">Contact</a></li>
                     </ul>
                 </div>
             </nav>

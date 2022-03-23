@@ -10,7 +10,11 @@ try{
 
     if(isset($_GET['action'])){
         
-        if($_GET['action'] == 'blog'){
+        if($_GET['action'] == 'home') {
+            $frontController->home();
+        }
+        
+        elseif($_GET['action'] == 'blog'){
             $frontController->blog();
         }
 
@@ -21,7 +25,7 @@ try{
         elseif($_GET['action'] == 'meteo'){
             $frontController->meteo();
         }
-        
+
         elseif($_GET['action'] == 'contact'){
             $frontController->contact();
         }

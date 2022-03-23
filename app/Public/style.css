@@ -167,5 +167,8 @@ header{
     .navbar-links ul{
         flex-direction: row;
     }
+    .active, .navbar-links li:hover{
+        background-color: var(--mainLightColor);
+    }
     
 }
