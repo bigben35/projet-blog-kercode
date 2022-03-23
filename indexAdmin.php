@@ -9,7 +9,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 try 
 {
 
-    $backController = new \ProjetBlogKercode\Controllers\adminController();//objet controler, on instancie la class adminController (copie de la class adminController)
+    $backController = new \ProjetBlogKercode\Controllers\AdminController();//objet controler, on instancie la class adminController (copie de la class adminController)
     //on le stocke dans une variable pour pouvoir l'utiliser
 
     
