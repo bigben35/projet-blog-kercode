@@ -48,7 +48,9 @@
 
     <!-- CONTENU DE LA PAGE  -->
     <main>
-        <?= $content ?>
+        <div class="container">
+            <?= $content ?>
+        </div>
     </main>
 
     <!-- FOOTER  -->

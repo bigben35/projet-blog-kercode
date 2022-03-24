@@ -6,11 +6,18 @@ class FrontController extends Controller
 {
     function home()
     {
+        // slider 
         $slider = new \ProjetBlogKercode\Models\UserModel();
         $slides = $slider->getSlides();
+
+        // presentation Admin 
+        $presentationAdmin = new \ProjetBlogKercode\Models\UserModel();
+        $presentation = $presentationAdmin->getPresentation();
+        
         require "app/Views/Front/home.php";
     }
 
+    
     function blog()
     {
         require "app/Views/Front/blog.php";

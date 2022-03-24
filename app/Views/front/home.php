@@ -6,6 +6,7 @@ ob_start();
 
 <!-- SLIDER  -->
 
+<section id="mainSlider">
     <div class="slider">
         <!-- <img src="app/Public/images/aurores-boreales_Islande.webp" alt="Magnifiques Aurores Boréales en Islande" class="imgSlider active" />
         <img src="app/Public/images/cascade_Islande.webp" alt="Magnifiques Cascades au sud de l'Islande" class="imgSlider" />
@@ -20,9 +21,22 @@ ob_start();
         <i class="fa-solid fa-circle-chevron-right"></i>
     </div>
     <div class="precedent">
-        <i class="fa-solid fa-circle-chevron-left"></i>
+            <i class="fa-solid fa-circle-chevron-left"></i>
     </div>
-</div>
+</section>
+
+<section id="presentation">
+    <div class="bloc-presentation">
+        <h2>Bienvenue sur Islande en Tête</h2>
+        <img src="<?= $presentation['url_image']; ?>"
+         alt="<?= $presentation['alt_image']; ?>">
+        <p class="content-presentation"><?= $presentation['content']; ?></p>
+    </div>
+</section>
+
+
+
+
 
 
 <?php $content = ob_get_clean(); ?>

@@ -77,6 +77,9 @@ header{
     list-style: none;
     text-align: center;
 }
+.navbar-links li:not(:last-child){
+    margin-right: 5px;
+}
 .navbar-links li:hover{
     background-color: var(--mainLightColor);
 }
@@ -85,8 +88,7 @@ header{
     color: white;
     padding: 1rem;
     display: block;
-    padding: 0.5rem 1rem;
-    
+    padding: 0.5rem 1rem;  
 }
 
 
