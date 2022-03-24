@@ -16,9 +16,9 @@ ob_start();
             </div>
 
             <div class="bloc-info">
-                <p class="temps">Couvert</p>
-                <p class="temperature">15°</p>
-                <p class="localisation">Reykjavik</p>
+                <p class="temps"></p>
+                <p class="temperature"></p>
+                <p class="localisation"></p>
             </div>
         </div>
 

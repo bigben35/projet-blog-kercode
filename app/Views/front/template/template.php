@@ -53,7 +53,7 @@
 
     <!-- FOOTER  -->
     <footer class="container">
-        <p>Copyright &copy; <?= date("Y"); ?> -Kercode- Tous droits réservés.</p>
+        <p>Copyright &copy; <?= date("Y"); ?> - Islande en Tête - <a href="#">Mentions Légales</a> .</p>
     </footer>
 
     <script src="app/Public/front/js/script.js" defer></script>
