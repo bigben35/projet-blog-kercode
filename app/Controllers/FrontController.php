@@ -14,6 +14,9 @@ class FrontController extends Controller
         $presentationAdmin = new \ProjetBlogKercode\Models\UserModel();
         $presentation = $presentationAdmin->getPresentation();
         
+        //derniers articles
+        $lastArticle = new \ProjetBlogKercode\Models\UserModel();
+        $articles = $lastArticle->getLastArticles();
         require "app/Views/Front/home.php";
     }
 

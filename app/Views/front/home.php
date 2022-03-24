@@ -34,6 +34,23 @@ ob_start();
     </div>
 </section>
 
+<section id="last-articles">
+    <article>
+        <h2>Derniers articles postés</h2>
+        <?php foreach ($articles as $article){
+            ?>
+            <div class="bloc-article">
+                <img src="<?= $article['url_image']; ?>" alt="<?= $article['alt_image']; ?>">
+            </div>
+            <div class="content-article">
+                <p class="date">Posté le <time datetime="<?= $article['created_at']; ?>"><?= $article['created_at']; ?></time></p>
+                <h3><?= $article['title']; ?></h3>
+                <p class="content"><?= $article['content']; ?></p>
+            </div>
+        <?php }; ?>
+    </article>
+</section>
+
 
 
 

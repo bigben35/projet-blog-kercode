@@ -151,6 +151,19 @@ header{
     left: 1rem;
 }
 
+/* PRESENTATION  */
+#presentation{
+    margin: 10px;
+    text-align: center;
+}
+.bloc-presentation h2{
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+.bloc-presentation img{
+    width: 100%;
+    margin-bottom: 1rem;
+}
 
 
 /* ----------------------PAGE METEO  ---------------------*/
