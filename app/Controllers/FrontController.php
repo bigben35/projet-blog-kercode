@@ -44,6 +44,10 @@ class FrontController extends Controller
         require "app/Views/Front/contact.php";
     }
 
+    function connect(){
+        require "app/Views/Front/connect.php";
+    }
+
 
     //------------- mail formulaire de contact ------------
 

@@ -25,6 +25,13 @@
 body{
     font-family: 'robotoregular', sans-serif;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
+li{
+    list-style: none;
+}
 /* --------------------HEADER-----------------  */
 header{
     width: 100%;
@@ -36,14 +43,15 @@ header{
     margin: 0 auto;
 
 }
-#connect{
-    background-color: black;
-    color: white;
+
+
+/* -------------------FOOTER ------------- */
+.icons{
     display: flex;
-    justify-content: end;
-    padding: 0.5rem 2rem;
-    font-size: 1.3rem;
+    justify-content: space-evenly;
 }
+
+
 /* ------------NAVIGATION ------------*/
 .blog-title{
     font-size: 1.5rem;
@@ -74,7 +82,6 @@ header{
     flex-direction: column;
 }
 .navbar-links li{
-    list-style: none;
     text-align: center;
 }
 .navbar-links li:not(:last-child){
@@ -96,7 +103,7 @@ header{
 /*--------------------- MENU BURGER --------------------------- */
 .btn-burger{
     position: absolute;
-    top: 4rem;
+    top: 1.4rem;
     right: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -112,7 +119,7 @@ header{
     border-radius: 10px;
 }
 
-/* ----------------FOOTER -------------------------- */
+
 
 
 
@@ -165,6 +172,19 @@ header{
     margin-bottom: 1rem;
 }
 
+/* BOUTON VOIR ARTICLES  */
+#last-articles a{
+    display: block;
+    padding: 1rem 2rem;
+    background-color: var(--mainColor);
+    color: white;
+    border: none;
+    font-weight: 600;
+    border-radius: 50px;
+    margin: 0 auto;
+    text-align: center;
+    width: 50%;
+}
 
 /* ----------------------PAGE METEO  ---------------------*/
 .bloc-app-meteo{

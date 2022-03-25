@@ -30,6 +30,10 @@ try{
             $frontController->contact();
         }
 
+        elseif($_GET['action'] == 'connect'){
+            $frontController->connect();
+        }
+
         // envois mail dans la bdd 
         elseif ($_GET['action'] == 'contactPost') {
             $lastname = htmlspecialchars($_POST['lastname']);

@@ -15,12 +15,6 @@
     <!-- HEADER  -->
     <header>
         <div class="container">
-            <div id="connect">
-                <div class="admin-connect">
-                    <i class="fa-solid fa-circle-user"></i>
-                </div>
-                <div class="icon-connect"></div>
-            </div>
             <!-- NAV  -->
             <nav class="navbar">
                 <!-- <div class="search">
@@ -40,6 +34,7 @@
                         <li><a href="index.php?action=temoignages" class="nav-link">Témoignages</a></li>
                         <li><a href="index.php?action=meteo" class="nav-link">Météo</a></li>
                         <li><a href="index.php?action=contact" class="nav-link">Contact</a></li>
+                        <li><a href="index.php?action=connect" class="nav-link">Se connecter</a></li>
                     </ul>
                 </div>
             </nav>
@@ -55,6 +50,14 @@
 
     <!-- FOOTER  -->
     <footer class="container">
+    <div id="reseaux">
+            <ul class="icons">
+                <li><a href="#" title="facebook"><i class="fa-brands fa-facebook-square"></i></a></li>
+                <li><a href="#" title="twitter"><i class="fa-brands fa-twitter-square"></i></a></li>
+                <li><a href="#" title="instagram"><i class="fa-brands fa-instagram-square"></i></a></li>
+                <li><a href="#" title="snapchat"><i class="fa-brands fa-snapchat-square"></i></a></li>
+            </ul>
+        </div>
         <p>Copyright &copy; <?= date("Y"); ?> - Islande en Tête - <a href="#">Mentions Légales</a> .</p>
     </footer>
 

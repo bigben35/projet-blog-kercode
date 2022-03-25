@@ -49,7 +49,9 @@ ob_start();
             </div>
         <?php }; ?>
     </article>
+    <a class="" href="index.php?action=blog">Voir tous les articles</a>
 </section>
+
 
 
 
