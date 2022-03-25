@@ -12,7 +12,7 @@ ob_start();
 
         <div class="bloc-logo-info">
             <div class="bloc-logo">
-                <img src="app/Public/ressources/jour/04d.svg" alt="logo météo islande nuageux" class="logo-meteo">
+                <img alt="logo météo islande nuageux" class="logo-meteo">
             </div>
 
             <div class="bloc-info">

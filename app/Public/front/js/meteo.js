@@ -15,8 +15,7 @@ function weatherIceland()
         drawWeather(data);
         getIcon(data);
     })
-    // .then(function(data){
-    // })
+    
     .catch(function(){
         console.log("error");
     });
@@ -42,11 +41,14 @@ function getIcon(data)
 
      let heureActuelle = new Date().getHours();
 
+    //  console.log(data);
+    //  console.log(heureActuelle);
      if(heureActuelle >= 6 && heureActuelle < 20) {
-         imgIcone.src = `app/Public/ressources/jour/${data.current.weather[0].icon}.svg`
+         imgIcone.src = `app/Public/ressources/jour/${data.weather[0].icon}.svg`
      } else  {
-        imgIcone.src = `app/Public/ressources/nuit/${data.current.weather[0].icon}.svg`
+        imgIcone.src = `app/Public/ressources/nuit/${data.weather[0].icon}.svg`
      }
+    //  console.log(imgIcone.src);
 }
 
 window.onload = () => {
