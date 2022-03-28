@@ -8,7 +8,7 @@ ob_start();
 
 <div class="container">
     <div class="bloc-app-meteo">
-        <h2 class="titre-meteo">Météo Islande</h2>
+        <h2 class="titre-meteo">Météo du jour en Islande</h2>
 
         <div class="bloc-logo-info">
             <div class="bloc-logo">

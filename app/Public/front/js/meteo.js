@@ -11,7 +11,7 @@ function weatherIceland()
         return resp.json()
     })
     .then(function(data) {
-        console.log(data);
+        // console.log(data);
         drawWeather(data);
         getIcon(data);
     })

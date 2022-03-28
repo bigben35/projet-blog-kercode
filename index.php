@@ -30,7 +30,7 @@ try{
             $frontController->contact();
         }
 
-        elseif($_GET['action'] == 'connect'){
+        elseif($_GET['action'] == 'connexion'){
             $frontController->connect();
         }
 
