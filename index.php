@@ -34,6 +34,10 @@ try{
             $frontController->connect();
         }
 
+        elseif($_GET['action'] == 'mentionsLegales'){
+            $frontController->mentionsLegales();
+        }
+
         // envois mail dans la bdd 
         elseif ($_GET['action'] == 'contactPost') {
             $lastname = htmlspecialchars($_POST['lastname']);

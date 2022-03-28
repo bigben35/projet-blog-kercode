@@ -11,7 +11,7 @@
     <h1>Administrateur</h1>
     <div id="inscription">
         <div>
-            <form action="indexAdmin.php?action=createAdmin" method="POST">
+            <form action="createAdmin" method="POST">
                 <table>
                 <tr>
                         <td><label for="name">Prénom</label></td>

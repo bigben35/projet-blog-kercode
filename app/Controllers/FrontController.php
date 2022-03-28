@@ -48,6 +48,10 @@ class FrontController extends Controller
         require "app/Views/Front/connect.php";
     }
 
+    function mentionsLegales(){
+        require "app/Views/Front/mentionsLegales.php";
+    }
+
 
     //------------- mail formulaire de contact ------------
 

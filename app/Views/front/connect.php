@@ -14,6 +14,8 @@ ob_start();
     <div class="bloc-form">
         <label for="password">Mot de passe</label>
         <input type="text" id="password" name="password" required>
+
+        <button name="submit" type="submit">Se connecter</button>
     </div>
 </form>
 

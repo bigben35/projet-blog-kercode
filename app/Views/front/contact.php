@@ -4,7 +4,7 @@
     $description = "";
 
 ob_start(); ?>
-<form action="index.php?action=contactPost" method="post">   
+<form action="contactPost" method="post">   
             <h2>Contactez-nous</h2>
             <div class="bloc-form">
                 <label for="name">Nom : *</label>
