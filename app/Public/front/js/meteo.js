@@ -11,17 +11,14 @@ function weatherIceland()
         return resp.json()
     })
     .then(function(data) {
-        // console.log(data);
+        console.log(data);
         drawWeather(data);
         getIcon(data);
     })
     
     .catch(function(){
         console.log("error");
-    });
-
-
-   
+    });   
 }
 
 
@@ -31,24 +28,21 @@ function drawWeather(data)
     
     document.querySelector('.temps').innerHTML = data.weather[0].description;    
     document.querySelector('.temperature').innerHTML = temp + " °C";    
-    document.querySelector('.localisation').innerHTML = data.name;    
-    
+    document.querySelector('.localisation').innerHTML = data.name;        
 }
 
 function getIcon(data)
 {
      // Icone dynamique 
 
-     let heureActuelle = new Date().getHours();
+     let heureActuelle = (new Date().getHours() - 2);
 
-    //  console.log(data);
-    //  console.log(heureActuelle);
-     if(heureActuelle >= 6 && heureActuelle < 20) {
+     if(heureActuelle >= 7 && heureActuelle < 20) {
          imgIcone.src = `app/Public/ressources/jour/${data.weather[0].icon}.svg`
      } else  {
         imgIcone.src = `app/Public/ressources/nuit/${data.weather[0].icon}.svg`
      }
-    //  console.log(imgIcone.src);
+    
 }
 
 window.onload = () => {
