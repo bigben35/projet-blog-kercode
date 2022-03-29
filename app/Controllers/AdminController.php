@@ -42,7 +42,7 @@ class AdminController extends Controller
         $_SESSION['role'] = $result['role'];
 
 
-        if ($isPasswordOk) {
+        if ($isPasswordOk && ($_SESSION['role'] === 1)) {
 
             require 'app/Views/Admin/dashboard.php';
         } 

@@ -60,5 +60,5 @@ try{
     }
 
 } catch(Exception $e){
-    require 'app/Views/Front/errorLoading.php';
+    require 'app/Views/Front/home.php';
 }

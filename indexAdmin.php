@@ -38,7 +38,8 @@ try
         }
 
     } else {
-        $backController->connexionAdmin();
+        // $backController->connexionAdmin();
+        $backController->createAdmin($firstname, $mail, $password);
 
     }
 

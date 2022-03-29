@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php 
 
-<head>
-    <meta charset="UTF-8">
-    <title>Connexion</title>
-</head>
+    $title = "Page creation Admin";
+    $description = "";
 
-<body>
+ob_start(); ?>
 
     <h1>Administrateur</h1>
     <div id="inscription">
@@ -35,6 +32,5 @@
             <a href="/">Retour à l'accueil</a>
         </div>
     </div>
-</body>
-
-</html>
+    <?php $content = ob_get_clean(); ?>
+<?php require 'template/template.php'; ?>
