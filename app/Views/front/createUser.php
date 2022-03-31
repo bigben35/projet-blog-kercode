@@ -4,7 +4,7 @@ $description = "";
 ob_start();
 ?>
 
-<h1>Login</h1>
+<h1>Créer votre Compte</h1>
 <img src="app/Public/images/iconLogin.webp" alt="icône de l'utilisateur">
 
 <div id="inscription">
