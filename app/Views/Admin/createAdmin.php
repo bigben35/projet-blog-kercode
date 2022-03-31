@@ -8,15 +8,15 @@ ob_start(); ?>
     <h1>Administrateur</h1>
     <div id="inscription">
         <div>
-            <form action="createAdmin" method="POST">
+            <form action="indexAdmin.php?action=createAdmin" method="POST">
                 <table>
                 <tr>
-                        <td><label for="name">Prénom</label></td>
-                        <td><input type="text" placeholder="Prénom" name="firstname" id="name" required></td>
+                        <td><label for="name">Pseudo</label></td>
+                        <td><input type="text" placeholder="pseudo" name="pseudo" id="pseudo" required></td>
                     </tr>
                     <tr>
                         <td><label for="nom">email :</label></td>
-                        <td><input type="text" placeholder="votre email" name="mail" id="pseudo" required></td>
+                        <td><input type="text" placeholder="votre email" name="mail" id="mail" required></td>
                     </tr>
                     <tr>
                         <td><label for="password">Mot de passe :</label></td>
@@ -32,5 +32,4 @@ ob_start(); ?>
             <a href="/">Retour à l'accueil</a>
         </div>
     </div>
-    <?php $content = ob_get_clean(); ?>
-<?php require 'template/template.php'; ?>
+   

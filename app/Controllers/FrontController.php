@@ -4,6 +4,8 @@ namespace ProjetBlogKercode\Controllers;
 
 class FrontController extends Controller
 {
+    
+
     function home()
     {
         // slider 
@@ -17,23 +19,23 @@ class FrontController extends Controller
         //derniers articles
         $lastArticle = new \ProjetBlogKercode\Models\UserModel();
         $articles = $lastArticle->getLastArticles();
-        require "app/Views/Front/home.php";
+        require "app/Views/front/home.php";
     }
 
     
     function blog()
     {
-        require "app/Views/Front/blog.php";
+        require "app/Views/front/blog.php";
     }
 
     function temoignage()
     {
-        require "app/Views/Front/temoignages.php";
+        require "app/Views/front/temoignages.php";
     }
 
     function meteo()
     {
-        require "app/Views/Front/meteo.php";
+        require "app/Views/front/meteo.php";
     }
 
     function contact()
@@ -41,15 +43,43 @@ class FrontController extends Controller
         $mails = new \ProjetBlogKercode\Models\ContactModel();
         $allMails = $mails->getMails();
 
-        require "app/Views/Front/contact.php";
+        require "app/Views/front/contact.php";
     }
 
     function connect(){
-        require "app/Views/Front/connect.php";
+        require "app/Views/front/connect.php";
     }
 
+    //aller à la page de création d'un compte
+    function createPageCreationCompte()
+    {
+        require 'app/views/front/createUser.php';
+    }
+
+    //création de l'utilisateur
+    function createUser($pseudo, $mail, $password)
+    {
+        $userManager = new \ProjetBlogKercode\Models\AdminModel();
+        $user = $userManager->createUser($pseudo, $mail, $password);
+
+        require 'app/Views/front/createUser.php';
+    }
+
+    // connexion à la page de connexion
+    function connexionUser()
+    {
+        require 'app/Views/front/connect.php';
+    }
+    
+    // connexion à la page connexion
+    function createPageUser()
+    {
+        require 'app/Views/front/createUser.php';
+    }
+
+
     function mentionsLegales(){
-        require "app/Views/Front/mentionsLegales.php";
+        require "app/Views/front/mentionsLegales.php";
     }
 
 
@@ -61,9 +91,9 @@ class FrontController extends Controller
 
         if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
             $mail = $postMail->postMail($lastname, $firstname, $mail, $phone, $objet, $msg);
-            require 'app/Views/Front/confirmSendMail.php';
+            require 'app/Views/front/confirmSendMail.php';
         } else {
-            header('Location: app/Views/Front/errorLoading.php');
+            header('Location: app/Views/front/errorLoading.php');
         }
     }
 }

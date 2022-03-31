@@ -57,6 +57,20 @@ header{
     font-size: 1.5rem;
     margin: 1rem;
 }
+.barre-connexion{
+    background-color: black;
+}
+.barre-connexion ul{
+    display: flex;
+    justify-content: center;
+}
+.barre-connexion ul li{
+    padding: 10px 15px;
+    font-size: 0.9rem;
+}
+.barre-connexion a{
+    color: white;
+}
 .navbar{
     display: flex;
     justify-content: space-between;
@@ -103,7 +117,7 @@ header{
 /*--------------------- MENU BURGER --------------------------- */
 .btn-burger{
     position: absolute;
-    top: 1.4rem;
+    top: 3.75rem;
     right: 1.5rem;
     display: flex;
     flex-direction: column;

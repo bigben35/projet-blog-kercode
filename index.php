@@ -7,8 +7,12 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 try{
     $frontController = new \ProjetBlogKercode\Controllers\FrontController();//objet controler
+    // $backController = new \ProjetBlogKercode\Controllers\AdminController();//objet controler, on instancie la class adminController (copie de la class adminController)
+    //on le stocke dans une variable pour pouvoir l'utiliser
 
     if(isset($_GET['action'])){
+
+        
         
         if($_GET['action'] == 'home') {
             $frontController->home();
@@ -28,6 +32,19 @@ try{
 
         elseif($_GET['action'] == 'contact'){
             $frontController->contact();
+        }
+
+        elseif($_GET['action'] == 'createUser'){
+            $frontController->createPageCreationCompte();
+
+        }
+        elseif($_GET['action'] == 'createUser'){
+            $pseudo = $_POST['pseudo'];
+            $mail = $_POST['mail'];
+            $pass = $_POST['password'];
+            $password = password_hash($pass, PASSWORD_DEFAULT); //crée une clé de hachage pour un password
+            
+            $frontController->createUser($pseudo, $mail, $password);
         }
 
         elseif($_GET['action'] == 'connexion'){
@@ -53,7 +70,36 @@ try{
             }
         }
 
+
+        
+
        
+
+
+        //----------- COTE ADMIN--------------------
+        
+        
+
+        // // connexion administrateur 
+        // elseif ($_GET['action'] == 'connexion'){
+        //     $mail = htmlspecialchars($_POST['mail']);   //htmlspecialchars — Convertit les caractères spéciaux en entités HTML
+        //     $password = $_POST['password'];
+        //     if (!empty($mail) && !empty($password)){
+        //         $backController->connexion($mail, $password); //on passe les 2 paramètres
+        //     } else {
+        //         throw new Exception("Veuillez renseigner vos identifiants pour vous connecter à votre session");
+        //     }
+
+        // }
+        // elseif ($_GET['action'] == 'connexionUser'){
+        //     $backController->connexionUser();
+        // }
+
+        // // dasboard 
+        // elseif($_GET['action'] == 'dashboard'){
+        //     $backController->dashboard();
+        // }
+
         
     }else{
         $frontController->home();

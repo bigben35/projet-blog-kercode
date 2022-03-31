@@ -16,17 +16,17 @@ try
     if (isset($_GET['action'])) { //$_GET donne les valeurs des informations indiquées dans l'url
         
         // création d'un administrateur 
-        if($_GET['action'] == 'createAdmin'){
-            $firstname = $_POST['firstname'];
+        if($_GET['action'] == 'createUser'){
+            $pseudo = $_POST['pseudo'];
             $mail = $_POST['mail'];
             $pass = $_POST['password'];
             $password = password_hash($pass, PASSWORD_DEFAULT); //crée une clé de hachage pour un password
 
-            $backController->createAdmin($firstname, $mail, $password);
+            $backController->createUser($pseudo, $mail, $password);
         }
 
         // connexion administrateur 
-        elseif ($_GET['action'] == 'connexionAdmin'){
+        elseif ($_GET['action'] == 'connexion'){
             $mail = htmlspecialchars($_POST['mail']);   //htmlspecialchars — Convertit les caractères spéciaux en entités HTML
             $password = $_POST['password'];
             if (!empty($mail) && !empty($password)){
@@ -36,10 +36,18 @@ try
             }
 
         }
+        elseif ($_GET['action'] == 'connexionUser'){
+            $backController->connexionUser();
+        }
+
+        // dasboard 
+        elseif($_GET['action'] == 'dashboard'){
+            $backController->dashboard();
+        }
 
     } else {
         // $backController->connexionAdmin();
-        $backController->createAdmin($firstname, $mail, $password);
+        $backController->createPageUser();
 
     }
 

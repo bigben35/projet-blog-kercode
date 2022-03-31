@@ -4,6 +4,16 @@ namespace ProjetBlogKercode\Models;
 
 class UserModel extends Manager
 {
+    public function createUser($pseudo, $mail, $password)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('INSERT INTO user (pseudo, mail, password )  VALUES (?, ?, ?)');
+        $req->execute(array($pseudo, $mail, $password));
+    
+        return $req;
+    }
+
+    
     // SLIDER 
     public function getSlides()
     {

@@ -4,26 +4,11 @@ namespace ProjetBlogKercode\Controllers;
 
 class AdminController extends Controller
 {
-    // connexion à la page connexion
-    function createPageAdmin()
-    {
-        require 'app/Views/Admin/createAdmin.php';
-    }
+    
 
-    //création de l'administrateur
-    function createAdmin($firstname, $mail, $password)
-    {
-        $userManager = new \ProjetBlogKercode\Models\AdminModel();
-        $user = $userManager->createAdmin($firstname, $mail, $password);
+    
 
-        require 'app/Views/Admin/createAdmin.php';
-    }
-
-    // connexion à la page de connexion
-    function connexionAdmin()
-    {
-        require 'app/Views/Admin/connexionAdmin.php';
-    }
+    // connexion au tableau de bord après comparaison du mdp
 
     function connexion($mail, $password)
     // récupère le password
@@ -38,14 +23,16 @@ class AdminController extends Controller
         $_SESSION['mail'] = $result['mail']; // transformation des variables recupérées en session
         $_SESSION['password'] = $result['password'];
         $_SESSION['id'] = $result['id'];
-        $_SESSION['firstname'] = $result['firstname'];
+        $_SESSION['pseudo'] = $result['pseudo'];
         $_SESSION['role'] = $result['role'];
 
 
-        if ($isPasswordOk && ($_SESSION['role'] === 1)) {
+
+        if ($isPasswordOk && ($_SESSION['role'] === "1")) {
 
             require 'app/Views/Admin/dashboard.php';
-        } 
+        }
+
         
         else {
             echo 'Un problème avec vos identifiants?';
@@ -53,5 +40,11 @@ class AdminController extends Controller
         }
 
 
+    }
+
+    // tableau de bord 
+    function dashboard()
+    {
+        require 'app/Views/Admin/dashboard.php';
     }
 }

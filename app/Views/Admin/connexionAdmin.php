@@ -11,7 +11,7 @@
     <h1>Connexion Administrateur</h1>
     <div id="inscription">
         <div>
-            <form action="connexionAdmin" method="post">
+            <form action="indexAdmin.php?action=connexion" method="post">
                 <table>
                     <tr>
                         <td><label for="mail">email :</label></td>
@@ -30,6 +30,7 @@
             <a href="home">Retour à l'accueil</a>
         </div>
     </div>
+    <a href=""></a>
 </body>
 
 </html>

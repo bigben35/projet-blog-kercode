@@ -5,14 +5,7 @@ namespace ProjetBlogKercode\Models;
 
 class AdminModel extends Manager
 {
-    public function createAdmin($firstname, $mail, $password)
-    {
-        $bdd = $this->dbConnect();
-        $req = $bdd->prepare('INSERT INTO user (firstname, mail, password )  VALUES (?, ?, ?)');
-        $req->execute(array($firstname, $mail, $password));
-    
-        return $req;
-    }
+   
 
     public function recupPassword($mail, $password)
     {
@@ -22,4 +15,9 @@ class AdminModel extends Manager
 
         return $req;
     }
+
+    // public function compte($id)
+    // {
+
+    // }
 }
