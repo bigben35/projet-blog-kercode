@@ -52,6 +52,10 @@ try{
             $frontController->connect();
         }
 
+        elseif($_GET['action'] == 'deconnexion'){
+            $frontController->deconnexion();
+        }
+
         // // connexion utilisateur 
         elseif ($_GET['action'] == 'connexionUser'){
             $mail = htmlspecialchars($_POST['mail']);   //htmlspecialchars — Convertit les caractères spéciaux en entités HTML

@@ -19,10 +19,10 @@
         <div class="barre-connexion">
             <ul>
             <?php 
-            if(isset($_SESSION['user']))  : 
+            if(isset($_SESSION['id']))  : 
             ?>
                 <li><a href="">Mon Compte</a></li>
-                <li><a href="">Déconnexion</a></li>
+                <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
             <?php
             else:
                 ?>

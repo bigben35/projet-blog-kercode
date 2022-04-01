@@ -121,6 +121,13 @@ class FrontController
 
     }
 
+    // deconnexion d'une session 
+    function deconnexion(){
+        unset($_SESSION['id']);
+        session_destroy();
+        header('Location: index.php?action=connexion');
+    }
+
     // page dashboardUser 
     function dashboardUser(){
         require "app/Views/front/dashboardUser.php";
