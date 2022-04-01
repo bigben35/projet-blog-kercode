@@ -8,7 +8,7 @@ ob_start();
 <img src="app/Public/images/iconLogin.webp" alt="icône de l'utilisateur">
 
 <div id="connexion">
-    <form action="index.php?action=connexion" method="POST">
+    <form action="index.php?action=connexionUser" method="POST">
         
         <div class="bloc-form">
             <label for="mail">Email</label>

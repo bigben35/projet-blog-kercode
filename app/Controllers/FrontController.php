@@ -75,11 +75,11 @@ class FrontController extends Controller
     function connexionUser()
     {
         if($_SESSION['role'] === "1"){
-        require 'app/Views/Admin/dashbord.php';
+        require 'app/Views/Admin/dashboard.php';
 
         }
         else{
-        require 'app/Views/front/dashbordUser.php';
+        require 'app/Views/front/dashboardUser.php';
 
         }
 
@@ -94,9 +94,9 @@ class FrontController extends Controller
     // récupère le password
     {
         $userManager = new \ProjetBlogKercode\Models\UserModel();
-        $connectAdmin = $userManager->recupPassword($mail, $password);
+        $connectUser = $userManager->recupPassword($mail, $password);
 
-        $result = $connectAdmin->fetch();
+        $result = $connectUser->fetch();
         $isPasswordOk = password_verify($password, $result['password']);
 
         // Les sessions permettent de conserver des variables sur toutes les pages de votre site même lorsque la page PHP a fini d'être générée.  

@@ -53,11 +53,11 @@ try{
         }
 
         // // connexion utilisateur 
-        elseif ($_GET['action'] == 'connexion'){
+        elseif ($_GET['action'] == 'connexionUser'){
             $mail = htmlspecialchars($_POST['mail']);   //htmlspecialchars — Convertit les caractères spéciaux en entités HTML
             $password = $_POST['password'];
             if (!empty($mail) && !empty($password)){
-                $backController->connexion($mail, $password); //on passe les 2 paramètres
+                $frontController->connexion($mail, $password); //on passe les 2 paramètres
             } else {
                 throw new Exception("Veuillez renseigner vos identifiants pour vous connecter à votre session");
             }
