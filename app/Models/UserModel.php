@@ -46,4 +46,35 @@ class UserModel extends Manager
         $req = $bdd->query("SELECT title, url_image, alt_image, content, created_at FROM article ORDER BY id DESC LIMIT 4");
         return $req->fetchAll();
     }
+
+
+    // PAGES createUser et dashboard ?? 
+    function nb_commentaires($id)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd ->prepare("SELECT COUNT(*) FROM commentaire WHERE article_id=?");
+        $req ->execute([(int)$id]);
+    
+        $nb_commentaires = $req->fetch()[0];
+        // var_dump($nb_commentaires);die;
+        return $nb_commentaires;
+    }
+    
+    
+    function commentaires()
+    {
+        $bdd = $this->dbConnect();
+        $id = (int)$_GET['id'];
+        $req = $bdd ->prepare("SELECT commentaire.*, user.pseudo FROM commentaire INNER JOIN user ON commentaires.user_id = users.id AND commentaires.article_id = ?");       //prepare quand on passe un paramètre variable; bien reprendre cette requête pour bien la comprendre!!                       
+    
+        $req ->execute([$id]);
+        $commentaires = $req ->fetchAll();
+    
+        // var_dump($commentaires);die;
+    
+        return $commentaires;
+    }
+
+
+
 }
