@@ -2,7 +2,7 @@
 
 namespace ProjetBlogKercode\Controllers;
 
-class FrontController extends Controller
+class FrontController
 {
     
 
@@ -74,12 +74,12 @@ class FrontController extends Controller
     // connexion à la page de connexion
     function connexionUser()
     {
-        if($_SESSION['role'] === "1"){
-        require 'app/Views/Admin/dashboard.php';
+        if($_SESSION['role'] === "0"){
+        require 'app/Views/Admin/dashboardUser.php';
 
         }
         else{
-        require 'app/Views/front/dashboardUser.php';
+        require 'app/Views/front/errorLoading';
 
         }
 
@@ -107,21 +107,17 @@ class FrontController extends Controller
         $_SESSION['role'] = $result['role'];
 
 
-
-        if ($isPasswordOk && ($_SESSION['role'] === "1")) {
-
-            require 'app/Views/Admin/dashboard.php';
-        }
-        elseif($isPasswordOk && ($_SESSION['role'] === "0")){
+        if($isPasswordOk && ($_SESSION['role'] === "0")){
+            
             require 'app/Views/front/dashboardUser.php';
-
         }
-
+        elseif($isPasswordOk && ($_SESSION['role'] === "1")){
+            header('Location: indexAdmin.php');
+        }
         else {
             echo 'Un problème avec vos identifiants?';
             
         }
-
 
     }
 
