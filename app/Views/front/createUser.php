@@ -8,7 +8,7 @@ ob_start();
 <img src="app/Public/images/iconLogin.webp" alt="icône de l'utilisateur">
 
 <div id="inscription">
-    <form action="index.php?action=createUser" method="POST">
+    <form action="index.php?action=StoreUser" method="POST">
         <div class="bloc-form">
             <label for="pseudo">Pseudo</label>
             <input type="text" id="pseudo" name="pseudo" placeholder="Votre Pseudo" required>

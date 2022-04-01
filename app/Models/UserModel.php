@@ -13,6 +13,15 @@ class UserModel extends Manager
         return $req;
     }
 
+    public function recupPassword($mail, $password)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT * FROM user WHERE mail = ?');
+        $req->execute(array($mail));
+
+        return $req;
+    }
+
     
     // SLIDER 
     public function getSlides()

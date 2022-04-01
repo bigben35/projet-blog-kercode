@@ -13,7 +13,6 @@ try{
     if(isset($_GET['action'])){
 
         
-        
         if($_GET['action'] == 'home') {
             $frontController->home();
         }
@@ -38,7 +37,9 @@ try{
             $frontController->createPageCreationCompte();
 
         }
-        elseif($_GET['action'] == 'createUser'){
+
+        // creation d'un utilisateur 
+        elseif($_GET['action'] == 'StoreUser'){
             $pseudo = $_POST['pseudo'];
             $mail = $_POST['mail'];
             $pass = $_POST['password'];
@@ -46,11 +47,23 @@ try{
             
             $frontController->createUser($pseudo, $mail, $password);
         }
-
+        
         elseif($_GET['action'] == 'connexion'){
             $frontController->connect();
         }
 
+        // // connexion utilisateur 
+        elseif ($_GET['action'] == 'connexion'){
+            $mail = htmlspecialchars($_POST['mail']);   //htmlspecialchars — Convertit les caractères spéciaux en entités HTML
+            $password = $_POST['password'];
+            if (!empty($mail) && !empty($password)){
+                $backController->connexion($mail, $password); //on passe les 2 paramètres
+            } else {
+                throw new Exception("Veuillez renseigner vos identifiants pour vous connecter à votre session");
+            }
+
+        }
+        
         elseif($_GET['action'] == 'mentionsLegales'){
             $frontController->mentionsLegales();
         }
@@ -80,17 +93,6 @@ try{
         
         
 
-        // // connexion administrateur 
-        // elseif ($_GET['action'] == 'connexion'){
-        //     $mail = htmlspecialchars($_POST['mail']);   //htmlspecialchars — Convertit les caractères spéciaux en entités HTML
-        //     $password = $_POST['password'];
-        //     if (!empty($mail) && !empty($password)){
-        //         $backController->connexion($mail, $password); //on passe les 2 paramètres
-        //     } else {
-        //         throw new Exception("Veuillez renseigner vos identifiants pour vous connecter à votre session");
-        //     }
-
-        // }
         // elseif ($_GET['action'] == 'connexionUser'){
         //     $backController->connexionUser();
         // }

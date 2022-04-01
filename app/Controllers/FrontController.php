@@ -46,6 +46,7 @@ class FrontController extends Controller
         require "app/Views/front/contact.php";
     }
 
+    // aller a la page de connexion 
     function connect(){
         require "app/Views/front/connect.php";
     }
@@ -59,25 +60,77 @@ class FrontController extends Controller
     //création de l'utilisateur
     function createUser($pseudo, $mail, $password)
     {
-        $userManager = new \ProjetBlogKercode\Models\AdminModel();
+        $userManager = new \ProjetBlogKercode\Models\UserModel();
+        
+        if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
         $user = $userManager->createUser($pseudo, $mail, $password);
 
-        require 'app/Views/front/createUser.php';
+        require 'app/Views/front/connect.php';
+    } else {
+        header('Location: app/Views/front/errorLoading.php');
+    }
     }
 
     // connexion à la page de connexion
     function connexionUser()
     {
-        require 'app/Views/front/connect.php';
+        if($_SESSION['role'] === "1"){
+        require 'app/Views/Admin/dashbord.php';
+
+        }
+        else{
+        require 'app/Views/front/dashbordUser.php';
+
+        }
+
+        // require 'app/Views/front/connect.php';
     }
     
-    // connexion à la page connexion
-    function createPageUser()
+
+
+    // connexion au tableau de bord après comparaison du mdp
+
+    function connexion($mail, $password)
+    // récupère le password
     {
-        require 'app/Views/front/createUser.php';
+        $userManager = new \ProjetBlogKercode\Models\UserModel();
+        $connectAdmin = $userManager->recupPassword($mail, $password);
+
+        $result = $connectAdmin->fetch();
+        $isPasswordOk = password_verify($password, $result['password']);
+
+        // Les sessions permettent de conserver des variables sur toutes les pages de votre site même lorsque la page PHP a fini d'être générée.  
+        $_SESSION['mail'] = $result['mail']; // transformation des variables recupérées en session
+        $_SESSION['password'] = $result['password'];
+        $_SESSION['id'] = $result['id'];
+        $_SESSION['pseudo'] = $result['pseudo'];
+        $_SESSION['role'] = $result['role'];
+
+
+
+        if ($isPasswordOk && ($_SESSION['role'] === "1")) {
+
+            require 'app/Views/Admin/dashboard.php';
+        }
+        elseif($isPasswordOk && ($_SESSION['role'] === "0")){
+            require 'app/Views/front/dashboardUser.php';
+
+        }
+
+        else {
+            echo 'Un problème avec vos identifiants?';
+            
+        }
+
+
     }
 
+    // page dashboardUser 
+    function dashboardUser(){
+        require "app/Views/front/dashboardUser.php";
+    }
 
+    // page mentions legales 
     function mentionsLegales(){
         require "app/Views/front/mentionsLegales.php";
     }
