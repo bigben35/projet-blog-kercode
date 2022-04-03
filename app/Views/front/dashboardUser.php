@@ -15,7 +15,7 @@ ob_start();
         </div>
         <div>
             <div class="col-xs-12">
-                <p>Adresse e-mail : <?= $_SESSION['email'] ?></p>
+                <p>Adresse e-mail : <?= $_SESSION['mail'] ?></p>
             </div>
         </div>
         <div>

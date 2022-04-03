@@ -21,6 +21,10 @@ try{
             $frontController->blog();
         }
 
+        elseif($_GET['action'] == 'article'){
+            $frontController->article();
+        }
+
         elseif($_GET['action'] == 'temoignages'){
             $frontController->temoignage();
         }

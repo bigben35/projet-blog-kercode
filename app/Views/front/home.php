@@ -37,15 +37,15 @@ ob_start();
 <section id="last-articles">
     <article>
         <h2>Derniers articles postés</h2>
-        <?php foreach ($articles as $article){
+        <?php foreach ($lastarticles as $lastarticle){
             ?>
             <div class="bloc-article">
-                <img src="<?= $article['url_image']; ?>" alt="<?= $article['alt_image']; ?>">
+                <img src="<?= $lastarticle['url_image']; ?>" alt="<?= $lastarticle['alt_image']; ?>">
             </div>
             <div class="content-article">
-                <p class="date">Posté le <time datetime="<?= $article['created_at']; ?>"><?= $article['created_at']; ?></time></p>
-                <h3><?= $article['title']; ?></h3>
-                <p class="content"><?= $article['content']; ?></p>
+                <p class="date">Posté le <time datetime="<?= $lastarticle['created_at']; ?>"><?= $lastarticle['created_at']; ?></time></p>
+                <h3><?= $lastarticle['title']; ?></h3>
+                <p class="content"><?= $lastarticle['content']; ?></p>
             </div>
         <?php }; ?>
     </article>

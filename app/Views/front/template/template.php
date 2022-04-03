@@ -14,27 +14,8 @@
 <body>
     <!-- HEADER  -->
     <header>
-        
+
         <div class="container">
-        <div class="barre-connexion">
-            <ul>
-            <?php 
-            if(isset($_SESSION['id']))  : 
-            ?>
-                <li><a href="">Mon Compte</a></li>
-                <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
-            <?php
-            else:
-                ?>
-                <li><a href="index.php?action=connexion" class="nav-link">Se connecter</a></li>
-                <li><a href="index.php?action=createUser" class="nav-link">Créer un compte</a></li>
-            
-            <?php
-            endif;
-            ?>
-            </ul>
-        </div> 
-        
             <!-- NAV  -->
             <nav class="navbar">
                 <!-- <div class="search">
@@ -51,10 +32,23 @@
                     <ul class="nav-list">
                         <li><a href="index.php?action=home" class="nav-link active">Home</a></li>
                         <li><a href="index.php?action=blog" class="nav-link">Blog</a></li>
-                        <li><a href="index.php?action=temoignages" class="nav-link">Témoignages</a></li>
                         <li><a href="index.php?action=meteo" class="nav-link">Météo</a></li>
                         <li><a href="index.php?action=contact" class="nav-link">Contact</a></li>
-                        
+                        <?php
+                        if (isset($_SESSION['id'])) :
+                        ?>
+                            <li><a href="">Mon Compte</a></li>
+                            <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
+                        <?php
+                        else :
+                        ?>
+                            <li><a href="index.php?action=connexion" class="nav-link">Se connecter</a></li>
+                            <li><a href="index.php?action=createUser" class="nav-link">Créer un compte</a></li>
+
+                        <?php
+                        endif;
+                        ?>
+
                     </ul>
                 </div>
             </nav>
@@ -70,7 +64,7 @@
 
     <!-- FOOTER  -->
     <footer class="container">
-    <div id="reseaux">
+        <div id="reseaux">
             <ul class="icons">
                 <li><a href="#" title="facebook"><i class="fa-brands fa-facebook-square"></i></a></li>
                 <li><a href="#" title="twitter"><i class="fa-brands fa-twitter-square"></i></a></li>

@@ -18,14 +18,31 @@ class FrontController
         
         //derniers articles
         $lastArticle = new \ProjetBlogKercode\Models\UserModel();
-        $articles = $lastArticle->getLastArticles();
+        $lastarticles = $lastArticle->getLastArticles();
         require "app/Views/front/home.php";
     }
 
     
     function blog()
     {
+        // récupérer tous les articles 
+        $getArticles = new \ProjetBlogKercode\Models\UserModel();
+        $articles = $getArticles->allArticles();
         require "app/Views/front/blog.php";
+    }
+
+    function article()
+    {
+        // afficher un article 
+        $afficherArticle = new \ProjetBlogKercode\Models\UserModel();
+        if (empty($article)) {
+            $article = $afficherArticle->afficherArticle();
+            header('Location: app/Views/front/errorLoading.php');
+        }
+        else {
+            return $article;
+        }
+        require "app/Views/front/article.php";
     }
 
     function temoignage()

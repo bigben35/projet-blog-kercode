@@ -47,6 +47,28 @@ class UserModel extends Manager
         return $req->fetchAll();
     }
 
+    // PAGE BLOG 
+    public function allArticles()
+    {
+        $bdd = $this->dbConnect();
+        
+        $req = $bdd->query("SELECT id, title, url_image, alt_image, accroche, created_at FROM article ORDER BY id DESC");
+        
+        return $req->fetchAll();
+    }
+
+    // PAGE ARTICLE 
+    public function afficherArticle()
+    {
+        $bdd = $this->dbConnect();
+        $id = $_GET['id'];
+
+        $req = $bdd->prepare("SELECT id, titre, url_image, alt_image, contenu, created_at FROM article WHERE id=?");
+        $req->execute([$id]);
+
+        return $req->fetch();
+    }
+
 
     // PAGES createUser et dashboard ?? 
     function nb_commentaires($id)

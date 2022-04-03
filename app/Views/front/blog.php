@@ -7,7 +7,7 @@ ob_start();
 <section id="bloc-articles">
     <h1>Les Articles</h1>
     <article>
-        <h2>Derniers articles postés</h2>
+        
         <?php foreach ($articles as $article){
             ?>
             <div class="bloc-article">
@@ -16,8 +16,9 @@ ob_start();
             <div class="content-article">
                 <p class="date">Posté le <time datetime="<?= $article['created_at']; ?>"><?= $article['created_at']; ?></time></p>
                 <h3><?= $article['title']; ?></h3>
-                <p class="content"><?= $article['content']; ?></p>
+                <p class="accroche"><?= $article['accroche']; ?></p>
             </div>
+            <a href="index.php?action=article">Voir l'Article</a>
         <?php }; ?>
     </article>
 </section>
