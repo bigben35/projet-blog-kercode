@@ -18,54 +18,90 @@ $description = "Voici le tableau de bord de l'administrateur pour qu'il puisse a
     <title><?= $title ?></title>
 </head>
 
-<header id="dashboard-admin-header">
+<body>
 
-    <nav class="side-nav">
-        <div class="wrapper">
-            <div class="nav-bloc-black">
-                <h2>Admin</h2>
-            </div>
-            <div class="nav-bloc n-1">
-                <i class="fa-solid fa-file"></i>
-                <div class="sub-nav">
-                    <h3>Articles</h3>
-                    <ul>
-                        <li><a href="">Nouveaux Articles</a></li>
-                        <li><a href="">Anciens Articles</a></li>
+    <header id="dashboard-admin-header">
 
-                    </ul>
+        <nav class="side-nav">
+            <div class="wrapper">
+                <div class="nav-bloc-black">
+                    <h2>Admin</h2>
+                </div>
+                <div class="nav-bloc n-1">
+                    <i class="fa-solid fa-file"></i>
+                    <div class="sub-nav">
+                        <h3>Articles</h3>
+                        <ul>
+                            <li><a href="">Nouveaux Articles</a></li>
+                            <li><a href="">Anciens Articles</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-bloc n-2">
+                    <i class="fa-solid fa-comment"></i>
+                    <div class="sub-nav">
+                        <h3>Commentaire</h3>
+                        <ul>
+                            <li><a href="">Commentaire reçu</a></li>
+                            <li><a href="">Commentaire à "valider</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-bloc n-3">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="sub-nav">
+                        <h3>E-mail</h3>
+                        <ul>
+                            <li><a href="">Nombre e-mail</a></li>
+                            <li><a href="">E-mail à lire</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-bloc n-4">
+                    <a href="index.php?action=deconnexion"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </div>
             </div>
-            <div class="nav-bloc n-2">
-                <i class="fa-solid fa-comment"></i>
-                <div class="sub-nav">
-                    <h3>Commentaire</h3>
-                    <ul>
-                        <li><a href="">Commentaire reçu</a></li>
-                        <li><a href="">Commentaire à "valider</a></li>
+        </nav>
 
-                    </ul>
-                </div>
-            </div>
-            <div class="nav-bloc n-3">
-                <i class="fa-solid fa-envelope"></i>
-                <div class="sub-nav">
-                    <h3>E-mail</h3>
-                    <ul>
-                        <li><a href="">Nombre e-mail</a></li>
-                        <li><a href="">E-mail à lire</a></li>
+    </header>
 
-                    </ul>
+    <main id="main-dashboard-admin">
+        <div class="container">
+            <h2>Bonjour <?= $_SESSION['pseudo'] ?>!</h2>
+
+            <section class="section-dashboard-admin">
+                <div class="bloc-section-admin">
+                    <i class="fa-solid fa-file"></i>
+                    <div class="bloc-info-admin">
+                        <h3>Articles</h3>
+                        <p class="count">32</p>
+                    </div>
                 </div>
-            </div>
-            <div class="nav-bloc n-4">
-                <a href="index.php?action=deconnexion"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
-            </div>
+                <div class="bloc-section-admin">
+                    <i class="fa-solid fa-comment"></i>
+                    <div class="bloc-info-admin">
+                        <h3>Commentaires</h3>
+                        <p class="count">23</p>
+                    </div>
+                </div>
+                <div class="bloc-section-admin">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="bloc-info-admin">
+                        <h3>E-mail</h3>
+                        <p class="count">14</p>
+                    </div>
+                </div>
+                <div class="bloc-section-admin">
+                    <a href="index.php?action=deconnexion"><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <h3>Se déconnecter</h3>
+                    </a>
+                </div>
+            </section>
         </div>
-    </nav>
+    </main>
+</body>
 
-</header>
-
-<main id="main-dashboard-admin">
-    <h2>Bienvenue <?= $_SESSION['pseudo'] ?>!</h2>
-</main>
+</html>
