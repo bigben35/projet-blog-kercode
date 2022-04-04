@@ -72,7 +72,7 @@ $description = "Voici le tableau de bord de l'administrateur pour qu'il puisse a
         <div class="container">
             <h2>Bonjour <?= $_SESSION['pseudo'] ?>!</h2>
 
-            <section class="section-dashboard-admin">
+            <section class="section-dashboard-admin container-admin">
                 <div class="bloc-section-admin">
                     <i class="fa-solid fa-file"></i>
                     <div class="bloc-info-admin">

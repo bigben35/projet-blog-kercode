@@ -6,7 +6,7 @@ $url = "xxxx" ;
 $name = "Islande en Tête";
 ?>
 
-<section id=""></section>
+<section id="bloc-mentions">
 <h1>Mentions Légales</h1>
 
     <h2>A propos</h2>
@@ -133,7 +133,7 @@ $name = "Islande en Tête";
     </div>
 
     
-
+    </section>
 
 <?php
 $content = ob_get_clean();
