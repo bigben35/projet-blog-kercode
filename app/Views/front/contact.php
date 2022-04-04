@@ -4,8 +4,12 @@
     $description = "";
 
 ob_start(); ?>
-<form action="index.php?action=contactPost" method="post">   
-            <h2>Contactez-nous</h2>
+
+<section class="bloc-create-user">
+<div class="form-container">
+    <h1>Contactez-nous</h1>
+    <div class="main-bloc-form">
+    <form action="index.php?action=contactPost" method="post">   
             <div class="bloc-form">
                 <label for="name">Nom : *</label>
                 <input type="text" id="name" name="lastname" placeholder="Votre Nom" required>
@@ -30,13 +34,16 @@ ob_start(); ?>
                 <label for="msg">Message :</label>
                 <textarea id="msg" name="msg" placeholder="Votre message"></textarea>
             </div>
-            <div class="bloc-form">
-                    <input type="checkbox" id="autorisation" required>
-                    <label for="autorisation">&nbsp; En soumettant ce formulaire, j'autorise ce site à conserver mes données personnelles. Aucune exploitation commerciale ne sera faite des données conservées.</label>
+            <div>
+                <input type="checkbox" id="autorisation" required>
+                <label for="autorisation">&nbsp; En soumettant ce formulaire, j'autorise ce site à conserver mes données personnelles. Aucune exploitation commerciale ne sera faite des données conservées.</label>
             </div>
 
             <button class="btn-form" type="submit" name="btn-submit">Envoyer</button>
         </form>
+    </div>
+</div>
+    </section>
 
 <?php $content = ob_get_clean(); ?>
 <?php require 'template/template.php'; ?>

@@ -4,12 +4,13 @@ $description = "";
 ob_start();
 ?>
 
-<section id="bloc-create-user">
-    
-    <h1>Créer votre Compte</h1>
-    <img src="app/Public/images/iconLogin.webp" alt="icône de l'utilisateur">
-    
-    <div id="inscription">
+<section class="bloc-create-user">
+    <div class="form-container">
+
+        <h1>Créer votre Compte</h1>
+        <img src="app/Public/images/iconLogin.webp" alt="icône de l'utilisateur">
+        
+        <div class="main-bloc-form">
         <form action="index.php?action=StoreUser" method="POST">
             <div class="bloc-form">
                 <label for="pseudo">Pseudo</label>
@@ -24,11 +25,12 @@ ob_start();
             <input type="text" id="password" name="password" required>
         </div>
 
-            <p>En m'inscrivant, j'accepte les conditions d'utilisation et la politique de confidentialité du site Islande en Tête</p>
+        <p>En m'inscrivant, j'accepte les conditions d'utilisation et la politique de confidentialité du site Islande en Tête</p>
 
-            <button class="btn-login" name="submit" type="submit">créer un compte</button>
+            <button class="btn-form" name="submit" type="submit">créer un compte</button>
     </form>
     <span>Vous avez déjà un compte? </span><a href="index.php?action=connexionUser">Login</a>
+</div>
 </div>
 </section>
 

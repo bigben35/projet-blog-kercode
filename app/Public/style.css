@@ -250,8 +250,8 @@ footer{
 }
 
 /* ----------------------PAGE METEO  ---------------------*/
-#meteo-container{
-    max-width: 800px;
+.form-container{
+    max-width: 700px;
     margin: 0 auto;
 }
 .bloc-app-meteo{
@@ -447,50 +447,61 @@ footer{
 
 
 /* PAGE CREATE USER  */
-#bloc-create-user{
+.bloc-create-user{
     text-align: center;
     margin: 1.5rem
 }
-#bloc-create-user h1{
+.bloc-create-user h1{
     margin-bottom: 1rem;
 }
-#inscription form{
-    padding: 0.5rem;
+.main-bloc-form form{
+    padding: 2.5rem;
 }
 .bloc-form label{
     display: block;
     text-align: start;
-    padding-left: 13px;
     margin-bottom: 5px;
 }
 .bloc-form input{
-    height: 25px;
+    height: 30px;
     margin-bottom: 1rem;
-    width: 90%;
+    width: 100%;
 }
-#inscription form p{
+.main-bloc-form form p{
     font-size: 0.8rem;
     text-align: initial;
 }
-.btn-login{
+.btn-form{
     padding: 0.8rem 2rem;
     background-color: var(--mainColor);
     color: white;
     border: none;
     font-weight: 600;
     border-radius: 50px;
-    margin: 15px auto;
+    margin: 3rem auto 10px;
     text-align: center;
     width: 67%;
 }
-#inscription a{
+.main-bloc-form a{
     color: var(--mainLightColor);
 }
 
+/* --------------------PAGE CONTACT--------------------------  */
+textarea{
+    height: 100px;
+    width: 100%;
+    margin-bottom: 2rem;
+}
 
 
 /* ----------------MEDIA QUERIES----------------- */
 @media screen and (min-width: 768px){
+    /* PAGE HOME  */
+    #last-articles a{
+        width: 40%;
+    }
+    
+    
     /* PAGE METEO  */
     .bloc-app-meteo{
         grid-template: 125px 260px / repeat(8, 12.5%);
@@ -510,8 +521,8 @@ footer{
     
     
     /* PAGE CREATE USER  */
-    #inscription form{
-        width: 60%;
+    .main-bloc-form form{
+        width: 75%;
         margin: 0 auto;
     }
 }

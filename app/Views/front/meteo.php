@@ -4,7 +4,7 @@ $description = "";
 ob_start();
 ?>
 
-<section id="meteo-container">
+<section class="form-container">
     
     <div class="bloc-app-meteo">
         <h2 class="titre-meteo">Météo du jour en Islande</h2>
