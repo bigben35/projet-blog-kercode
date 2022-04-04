@@ -6,22 +6,24 @@ use Exception;
 
 class Manager
 {
-    protected function dbConnect()  //protected car utiliser uniquement par Manager et les classes qui vont hériter de la classe Manager
+
+    private static $pdo = null;
+    protected static function dbConnect()  //protected car utiliser uniquement par Manager et les classes qui vont hériter de la classe Manager
     {
-        $dbHost = "localhost";
-        $dbName = "blog_islande";
-        $username = 'root';
-        $password = '';
-        $charset = 'utf8mb4';
-
-        try {
-            $bdd = new \PDO("mysql:host=$dbHost;dbname=$dbName;charset=$charset",$username,$password);
-            $bdd->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-            return $bdd;
+        if(isset(self::$pdo)) {
+            return self::$pdo;
+          } else {
             
-
-        } catch(Exception $e){
-            die('Erreur: ' . $e->getMessage());
-        }
+            $path = "mysql:host=" . $_ENV['DB_HOST'] . ":" . $_ENV['DB_PORT'] . ";dbname=" . $_ENV['DB_NAME'] . ";charset=utf8";
+      
+            self::$pdo = 	
+              new \PDO(
+                $path, 
+                $_ENV['DB_USERNAME'], 
+                $_ENV['DB_PASSWORD']
+              );
+          
+            return self::$pdo;
+          }
     }
         }

@@ -17,12 +17,12 @@ ob_start();
             <img src="<?= $slide['url_image']; ?>" alt="<?= $slide['alt_image']; ?>" class="imgSlider" />
         <?php }; ?>
     </div>
-    <div class="suivant">
+    <!-- <div class="suivant">
         <i class="fa-solid fa-circle-chevron-right"></i>
     </div>
     <div class="precedent">
             <i class="fa-solid fa-circle-chevron-left"></i>
-    </div>
+    </div> -->
 </section>
 
 <section id="presentation">

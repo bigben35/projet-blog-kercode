@@ -181,9 +181,10 @@ footer{
 /* -----------------PAGE HOME-------------------  */
 
 /* ------------------SLIDER-----------------------  */
-.slider{
+#mainSlider{
     height: 50vh;
     position: relative;
+    margin: 2rem 0;
 }
 .slider img{
     object-fit: cover;
@@ -481,6 +482,10 @@ footer{
     margin: 3rem auto 10px;
     text-align: center;
     width: 67%;
+    cursor: pointer;
+}
+.btn-form:hover{
+    background-color: var(--mainLightColor);
 }
 .main-bloc-form a{
     color: var(--mainLightColor);

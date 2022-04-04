@@ -27,7 +27,7 @@ ob_start();
 
         <p>En m'inscrivant, j'accepte les conditions d'utilisation et la politique de confidentialité du site Islande en Tête</p>
 
-            <button class="btn-form" name="submit" type="submit">créer un compte</button>
+            <button class="btn-form" name="submit" type="submit">Créer un compte</button>
     </form>
     <span>Vous avez déjà un compte? </span><a href="index.php?action=connexionUser">Login</a>
 </div>
