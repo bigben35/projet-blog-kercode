@@ -35,11 +35,18 @@
                         <li><a href="index.php?action=meteo" class="nav-link">Météo</a></li>
                         <li><a href="index.php?action=contact" class="nav-link">Contact</a></li>
                         <?php
-                        if (isset($_SESSION['id'])) :
+                        if (isset($_SESSION['role']) && ($_SESSION['role'] == "1")) :
                         ?>
-                            <li><a href="">Mon Compte</a></li>
+                            <li><a href="indexAdmin.php">Mon Compte</a></li>
                             <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
                         <?php
+
+                        elseif (isset($_SESSION['role']) && ($_SESSION['role'] == "0")) :
+                            ?>
+                            <li><a href="index.php?action=connexionUser">Mon Compte</a></li>
+                            <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
+                            <?php
+                            
                         else :
                         ?>
                             <li><a href="index.php?action=connexion" class="nav-link">Se connecter</a></li>
@@ -68,13 +75,13 @@
 
             <div id="reseaux">
                 <ul class="icons">
-                    <li><a href="#" title="facebook"><i class="fa-brands fa-facebook-square"></i></a></li>
+                    <li><a href="www.facebook.com" title="facebook"><i class="fa-brands fa-facebook-square"></i></a></li>
                     <li><a href="#" title="twitter"><i class="fa-brands fa-twitter-square"></i></a></li>
                     <li><a href="#" title="instagram"><i class="fa-brands fa-instagram-square"></i></a></li>
                     <li><a href="#" title="snapchat"><i class="fa-brands fa-snapchat-square"></i></a></li>
                 </ul>
             </div>
-            <p class="copyright">Copyright &copy; <?= date("Y"); ?> - Islande en Tête - <a href="mentionsLegales">Mentions Légales</a> .</p>
+            <p class="copyright">Copyright &copy; <?= date("Y"); ?> - Islande en Tête - <a href="index.php?action=mentionsLegales">Mentions Légales</a> .</p>
         </div>
         </footer>
         

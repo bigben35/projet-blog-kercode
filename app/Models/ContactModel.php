@@ -8,6 +8,7 @@ class ContactModel extends Manager
     {
         $bdd = $this->dbConnect();
         $request = $bdd->prepare('INSERT INTO contacts(lastname, firstname, mail, phone, objet, msg) VALUE(?, ?, ?, ?, ?, ?)');
+        
         $request->execute(array($lastname, $firstname, $mail, $phone, $objet, $msg));
         return $request;
     }

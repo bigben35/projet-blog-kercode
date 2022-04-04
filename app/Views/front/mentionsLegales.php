@@ -1,8 +1,12 @@
 <?php ob_start();  
 
+$title = "Mentions Légales";
+$description = "Page correspondant aux mentions légales du blog 'Islande en tête'; blog consacré à l'Islande, ce pays ou l'on retrouve d'imposants glaciers, de très balles chutes d'eau, les fameuses aurores boréales...";
 $url = "xxxx" ;
 $name = "Islande en Tête";
 ?>
+
+<section id=""></section>
 <h1>Mentions Légales</h1>
 
     <h2>A propos</h2>

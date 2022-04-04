@@ -24,12 +24,15 @@ ob_start();
             <label for="password">Mot de passe</label>
             <input type="text" id="password" name="password" required>
         </div>
-
-        <p>En m'inscrivant, j'accepte les conditions d'utilisation et la politique de confidentialité du site Islande en Tête</p>
+        <div>
+                <input type="checkbox" id="autorisation" required>
+                <label for="autorisation">&nbsp; En m'inscrivant, j'accepte les conditions d'utilisation et la politique de confidentialité du site Islande en Tête</label>
+            </div>
+        
 
             <button class="btn-form" name="submit" type="submit">Créer un compte</button>
     </form>
-    <span>Vous avez déjà un compte? </span><a href="index.php?action=connexionUser">Login</a>
+    <span>Vous avez déjà un compte? </span><a href="index.php?action=connexion">Login</a>
 </div>
 </div>
 </section>
