@@ -4,17 +4,16 @@ $description = "";
 ob_start();
 ?>
 
-<h1>Météo</h1>
-
-<div class="container">
+<section id="meteo-container">
+    
     <div class="bloc-app-meteo">
         <h2 class="titre-meteo">Météo du jour en Islande</h2>
-
+        
         <div class="bloc-logo-info">
             <div class="bloc-logo">
                 <img alt="logo météo islande nuageux" class="logo-meteo">
             </div>
-
+            
             <div class="bloc-info">
                 <p class="temps"></p>
                 <p class="temperature"></p>
@@ -53,8 +52,8 @@ ob_start();
             </div>
         </div>
     </div>
-</div>
 
+</section>
 
-<?php $content = ob_get_clean(); ?>
+    <?php $content = ob_get_clean(); ?>
 <?php require 'template/template.php';

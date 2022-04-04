@@ -4,10 +4,12 @@ $description = "";
 ob_start();
 ?>
 
-<h1>Login</h1>
-<img src="app/Public/images/iconLogin.webp" alt="icône de l'utilisateur">
+<section id="bloc-create-user">
 
-<div id="connexion">
+    <h1>Login</h1>
+    <img src="app/Public/images/iconLogin.webp" alt="icône de l'utilisateur">
+    
+<div id="inscription">
     <form action="index.php?action=connexionUser" method="POST">
         
         <div class="bloc-form">
@@ -18,11 +20,12 @@ ob_start();
             <label for="password">Mot de passe</label>
             <input type="text" id="password" name="password" required>
 
-            <button name="submit" type="submit">Se connecter</button>
+            <button class="btn-login" name="submit" type="submit">Se connecter</button>
         </div>
     </form>
     <a href="home">Retour à l'accueil</a>
 </div>
+</section>
 
 <?php $content = ob_get_clean(); ?>
 <?php require 'template/template.php';
