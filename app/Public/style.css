@@ -48,8 +48,47 @@ header{
 /* -------------------FOOTER ------------- */
 .icons{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
+.icons li{
+    padding: 20px;
+}
+
+/* animations icones  */
+.icons i {
+    color: var(--mainColor);
+    transition: all 0.3s ease-out;
+    font-size: 1.6rem;
+  }
+  .icons a {
+    display: inline-block;
+  }
+  .icons a::before {
+    transform: scale(1);
+    content: "";
+    /* width: 30px; */
+    /* height: 30px; */
+    border-radius: 100%;
+    display: block;
+    background: var(--gris-foncé);
+  }
+  .icons a:hover::before {
+    transform: scale(0);
+    transition: transform 0.3s ease-in;
+  }
+  .icons a:hover i {
+    transform: scale(2.2);
+    color: var(--gris-foncé);
+    background: var(--gris-foncé);
+    -webkit-background-clip: text; /*l'arriere plan est limité au texte en premier plan*/
+    -webkit-text-fill-color: var(--mainColor); /*définie la couleur utilisée pour dessiner le contenu des lettres qui forment un texte*/
+    transition: all 0.3s ease-in;
+  }
+.copyright{
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
 
 
 /* ------------NAVIGATION ------------*/
@@ -186,6 +225,15 @@ header{
     margin-bottom: 1rem;
 }
 
+/* DERNIERS ARTICLES  */
+#last-articles{
+    text-align: center;
+}
+#last-articles h2{
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
 /* BOUTON VOIR ARTICLES  */
 #last-articles a{
     display: block;
@@ -197,7 +245,7 @@ header{
     border-radius: 50px;
     margin: 0 auto;
     text-align: center;
-    width: 50%;
+    width: 67%;
 }
 
 /* ----------------------PAGE METEO  ---------------------*/
