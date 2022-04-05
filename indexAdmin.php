@@ -6,6 +6,7 @@ session_start();
 //chargement automatique avec composer
 require_once __DIR__ . '/vendor/autoload.php';
 
+
 try 
 {
 

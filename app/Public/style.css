@@ -269,7 +269,7 @@ footer{
     margin: 15px auto;
     position: relative;
     border: 1px solid black;
-    background-color: var(--mainLightColor);
+    background-color: rgb(13, 143, 179);
 }
 .titre-meteo{
     /* deb row/deb col/ fin row/ fin col  */
