@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'b0a94d178a8e90636b3bf58a3cda8678023d154d',
+        'reference' => 'efdab2ca6251e0c248717bdd2dfabde18ca13250',
         'name' => 'kercode/projet-blog-kercode',
         'dev' => true,
     ),
@@ -25,7 +25,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'b0a94d178a8e90636b3bf58a3cda8678023d154d',
+            'reference' => 'efdab2ca6251e0c248717bdd2dfabde18ca13250',
             'dev_requirement' => false,
         ),
         'phpoption/phpoption' => array(

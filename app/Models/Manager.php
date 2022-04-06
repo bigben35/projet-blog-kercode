@@ -22,6 +22,7 @@ class Manager
                 $_ENV['DB_USERNAME'], 
                 $_ENV['DB_PASSWORD']
               );
+              self::$pdo->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_WARNING);
           
             return self::$pdo;
           }
