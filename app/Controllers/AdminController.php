@@ -50,5 +50,9 @@ class AdminController
         require "app/Views/Admin/afficheArticle.php";
     }
     
+    public function ajouteArticle()
+    {
+        require "app/Views/Admin/ajoutArticle.php";
+    }
     
 }

@@ -36,7 +36,7 @@ class ArticleManager extends Manager{
        $req = $bdd->prepare("SELECT * FROM article WHERE id=?");
        $req->execute(array($id));
        return $req->fetch();
-       
-        
     }
+
+    public
 }
