@@ -10,12 +10,14 @@ class Article extends Manager
     private string $alt_image;
     private string $dateCreation;
 
-    public function __construct(int $id, string $title, string $url_image, string $alt_image, string $dateCreation)
+    public function __construct(int $id, string $title, string $url_image, string $alt_image, string $accroche, string $contenu, string $dateCreation)
     {
         $this->id = $id;
         $this->title = $title;
         $this->url_image = $url_image;
         $this->alt_image = $alt_image;
+        $this->accroche = $accroche;
+        $this->contenu = $contenu;
         $this->dateCreation = $dateCreation;
     }
 
@@ -30,6 +32,12 @@ class Article extends Manager
 
     public function getAltImage(){return $this->alt_image;}
     public function setAltImage($alt_image){$this->alt_image = $alt_image;}
+
+    public function getAccroche(){return $this->accroche;}
+    public function setAccroche($accroche){$this->accroche = $accroche;}
+
+    public function getContenu(){return $this->contenu;}
+    public function setContenu($contenu){$this->contenu = $contenu;}
 
     public function getDateCreation(){return $this->dateCreation;}
     public function setDateCreation($dateCreation){$this->dateCreation = $dateCreation;}

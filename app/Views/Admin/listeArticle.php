@@ -15,7 +15,7 @@ ob_start();
     </tr>
     <?php for($i=0; $i < count($articles); $i++) :?>
     <tr>
-        <td><?= $articles[$i]->getTitle(); ?></td>
+        <td><a href="indexAdmin.php?action=afficheArticle&id=<?= $articles[$i]->getId(); ?>"><?= $articles[$i]->getTitle(); ?></a></td>
         <td><img src="<?= $articles[$i]->getUrlImage(); ?>" alt="<?= $articles[$i]->getAltImage(); ?>"></td>
         <td><?= $articles[$i]->getDateCreation(); ?></td>
         <td><a href="" class="btn-action-admin">Modifier</a></td>

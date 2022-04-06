@@ -27,7 +27,7 @@ class AdminController
 
     
     
-    // ----------------ARTICLES-----------------
+    // ----------------GESTION DES ARTICLES-----------------
 
     private $articleManager;
 
@@ -36,10 +36,18 @@ class AdminController
         $this->articleManager->chargementArticles();
     }
     // page liste articles 
-    function afficherListeArticle()
+    public function afficherListeArticle()
     {
         $articles = $this->articleManager->getArticles();
         require 'app/Views/Admin/listeArticle.php';
+    }
+
+    public function afficherArticle($id)
+    {
+        $articleData = $this->articleManager->getArticleById($id);
+        $article = new \ProjetBlogKercode\Models\Article($articleData['id'], $articleData['title'], $articleData['url_image'], $articleData['alt_image'], $articleData['accroche'], $articleData['content'], $articleData['created_at']);
+        // var_dump($article); die;
+        require "app/Views/Admin/afficheArticle.php";
     }
     
     

@@ -26,6 +26,10 @@ try
             $backController->afficherListeArticle();
         }
 
+        elseif($_GET['action'] == 'afficheArticle'){
+            $backController->afficherArticle($_GET['id']);
+        }
+
     } else {
         $backController->dashboard();
     }

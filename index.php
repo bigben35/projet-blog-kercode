@@ -27,10 +27,6 @@ try{
             $frontController->article();
         }
 
-        elseif($_GET['action'] == 'temoignages'){
-            $frontController->temoignage();
-        }
-
         elseif($_GET['action'] == 'meteo'){
             $frontController->meteo();
         }
