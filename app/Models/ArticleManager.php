@@ -38,5 +38,24 @@ class ArticleManager extends Manager{
        return $req->fetch();
     }
 
-    public
+    public function ajoutArticleBD($title, $url_image, $alt_image, $accroche, $content, $dateCreation)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare("INSERT INTO article (title, url_image, alt_image, accroche, content, created_at) VALUES (:title, :url_image, :alt_image, :accroche, :content, :created_at");
+        // $req->bindValue(':title',$title,\PDO::PARAM_STR);
+        // $req->bindValue(':url_image',$url_image,\PDO::PARAM_STR);
+        // $req->bindValue(':alt_image',$alt_image,\PDO::PARAM_STR);
+        // $req->bindValue(':accroche',$accroche,\PDO::PARAM_STR);
+        // $req->bindValue(':content',$content,\PDO::PARAM_STR);
+        // $req->bindValue(':created_at',$dateCreation,\PDO::PARAM_STR);
+        $resultat = $req->execute();
+        return $req;
+        
+        if($resultat > 0){
+            $article = new Article($this->dbConnect()->lastInsertId(),$title, $url_image, $alt_image, $accroche, $content, $dateCreation);
+            var_dump($article);
+            $this->ajoutArticle($article);
+        }
+        
+    }
 }

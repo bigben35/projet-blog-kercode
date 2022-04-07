@@ -8,6 +8,8 @@ class Article extends Manager
     private string $title;
     private string $url_image;
     private string $alt_image;
+    private string $accroche;
+    private string $contenu;
     private string $dateCreation;
 
     public function __construct(int $id, string $title, string $url_image, string $alt_image, string $accroche, string $contenu, string $dateCreation)

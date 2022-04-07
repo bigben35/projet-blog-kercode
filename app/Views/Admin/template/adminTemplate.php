@@ -26,7 +26,7 @@
                     <div class="sub-nav">
                         <h3>Articles</h3>
                         <ul>
-                            <li><a href="indexAdmin.php?action=ajouteArticle">Créer un article</a></li>
+                            <li><a href="indexAdmin.php?action=ajouterArticle">Créer un article</a></li>
                             <li><a href="indexAdmin.php?action=listeArticle">Liste des articles</a></li>
 
                         </ul>

@@ -4,6 +4,7 @@
 ob_start(); 
 ?>
 
+<section>
 <h1>affiche article en fonction de son id</h1>
 <div>
     <div>
@@ -16,7 +17,8 @@ ob_start();
         <p>Créé le : <?= $article->getDateCreation(); ?></p>
     </div>
 </div>
-
+<a href="indexAdmin.php?action=listeArticle">Retour à la liste des articles</a>
+</section>
 
 
 <?php

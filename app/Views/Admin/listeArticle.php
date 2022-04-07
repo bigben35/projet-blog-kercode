@@ -24,7 +24,7 @@ ob_start();
     <?php endfor; ?>
     
 </table>
-<a href="indexAdmin.php?action=ajouteArticle" class="btn-action-admin">Ajouter</a>
+<a href="indexAdmin.php?action=ajouterArticle" class="btn-action-admin">Ajouter</a>
 
 
 <?php $content = ob_get_clean(); ?>

@@ -30,9 +30,14 @@ try
             $backController->afficherArticle($_GET['id']);
         }
 
-        elseif($_GET['action'] == 'ajouteArticle'){
-            $backController->ajouteArticle();
+        elseif($_GET['action'] == 'ajouterArticle'){
+            $backController->ajouterArticle();
         }
+
+        elseif($_GET['action'] == 'validerAjoutArticle'){
+            $backController->validerAjoutArticle();
+        }
+
     } else {
         $backController->dashboard();
     }
