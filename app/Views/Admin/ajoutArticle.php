@@ -5,7 +5,7 @@ ob_start();
 ?>
 <?php
 echo '<pre>';
-var_dump($_FILES);
+// var_dump($_FILES);
 var_dump($_POST);
 echo '</pre>';
 ?>
@@ -17,28 +17,25 @@ echo '</pre>';
         
         <div class="bloc-form">
             <label for="title">Titre :</label>
-            <input type="text" id="title" name="title">
+            <input type="text" id="title" name="title" required>
         </div>
         <div class="bloc-form">
             <label for="accroche">Accroche :</label>
-            <input type="text" id="accroche" name="accroche">
+            <input type="text" id="accroche" name="accroche"required>
         </div>
         <div class="bloc-form">
             <label for="content">Contenu :</label>
-            <input type="text" id="content" name="content">
+            <input type="text" id="content" name="content" required>
         </div>
         <div class="bloc-form">
             <label for="url_image">Image :</label>
-            <input type="file" id="url_image" name="url_image">
+            <input type="file" id="url_image" name="url_image" required>
         </div>
         <div class="bloc-form">
             <label for="alt_image">Descriptif de l'image :</label>
-            <input type="text" id="alt_image" name="alt_image">
+            <input type="text" id="alt_image" name="alt_image" required>
         </div>
-        <div class="bloc-form">
-            <label for="created_at">Créé le :</label>
-            <input type="datetime-local" id="created_at" name="created_at">
-        </div>
+       
 
         <button class="btn-form" name="submit" type="submit">Valider</button>
     </form>

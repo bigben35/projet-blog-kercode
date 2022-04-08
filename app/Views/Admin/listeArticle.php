@@ -19,7 +19,9 @@ ob_start();
         <td><img src="<?= $articles[$i]->getUrlImage(); ?>" alt="<?= $articles[$i]->getAltImage(); ?>"></td>
         <td><?= $articles[$i]->getDateCreation(); ?></td>
         <td><a href="" class="btn-action-admin">Modifier</a></td>
-        <td><a href="" class="btn-action-admin">Supprimer</a></td>
+        <td>
+            <form action="" method="POST"></form>
+        </td>
     </tr>
     <?php endfor; ?>
     

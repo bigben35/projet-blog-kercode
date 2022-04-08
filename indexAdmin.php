@@ -37,6 +37,7 @@ try
         elseif($_GET['action'] == 'validerAjoutArticle'){
             $backController->validerAjoutArticle();
         }
+        
 
     } else {
         $backController->dashboard();

@@ -39,6 +39,7 @@ class AdminController
     public function afficherListeArticle()
     {
         $articles = $this->articleManager->getArticles();
+        // var_dump($articles);die;
         require 'app/Views/Admin/listeArticle.php';
     }
 
@@ -55,15 +56,16 @@ class AdminController
         require "app/Views/Admin/ajoutArticle.php";
     }
 
-    
+    //ajout article en BDD
     public function validerAjoutArticle()
     {
         $image = $_FILES['url_image'];
         $repertoire = "app/Public/images/";
         $imageAjoute = $this->ajoutImageArticle($image, $repertoire);
-        $this->articleManager->ajoutArticleBD($_POST['title'], $_POST['accroche'], $_POST['content'], $imageAjoute, $_POST['alt_image'], $_POST['created_at']);
+        $this->articleManager->ajoutArticleBD($_POST['title'], $_POST['accroche'], $_POST['content'], $imageAjoute, $_POST['alt_image']);
       
-        header('Location: app/Views/Admin/afficheArticle.php');
+    
+        header('Location: indexAdmin.php?action=listeArticle');
     
     }
 
@@ -91,8 +93,10 @@ class AdminController
                 $uniqueName = uniqid('', true);
         
                 $imageName = $uniqueName. '.' .$extension;
+                $imageAjoute = 'app/Public/images/' . $imageName;
                 //mettre image dans dossier images du Blog avec nom unique
-                move_uploaded_file($tmpName, 'app/Public/images/' . $imageName);
+                move_uploaded_file($tmpName, $imageAjoute);
+                return $imageAjoute;
             }
             else{
                 echo "La taille de votre image est trop importante et/ou mauvaise extension de l'image";
