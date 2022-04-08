@@ -1,6 +1,6 @@
 <?php 
 
-// $titre = $article->getTitle();
+$title = $article->getTitle();
 ob_start(); 
 ?>
 

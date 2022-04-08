@@ -20,7 +20,10 @@ ob_start();
         <td><?= $articles[$i]->getDateCreation(); ?></td>
         <td><a href="" class="btn-action-admin">Modifier</a></td>
         <td>
-            <form action="" method="POST"></form>
+            <!-- <form action="indexAdmin.php?action=listeArticle" method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer l\'article\ ?');"> -->
+            <!-- <button class="btn-action-admin" type="submit">Supprimer</button>
+        </form> -->
+        <a href="indexAdmin.php?action=supprimerArticle&id=<?= $articles[$i]->getId(); ?>">Supprimer</a>
         </td>
     </tr>
     <?php endfor; ?>

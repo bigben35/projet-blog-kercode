@@ -37,6 +37,10 @@ try
         elseif($_GET['action'] == 'validerAjoutArticle'){
             $backController->validerAjoutArticle();
         }
+
+        elseif($_GET['action'] == 'supprimerArticle'){
+            $backController->supprimerArticle($_GET['id']);
+        }
         
 
     } else {

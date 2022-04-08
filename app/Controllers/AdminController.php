@@ -69,6 +69,15 @@ class AdminController
     
     }
 
+    // supprimer un article
+    public function supprimerArticle($id)
+    {
+        $dataArticle = $this->articleManager->getArticleById($id);
+        unlink("app/Public/images/" . $dataArticle['url_image']);
+        $this->articleManager->suppressionArticleBD($id);
+
+        header('Location: indexAdmin.php?action=listeArticle');
+    }
 
 
     public function ajoutImageArticle()

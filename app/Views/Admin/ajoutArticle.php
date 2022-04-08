@@ -25,7 +25,7 @@ echo '</pre>';
         </div>
         <div class="bloc-form">
             <label for="content">Contenu :</label>
-            <input type="text" id="content" name="content" required>
+           <textarea name="content" id="content" cols="30" rows="10" required></textarea> 
         </div>
         <div class="bloc-form">
             <label for="url_image">Image :</label>

@@ -68,4 +68,15 @@ class ArticleManager extends Manager{
         // }
         
     }
+
+
+    public function suppressionArticleBD($id){
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare("DELETE FROM article WHERE id = ?");
+
+        // $req->bindValue(":id",$id,\PDO::PARAM_INT);
+        $req->execute(array($id));
+
+        return $req;
+    }
 }
