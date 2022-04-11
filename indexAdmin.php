@@ -41,6 +41,14 @@ try
         elseif($_GET['action'] == 'supprimerArticle'){
             $backController->supprimerArticle($_GET['id']);
         }
+
+        elseif($_GET['action'] == 'modifierArticle'){
+            $backController->modifierArticle($_GET['id']);
+        }
+
+        elseif($_GET['action'] == 'validerModifArticle'){
+            $backController->validerModifArticle();
+        }
         
 
     } else {
@@ -50,5 +58,5 @@ try
 
 } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
-        require 'app/Views/Front/errorLoading.php'; 
+        require 'app/Views/front/errorLoading.php'; 
 }

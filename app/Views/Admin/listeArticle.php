@@ -18,12 +18,9 @@ ob_start();
         <td><a href="indexAdmin.php?action=afficheArticle&id=<?= $articles[$i]->getId(); ?>"><?= $articles[$i]->getTitle(); ?></a></td>
         <td><img src="<?= $articles[$i]->getUrlImage(); ?>" alt="<?= $articles[$i]->getAltImage(); ?>"></td>
         <td><?= $articles[$i]->getDateCreation(); ?></td>
-        <td><a href="" class="btn-action-admin">Modifier</a></td>
+        <td><a href="indexAdmin.php?action=modifierArticle&id=<?= $articles[$i]->getId(); ?>" class="btn-action-admin">Modifier</a></td>
         <td>
-            <!-- <form action="indexAdmin.php?action=listeArticle" method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer l\'article\ ?');"> -->
-            <!-- <button class="btn-action-admin" type="submit">Supprimer</button>
-        </form> -->
-        <a href="indexAdmin.php?action=supprimerArticle&id=<?= $articles[$i]->getId(); ?>">Supprimer</a>
+            <a href="indexAdmin.php?action=supprimerArticle&id=<?= $articles[$i]->getId(); ?>">Supprimer</a>
         </td>
     </tr>
     <?php endfor; ?>

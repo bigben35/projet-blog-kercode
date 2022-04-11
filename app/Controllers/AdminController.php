@@ -80,6 +80,35 @@ class AdminController
     }
 
 
+    
+    public function modifierArticle($id)
+    {
+        $modifArticle = $this->articleManager->getArticleById($id);
+        $article = new \ProjetBlogKercode\Models\Article($modifArticle['id'], $modifArticle['title'], $modifArticle['url_image'], $modifArticle['alt_image'], $modifArticle['accroche'], $modifArticle['content'], $modifArticle['created_at']);
+        
+        require 'app/Views/Admin/modifierArticle.php';
+    }
+
+
+    //modifier un article
+    public function validerModifArticle()
+    {
+        $imageActuelle = $this->articleManager->getArticleById($_POST['identifiant'])->getUrlImage();
+        $image = $_FILES['url_image'];
+
+        if($image['size'] > 0){
+            unlink("app/Public/images/".$imageActuelle);
+            $repertoire = "app/Public/images/";
+            $imageAjoute = $this->ajoutImageArticle($image, $repertoire);
+        } else {
+            $imageAjoute = $imageActuelle;
+        }
+        $this->articleManager->modificationArticleBD($_POST['identifiant'],$_POST['title'],$_POST['accroche'],$_POST['content'],$imageAjoute,$_POST['alt_image']);
+
+        header('Location: indexAdmin.php?action=listeArticle');
+    }
+
+
     public function ajoutImageArticle()
     {
         if(isset($_FILES['url_image'])){

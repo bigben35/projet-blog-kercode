@@ -38,14 +38,14 @@ class ArticleManager extends Manager{
        return $req->fetch();
     }
 
-    public function ajoutArticleBD($title, $accroche, $content, $imageAjoute, $alt_image)
+    public function ajoutArticleBD($title, $accroche, $contenu, $imageAjoute, $alt_image)
     {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare("INSERT INTO article(title,url_image,alt_image,accroche,content) VALUES (:title,:url_image,:alt_image,:accroche,:content)");
     
         $req->bindValue(':title',$title,\PDO::PARAM_STR);
         $req->bindValue(':accroche',$accroche,\PDO::PARAM_STR);
-        $req->bindValue(':content',$content,\PDO::PARAM_STR);
+        $req->bindValue(':content',$contenu,\PDO::PARAM_STR);
         $req->bindValue(':url_image',$imageAjoute,\PDO::PARAM_STR);
         $req->bindValue(':alt_image',$alt_image,\PDO::PARAM_STR);
        
@@ -70,7 +70,8 @@ class ArticleManager extends Manager{
     }
 
 
-    public function suppressionArticleBD($id){
+    public function suppressionArticleBD($id)
+    {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare("DELETE FROM article WHERE id = ?");
 
@@ -78,5 +79,32 @@ class ArticleManager extends Manager{
         $req->execute(array($id));
 
         return $req;
+    }
+
+
+    public function modificationArticleBD($id, $title, $accroche, $contenu, $imageAjoute, $alt_image)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare("UPDATE article SET title = :title, accroche = :accroche, content = :content, url_image = :url_image, alt_image = :alt_image WHERE id = :id");
+
+        $data = [
+            ':title' => htmlspecialchars($title),
+            ':accroche' => htmlspecialchars($accroche),
+            ':content' => htmlspecialchars($contenu),
+            ':url_image' => htmlspecialchars($imageAjoute),
+            ':alt_image' => htmlspecialchars($alt_image),
+            ':id' => htmlspecialchars($id),
+        ];
+
+        $result = $req->execute($data);
+        // $req->closeCursor();
+
+        // if($result > 0){
+        //     $this->getArticleById($id)->setTitle($title);
+        //     $this->getArticleById($id)->setTitle($accroche);
+        //     $this->getArticleById($id)->setTitle($contenu);
+        //     $this->getArticleById($id)->setTitle($imageAjoute);
+        //     $this->getArticleById($id)->setTitle($alt_image);
+        // }
     }
 }
