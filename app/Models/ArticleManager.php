@@ -19,7 +19,7 @@ class ArticleManager extends Manager{
     public function chargementArticles()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare("SELECT * FROM article");
+        $req = $bdd->prepare("SELECT * FROM article ORDER BY id DESC LIMIT 8");
         $req->execute();
         $mesArticles = $req->fetchAll(\PDO::FETCH_ASSOC);
         $req->closeCursor();
@@ -82,29 +82,36 @@ class ArticleManager extends Manager{
     }
 
 
-    public function modificationArticleBD($id, $title, $accroche, $contenu, $imageAjoute, $alt_image)
+    public function modificationArticleBD($id, $title, $accroche, $contenu, $url_image, $alt_image)
     {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare("UPDATE article SET title = :title, accroche = :accroche, content = :content, url_image = :url_image, alt_image = :alt_image WHERE id = :id");
 
         $data = [
-            ':title' => htmlspecialchars($title),
-            ':accroche' => htmlspecialchars($accroche),
-            ':content' => htmlspecialchars($contenu),
-            ':url_image' => htmlspecialchars($imageAjoute),
-            ':alt_image' => htmlspecialchars($alt_image),
-            ':id' => htmlspecialchars($id),
+            ':title' => $title,
+            ':accroche' => $accroche,
+            ':content' => $contenu,
+            ':url_image' => $url_image,
+            ':alt_image' => $alt_image,
+            ':id' => $id
         ];
 
-        $result = $req->execute($data);
-        // $req->closeCursor();
+        // $req->bindValue(':id',$id,\PDO::PARAM_INT);
+        // $req->bindValue(':title',$title,\PDO::PARAM_STR);
+        // $req->bindValue(':accroche',$accroche,\PDO::PARAM_STR);
+        // $req->bindValue(':content',$contenu,\PDO::PARAM_STR);
+        // $req->bindValue(':url_image',$url_image,\PDO::PARAM_STR);
+        // $req->bindValue(':alt_image',$alt_image,\PDO::PARAM_STR);
+
+        $req->execute($data);
+        $req->closeCursor();
 
         // if($result > 0){
         //     $this->getArticleById($id)->setTitle($title);
-        //     $this->getArticleById($id)->setTitle($accroche);
-        //     $this->getArticleById($id)->setTitle($contenu);
-        //     $this->getArticleById($id)->setTitle($imageAjoute);
-        //     $this->getArticleById($id)->setTitle($alt_image);
+        //     $this->getArticleById($id)->setAccroche($accroche);
+        //     $this->getArticleById($id)->setContenu($contenu);
+        //     $this->getArticleById($id)->setUrlImage($url_image);
+        //     $this->getArticleById($id)->setAltImage($alt_image);
         // }
     }
 }

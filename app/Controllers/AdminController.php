@@ -93,7 +93,7 @@ class AdminController
     //modifier un article
     public function validerModifArticle()
     {
-        $imageActuelle = $this->articleManager->getArticleById($_POST['identifiant'])->getUrlImage();
+        $imageActuelle = $this->articleManager->getArticleById($_POST['identifiant']);
         $image = $_FILES['url_image'];
 
         if($image['size'] > 0){

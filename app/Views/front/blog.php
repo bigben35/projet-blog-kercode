@@ -4,6 +4,7 @@ $description = "";
 ob_start();
 ?>
 
+
 <section id="bloc-articles">
     <h1>Les Articles</h1>
     <article>
@@ -18,7 +19,7 @@ ob_start();
                 <h3><?= $article['title']; ?></h3>
                 <p class="accroche"><?= $article['accroche']; ?></p>
             </div>
-            <a href="index.php?action=article">Voir l'Article</a>
+            <a href="index.php?action=article&id=<?= $article['id']; ?>">Voir l'Article</a>
         <?php }; ?>
     </article>
 </section>

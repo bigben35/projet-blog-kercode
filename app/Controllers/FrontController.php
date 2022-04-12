@@ -35,13 +35,8 @@ class FrontController
     {
         // afficher un article 
         $afficherArticle = new \ProjetBlogKercode\Models\UserModel();
-        if (empty($article)) {
-            $article = $afficherArticle->afficherArticle();
-            header('Location: app/Views/front/errorLoading.php');
-        }
-        else {
-            return $article;
-        }
+        $article = $afficherArticle->afficherArticle();
+    
         require "app/Views/front/article.php";
     }
 

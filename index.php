@@ -24,7 +24,7 @@ try{
         }
 
         elseif($_GET['action'] == 'article'){
-            $frontController->article();
+            $frontController->article($_GET['id']);
         }
 
         elseif($_GET['action'] == 'meteo'){
