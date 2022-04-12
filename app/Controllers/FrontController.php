@@ -48,16 +48,6 @@ class FrontController
         require "app/Views/front/article.php";
     }
 
-    function nb_commentaires($id)
-    {
-
-        require "app/Views/front/article.php";
-    }
-
-    function commentaires()
-    {
-
-    }
 
     function temoignage()
     {
@@ -106,7 +96,7 @@ class FrontController
     function connexionUser()
     {
         if($_SESSION['role'] === "0"){
-        require 'app/Views/Admin/dashboardUser.php';
+        require 'app/Views/front/dashboardUser.php';
 
         }
         else{
@@ -116,8 +106,8 @@ class FrontController
 
         // require 'app/Views/front/connect.php';
     }
-    
 
+    
 
     // connexion au tableau de bord après comparaison du mdp
 
@@ -161,6 +151,10 @@ class FrontController
 
     // page dashboardUser 
     function dashboardUser(){
+
+        $afficherCommentaire = new \ProjetBlogKercode\Models\UserModel();
+        $commentaires = $afficherCommentaire->commentaireUser();
+
         require "app/Views/front/dashboardUser.php";
     }
 

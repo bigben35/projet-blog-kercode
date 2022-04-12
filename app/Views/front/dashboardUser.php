@@ -26,7 +26,7 @@ ob_start();
         <div>
             <?php  foreach($commentaires as $commentaire): ?>
             <div class="col-xs-12">
-                <p class="date">Posté par <?= $_SESSION['pseudo'] ?> le <time datetime="<?=$commentaire['created_at'] ?>"></time> :</p>
+                <p class="date">Posté par <?= $_SESSION['pseudo'] ?> le <time datetime="<?=$commentaire['created_at'] ?>"><?= $commentaire['created_at']; ?></time> :</p>
                 <p><?= $commentaire['commentaire'] ?></p>
             </div>
             <?php endforeach; ?>

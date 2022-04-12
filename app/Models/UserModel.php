@@ -101,6 +101,18 @@ class UserModel extends Manager
     }
 
 
+    public function commentaireUser()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare("SELECT commentaires.*, article.title FROM commentaires INNER JOIN article ON commentaires.id_article = id_article AND commentaires.id_user = ?");
+
+        $req->execute([$_SESSION['id']]);
+        $commentaires = $req->fetchAll();
+
+        return $commentaires;
+    }
+
+
     // commenter
     public function commenter()
     {

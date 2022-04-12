@@ -43,7 +43,7 @@
 
                         elseif (isset($_SESSION['role']) && ($_SESSION['role'] == "0")) :
                             ?>
-                            <li><a href="index.php?action=connexionUser">Mon Compte</a></li>
+                            <li><a href="index.php?action=dashboardUser">Mon Compte</a></li>
                             <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
                             <?php
                             

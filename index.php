@@ -69,6 +69,10 @@ try{
             }
 
         }
+
+        elseif($_GET['action'] == 'dashboardUser'){
+            $frontController->dashboardUser();
+        }
         
         elseif($_GET['action'] == 'mentionsLegales'){
             $frontController->mentionsLegales();
