@@ -73,23 +73,24 @@ class UserModel extends Manager
 
 
     // PAGES createUser et dashboard ?? 
-    function nb_commentaires($id)
+    // COMMENTAIRES
+    public function countCommentaires($id)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd ->prepare("SELECT COUNT(*) FROM commentaire WHERE article_id=?");
+        $req = $bdd ->prepare("SELECT COUNT(*) FROM commentaires WHERE id_article=?");
         $req ->execute([(int)$id]);
-    
         $nb_commentaires = $req->fetch()[0];
+        
         // var_dump($nb_commentaires);die;
         return $nb_commentaires;
     }
     
     
-    function commentaires()
+    public function getCommentaires()
     {
         $bdd = $this->dbConnect();
         $id = (int)$_GET['id'];
-        $req = $bdd ->prepare("SELECT commentaire.*, user.pseudo FROM commentaire INNER JOIN user ON commentaires.user_id = users.id AND commentaires.article_id = ?");       //prepare quand on passe un paramètre variable; bien reprendre cette requête pour bien la comprendre!!                       
+        $req = $bdd ->prepare("SELECT commentaires.*, user.pseudo FROM commentaires INNER JOIN user ON commentaires.id_user = user.id AND commentaires.id_article = ?");                         
     
         $req ->execute([$id]);
         $commentaires = $req ->fetchAll();
@@ -99,6 +100,36 @@ class UserModel extends Manager
         return $commentaires;
     }
 
+
+    // commenter
+    public function commenter()
+    {
+        if(isset($_SESSION['user'])){
+            $bdd = $this->dbConnect();
+            extract($_POST);
+
+            $erreur ="";
+
+            if(!empty($commentaire)){
+                $id = (int)$_GET['id'];
+
+                $req = $bdd->prepare("INSERT INTO commentaires(id_user, id_article, commentaire, created_at) VALUES (:id_user, :id_article, :commentaire, :created_at)");
+
+                $req->execute([
+                    "id_user" => $_SESSION['user'],
+                    "id_article" => $id,
+                    "commentaire" => nl2br(htmlspecialchars($commentaire)),
+                    "created_at" => date('Y-m-d H:i:s')
+                ]);
+
+                header("Location: index.php?action=article&id=".$id);
+            }
+            else{
+                $erreur .="Vous devez entrer un commentaire !";
+            }
+            return $erreur;
+        }
+    }
 
 
 }

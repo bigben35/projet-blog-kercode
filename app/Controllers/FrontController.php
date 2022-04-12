@@ -31,13 +31,32 @@ class FrontController
         require "app/Views/front/blog.php";
     }
 
-    function article()
+    function article($id)
     {
         // afficher un article 
         $afficherArticle = new \ProjetBlogKercode\Models\UserModel();
         $article = $afficherArticle->afficherArticle();
     
+        // nombre de commentaire par article
+        $allCommentaires = new \ProjetBlogKercode\Models\UserModel();
+        $nb_commentaires = $allCommentaires->countCommentaires($id);
+
+        //afficher les commentaires de l'article
+        $afficherCommentaire = new \ProjetBlogKercode\Models\UserModel();
+        $commentaires = $afficherCommentaire->getCommentaires();
+
         require "app/Views/front/article.php";
+    }
+
+    function nb_commentaires($id)
+    {
+
+        require "app/Views/front/article.php";
+    }
+
+    function commentaires()
+    {
+
     }
 
     function temoignage()
