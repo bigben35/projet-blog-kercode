@@ -104,19 +104,21 @@ class UserModel extends Manager
     public function commentaireUser()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare("SELECT commentaires.*, article.title FROM commentaires INNER JOIN article ON commentaires.id_article = id_article AND commentaires.id_user = ?");
+        $req = $bdd->prepare("SELECT commentaires.* FROM commentaires WHERE commentaires.id_user = ?");
 
         $req->execute([$_SESSION['id']]);
+        // var_dump([$_SESSION['id']]);die;
         $commentaires = $req->fetchAll();
 
         return $commentaires;
+        // var_dump($commentaires);die;
     }
 
 
     // commenter
     public function commenter()
     {
-        if(isset($_SESSION['user'])){
+        if(isset($_SESSION['id'])){
             $bdd = $this->dbConnect();
             extract($_POST);
 
@@ -128,7 +130,7 @@ class UserModel extends Manager
                 $req = $bdd->prepare("INSERT INTO commentaires(id_user, id_article, commentaire, created_at) VALUES (:id_user, :id_article, :commentaire, :created_at)");
 
                 $req->execute([
-                    "id_user" => $_SESSION['user'],
+                    "id_user" => $_SESSION['id'],
                     "id_article" => $id,
                     "commentaire" => nl2br(htmlspecialchars($commentaire)),
                     "created_at" => date('Y-m-d H:i:s')

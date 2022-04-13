@@ -114,4 +114,11 @@ class ArticleManager extends Manager{
         //     $this->getArticleById($id)->setAltImage($alt_image);
         // }
     }
+
+
+    public function afficheCategory()
+    {
+        $bdd = $this->dbConnect();
+        // $req = $bdd->prepare("SELECT id, name_Cat")
+    }
 }

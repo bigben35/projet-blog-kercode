@@ -28,6 +28,19 @@ echo '</pre>';
            <textarea name="content" id="content" cols="30" rows="10" required></textarea> 
         </div>
         <div class="bloc-form">
+            <label for="name_Cat">Catégorie :</label>
+            <select name="name_Cat" id="name_Cat">
+                 <?php
+                 foreach ($categories as $category):
+                    ?>
+
+                <option value="<?=$category['id']; ?>"><?=$category['name_Cat'];?></option>
+                <?php
+                endforeach;
+                ?>
+            </select>
+        </div>
+        <div class="bloc-form">
             <label for="url_image">Image :</label>
             <input type="file" id="url_image" name="url_image" required>
         </div>

@@ -59,7 +59,7 @@ try{
         }
 
         // // connexion utilisateur 
-        elseif ($_GET['action'] == 'connexionUser'){
+        elseif ($_GET['action'] == 'connectUser'){
             $mail = htmlspecialchars($_POST['mail']);   //htmlspecialchars — Convertit les caractères spéciaux en entités HTML
             $password = $_POST['password'];
             if (!empty($mail) && !empty($password)){
@@ -70,8 +70,15 @@ try{
 
         }
 
+
         elseif($_GET['action'] == 'dashboardUser'){
-            $frontController->dashboardUser();
+            if(isset($_SESSION['id'])){
+
+                $frontController->dashboardUser();
+            }
+            else {
+                throw new Exception("Veuillez renseigner vos identifiants pour vous connecter à votre session");
+            }
         }
         
         elseif($_GET['action'] == 'mentionsLegales'){
@@ -95,28 +102,10 @@ try{
 
 
         
-
-       
-
-
-        //----------- COTE ADMIN--------------------
-        
-        
-
-        // elseif ($_GET['action'] == 'connexionUser'){
-        //     $backController->connexionUser();
-        // }
-
-        // // dasboard 
-        // elseif($_GET['action'] == 'dashboard'){
-        //     $backController->dashboard();
-        // }
-
-        
     }else{
         $frontController->home();
     }
 
 } catch(Exception $e){
-    require 'app/Views/Front/home.php';
+    header('Location: index.php');
 }

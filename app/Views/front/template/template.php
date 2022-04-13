@@ -23,11 +23,11 @@
                 </div> -->
                 <div class="blog-title">Islande en Tête</div>
                 <!-- MENU BURGER  -->
-                <div class="btn-burger">
+                <a href="#" class="btn-burger">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
-                </div>
+                </a>
                 <div class="navbar-links">
                     <ul class="nav-list">
                         <li><a href="index.php?action=home" class="nav-link active">Home</a></li>
@@ -43,7 +43,7 @@
 
                         elseif (isset($_SESSION['role']) && ($_SESSION['role'] == "0")) :
                             ?>
-                            <li><a href="index.php?action=dashboardUser">Mon Compte</a></li>
+                            <li><a href="">Mon Compte</a></li>
                             <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
                             <?php
                             

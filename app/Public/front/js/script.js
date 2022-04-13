@@ -2,7 +2,8 @@
 const btnBurger = document.querySelector('.btn-burger');
 const navbarLinks = document.querySelector('.navbar-links');
 
-btnBurger.addEventListener('click', () => {
+btnBurger.addEventListener('click', (event) => {
+    event.preventDefault;
     navbarLinks.classList.toggle('active');
 })
 

@@ -45,6 +45,10 @@ class FrontController
         $afficherCommentaire = new \ProjetBlogKercode\Models\UserModel();
         $commentaires = $afficherCommentaire->getCommentaires();
 
+        // créer commentaire article
+        $creationCommentaire = new \ProjetBlogKercode\Models\UserModel();
+        $commenterArticle = $creationCommentaire->commenter();
+
         require "app/Views/front/article.php";
     }
 
@@ -130,7 +134,7 @@ class FrontController
 
         if($isPasswordOk && ($_SESSION['role'] === "0")){
             
-            require 'app/Views/front/dashboardUser.php';
+            header("Location: index.php?action=dashboardUser");
         }
         elseif($isPasswordOk && ($_SESSION['role'] === "1")){
             header('Location: indexAdmin.php');
@@ -139,6 +143,17 @@ class FrontController
             echo 'Un problème avec vos identifiants?';
             
         }
+        
+    }
+    
+    
+    function dashboardUser()
+    {
+        
+        $afficherCommentaire = new \ProjetBlogKercode\Models\UserModel();
+        $commentaires = $afficherCommentaire->commentaireUser();
+
+        require 'app/Views/front/dashboardUser.php';
 
     }
 
@@ -149,15 +164,7 @@ class FrontController
         header('Location: index.php?action=connexion');
     }
 
-    // page dashboardUser 
-    function dashboardUser(){
-
-        $afficherCommentaire = new \ProjetBlogKercode\Models\UserModel();
-        $commentaires = $afficherCommentaire->commentaireUser();
-
-        require "app/Views/front/dashboardUser.php";
-    }
-
+    
     // page mentions legales 
     function mentionsLegales(){
         require "app/Views/front/mentionsLegales.php";

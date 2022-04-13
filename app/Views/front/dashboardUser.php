@@ -1,6 +1,11 @@
 <?php
 $title = "Tableau de bord utilisateur";
 $description = "";
+
+    // if(!isset($_SESSION['user'])){
+    //     header("Location: app/Views/front/connect.php");
+    // }
+
 ob_start();
 ?>
 
@@ -25,7 +30,7 @@ ob_start();
         </div>
         <div>
             <?php  foreach($commentaires as $commentaire): ?>
-            <div class="col-xs-12">
+            <div>
                 <p class="date">Posté par <?= $_SESSION['pseudo'] ?> le <time datetime="<?=$commentaire['created_at'] ?>"><?= $commentaire['created_at']; ?></time> :</p>
                 <p><?= $commentaire['commentaire'] ?></p>
             </div>

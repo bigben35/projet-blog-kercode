@@ -36,9 +36,38 @@ ob_start();
             <p><?= $commentaire['commentaire'] ?></p>
         </div>
     <?php endforeach;
-    if(isset($_SESSION['user'])):
+
+    if(isset($_SESSION['id'])):
         ?>
 
+            <div">
+                <form method="post" action="">
+                    <?php if(isset($erreur)):
+                        if($erreur):
+                         ?>
+                    <div>
+                        <div>
+                            <div class="message erreur"><?= $erreur ?></div>
+                        </div>
+                    </div>
+
+                    <?php 
+                else:
+                 ?>
+                    <div>
+                        <div>
+                            <div class="message confirmation">Votre commentaire a bien été posté !</div>
+                        </div>
+                    </div>
+                    <?php
+                    endif;
+                endif;
+                    ?>
+                    <textarea name="commentaire" placeholder="Votre commentaire"></textarea>
+                    <input type="submit" value="Commenter">
+                </form>
+            </div>
+        
 
 <?php
 endif;
