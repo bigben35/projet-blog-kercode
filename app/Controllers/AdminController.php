@@ -53,6 +53,8 @@ class AdminController
     
     public function ajouterArticle()
     {
+        $recupCategory = new \ProjetBlogKercode\Models\ArticleManager;
+        $categories = $recupCategory->afficheCategory();
         require "app/Views/Admin/ajoutArticle.php";
     }
 
@@ -73,7 +75,7 @@ class AdminController
     public function supprimerArticle($id)
     {
         $dataArticle = $this->articleManager->getArticleById($id);
-        unlink("app/Public/images/" . $dataArticle['url_image']);
+        unlink("app/Public/images/".$dataArticle['url_image']);
         $this->articleManager->suppressionArticleBD($id);
 
         header('Location: indexAdmin.php?action=listeArticle');
@@ -124,7 +126,7 @@ class AdminController
     
             // tableau des extensions autorisées
             $extensionsAutorisees = ['jpg', 'jpeg', 'png','gif', 'webp'];
-            $tailleMax = 150000;
+            $tailleMax = 15000000;
     
             if(in_array($extension, $extensionsAutorisees) && $size <= $tailleMax && $error == 0){
     

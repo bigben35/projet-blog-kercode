@@ -3,12 +3,7 @@ $title = "Page ajout d'un article";
 $description = "";
 ob_start();
 ?>
-<?php
-echo '<pre>';
-// var_dump($_FILES);
-var_dump($_POST);
-echo '</pre>';
-?>
+
 
 
 <section>
@@ -27,7 +22,7 @@ echo '</pre>';
             <label for="content">Contenu :</label>
            <textarea name="content" id="content" cols="30" rows="10" required></textarea> 
         </div>
-        <div class="bloc-form">
+        <!-- <div class="bloc-form">
             <label for="name_Cat">Catégorie :</label>
             <select name="name_Cat" id="name_Cat">
                  <?php
@@ -39,7 +34,7 @@ echo '</pre>';
                 endforeach;
                 ?>
             </select>
-        </div>
+        </div> -->
         <div class="bloc-form">
             <label for="url_image">Image :</label>
             <input type="file" id="url_image" name="url_image" required>

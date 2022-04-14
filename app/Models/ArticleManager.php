@@ -46,6 +46,7 @@ class ArticleManager extends Manager{
         $req->bindValue(':title',$title,\PDO::PARAM_STR);
         $req->bindValue(':accroche',$accroche,\PDO::PARAM_STR);
         $req->bindValue(':content',$contenu,\PDO::PARAM_STR);
+        // $req->bindValue(':id_category',$category,\PDO::PARAM_INT);
         $req->bindValue(':url_image',$imageAjoute,\PDO::PARAM_STR);
         $req->bindValue(':alt_image',$alt_image,\PDO::PARAM_STR);
        
@@ -79,6 +80,10 @@ class ArticleManager extends Manager{
         $req->execute(array($id));
 
         return $req;
+        if($req > 0){
+            $article = $this->getArticleById($id);
+            unset($article);
+        }
     }
 
 
@@ -91,6 +96,7 @@ class ArticleManager extends Manager{
             ':title' => $title,
             ':accroche' => $accroche,
             ':content' => $contenu,
+            // ':id_category' => $category,
             ':url_image' => $url_image,
             ':alt_image' => $alt_image,
             ':id' => $id
@@ -119,6 +125,10 @@ class ArticleManager extends Manager{
     public function afficheCategory()
     {
         $bdd = $this->dbConnect();
-        // $req = $bdd->prepare("SELECT id, name_Cat")
+        $req = $bdd->prepare("SELECT id, name_Cat FROM category");
+        $req->execute();
+
+        return $req->fetchAll();
+        
     }
 }

@@ -1,9 +1,9 @@
 //  ANIMATION MENU BURGER
-const btnBurger = document.querySelector('.btn-burger');
+const btnBurger = document.getElementById('btn-burger');
 const navbarLinks = document.querySelector('.navbar-links');
 
 btnBurger.addEventListener('click', (event) => {
-    event.preventDefault;
+    event.preventDefault();
     navbarLinks.classList.toggle('active');
 })
 

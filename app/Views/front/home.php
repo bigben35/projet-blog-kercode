@@ -27,7 +27,7 @@ ob_start();
 
 <section id="presentation">
     <div class="bloc-presentation">
-        <h2>Bienvenue sur Islande en Tête</h2>
+        <h1>Bienvenue sur Islande en Tête</h1>
         <img src="<?= $presentation['url_image']; ?>"
          alt="<?= $presentation['alt_image']; ?>">
         <p class="content-presentation"><?= $presentation['content']; ?></p>

@@ -23,7 +23,7 @@
                 </div> -->
                 <div class="blog-title">Islande en Tête</div>
                 <!-- MENU BURGER  -->
-                <a href="#" class="btn-burger">
+                <a href="index.php?action=static_menu" id="btn-burger">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>

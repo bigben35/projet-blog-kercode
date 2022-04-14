@@ -158,7 +158,7 @@ footer{
 
 
 /*--------------------- MENU BURGER --------------------------- */
-.btn-burger{
+#btn-burger{
     position: absolute;
     top: 1.4rem;
     right: 1.5rem;
@@ -169,7 +169,7 @@ footer{
     height: 21px;
     cursor: pointer;
 }
-.btn-burger .bar{
+#btn-burger .bar{
     height: 3px;
     width: 100%;
     background-color: white;
@@ -221,7 +221,7 @@ footer{
     margin: 10px;
     text-align: center;
 }
-.bloc-presentation h2{
+.bloc-presentation h1{
     font-size: 1.3rem;
     margin-bottom: 1rem;
 }
@@ -602,7 +602,7 @@ table img{
     }
 }
 @media screen and (min-width: 1024px){
-    .btn-burger {
+    #btn-burger {
         display: none;
     }
     .navbar{
