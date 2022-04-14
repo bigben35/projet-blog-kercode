@@ -26,8 +26,8 @@
                     <div class="sub-nav">
                         <h3>Articles</h3>
                         <ul>
-                            <li><a href="indexAdmin.php?action=ajouterArticle">Créer un article</a></li>
-                            <li><a href="indexAdmin.php?action=listeArticle">Liste des articles</a></li>
+                            <li><a href="ajouterArticle">Créer un article</a></li>
+                            <li><a href="listeArticle">Liste des articles</a></li>
 
                         </ul>
                     </div>
@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class="nav-bloc n-4">
-                    <a href="index.php?action=deconnexion"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                    <a href="deconnexion"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </div>
             </div>
         </nav>

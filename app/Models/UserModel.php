@@ -122,7 +122,8 @@ class UserModel extends Manager
             $bdd = $this->dbConnect();
             extract($_POST);
 
-            $erreur ="";
+            // $erreur ="";
+            $erreur ="Vous devez entrer un commentaire !";
 
             if(!empty($commentaire)){
                 $id = (int)$_GET['id'];
@@ -139,9 +140,10 @@ class UserModel extends Manager
                 header("Location: index.php?action=article&id=".$id);
             }
             else{
-                $erreur .="Vous devez entrer un commentaire !";
+                
+                return $erreur;
             }
-            return $erreur;
+            // var_dump($erreur);die;
         }
     }
 

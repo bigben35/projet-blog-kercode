@@ -1,10 +1,8 @@
+<?php ob_start(); ?>
+
+<h1>Error!</h1>
+
 <?php
-
-    $title = "Page Erreur 404";
-    $description = "";
-
-    ?>
-
-<h1>Error!
-    
-</h1>
+$content = ob_get_clean();
+require 'template/template.php';
+?>

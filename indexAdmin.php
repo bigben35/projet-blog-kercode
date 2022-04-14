@@ -1,4 +1,4 @@
-<?php
+<!-- 
 //empty — Détermine si une variable est vide
 //isset — Détermine si une variable est déclarée et est différente de null
 session_start();
@@ -15,7 +15,7 @@ try
     //on le stocke dans une variable pour pouvoir l'utiliser
 
     
-    if (isset($_GET['action'])) { //$_GET donne les valeurs des informations indiquées dans l'url
+    if (isset($_GET['action']) && !empty($_GET['action'])) { //$_GET donne les valeurs des informations indiquées dans l'url
         
         // dasboard 
         if($_GET['action'] == 'dashboard'){
@@ -59,4 +59,4 @@ try
 } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
         require 'app/Views/front/errorLoading.php'; 
-}
+} -->

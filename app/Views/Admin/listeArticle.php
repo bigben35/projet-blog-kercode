@@ -15,18 +15,18 @@ ob_start();
     </tr>
     <?php for($i=0; $i < count($articles); $i++) :?>
     <tr>
-        <td><a href="indexAdmin.php?action=afficheArticle&id=<?= $articles[$i]->getId(); ?>"><?= $articles[$i]->getTitle(); ?></a></td>
+        <td><a href="afficheArticle&id=<?= $articles[$i]->getId(); ?>"><?= $articles[$i]->getTitle(); ?></a></td>
         <td><img src="<?= $articles[$i]->getUrlImage(); ?>" alt="<?= $articles[$i]->getAltImage(); ?>"></td>
         <td><?= $articles[$i]->getDateCreation(); ?></td>
-        <td><a href="indexAdmin.php?action=modifierArticle&id=<?= $articles[$i]->getId(); ?>" class="btn-action-admin">Modifier</a></td>
+        <td><a href="modifierArticle&id=<?= $articles[$i]->getId(); ?>" class="btn-action-admin">Modifier</a></td>
         <td>
-            <a href="indexAdmin.php?action=supprimerArticle&id=<?= $articles[$i]->getId(); ?>">Supprimer</a>
+            <a href="supprimerArticle&id=<?= $articles[$i]->getId(); ?>">Supprimer</a>
         </td>
     </tr>
     <?php endfor; ?>
     
 </table>
-<a href="indexAdmin.php?action=ajouterArticle" class="btn-action-admin">Ajouter</a>
+<a href="ajouterArticle" class="btn-action-admin">Ajouter</a>
 
 
 <?php $content = ob_get_clean(); ?>

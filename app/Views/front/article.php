@@ -3,13 +3,8 @@
 $title = $article['title'];
 ob_start(); 
 ?>
-<?php
-// $nb_commentaires = $recupAllCommentaires();
-// $commentaires = getCommentaires();
-// if(!empty($_POST)){
-//     $erreur = commenter();
-// }
-?>
+
+
 <section class="article">
 <article>
     <div>
@@ -41,24 +36,22 @@ ob_start();
         ?>
 
             <div">
-                <form method="post" action="">
+                <form method="POST" action="">
                     <?php if(isset($erreur)):
                         if($erreur):
                          ?>
-                    <div>
-                        <div>
+                    
+                        
                             <div class="message erreur"><?= $erreur ?></div>
-                        </div>
-                    </div>
+                        
+                    
 
                     <?php 
                 else:
                  ?>
-                    <div>
-                        <div>
+                    
                             <div class="message confirmation">Votre commentaire a bien été posté !</div>
-                        </div>
-                    </div>
+                       
                     <?php
                     endif;
                 endif;

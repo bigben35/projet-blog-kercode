@@ -9,7 +9,7 @@ ob_start(); ?>
 <div class="form-container">
     <h1>Contactez-nous</h1>
     <div class="main-bloc-form">
-    <form action="index.php?action=contactPost" method="post">   
+    <form action="contactPost" method="post">   
             <div class="bloc-form">
                 <label for="name">Nom : *</label>
                 <input type="text" id="name" name="lastname" placeholder="Votre Nom" required>

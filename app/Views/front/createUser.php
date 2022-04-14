@@ -11,7 +11,7 @@ ob_start();
         <img src="app/Public/images/iconLogin.webp" alt="icône de l'utilisateur">
         
         <div class="main-bloc-form">
-        <form action="index.php?action=StoreUser" method="POST">
+        <form action="StoreUser" method="POST">
             <div class="bloc-form">
                 <label for="pseudo">Pseudo</label>
                 <input type="text" id="pseudo" name="pseudo" placeholder="Votre Pseudo" required>
@@ -32,7 +32,7 @@ ob_start();
 
             <button class="btn-form" name="submit" type="submit">Créer un compte</button>
     </form>
-    <span>Vous avez déjà un compte? </span><a href="index.php?action=connexion">Login</a>
+    <span>Vous avez déjà un compte? </span><a href="connexion">Login</a>
 </div>
 </div>
 </section>

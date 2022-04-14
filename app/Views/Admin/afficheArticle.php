@@ -18,7 +18,7 @@ ob_start();
         <p>Créé le : <?= $article->getDateCreation(); ?></p>
     </div>
 </div>
-<a href="indexAdmin.php?action=listeArticle">Retour à la liste des articles</a>
+<a href="listeArticle">Retour à la liste des articles</a>
 </section>
 
 

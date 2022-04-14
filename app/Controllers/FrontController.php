@@ -134,10 +134,10 @@ class FrontController
 
         if($isPasswordOk && ($_SESSION['role'] === "0")){
             
-            header("Location: index.php?action=dashboardUser");
+            header("Location: dashboardUser");
         }
         elseif($isPasswordOk && ($_SESSION['role'] === "1")){
-            header('Location: indexAdmin.php');
+            header('Location: dashboard');
         }
         else {
             echo 'Un problème avec vos identifiants?';
@@ -161,7 +161,7 @@ class FrontController
     function deconnexion(){
         unset($_SESSION['id']);
         session_destroy();
-        header('Location: index.php?action=connexion');
+        header('Location: connexion');
     }
 
     

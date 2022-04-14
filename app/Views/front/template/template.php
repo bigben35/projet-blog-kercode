@@ -23,34 +23,34 @@
                 </div> -->
                 <div class="blog-title">Islande en Tête</div>
                 <!-- MENU BURGER  -->
-                <a href="index.php?action=static_menu" id="btn-burger">
+                <a href="static_menu" id="btn-burger">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </a>
                 <div class="navbar-links">
                     <ul class="nav-list">
-                        <li><a href="index.php?action=home" class="nav-link active">Home</a></li>
-                        <li><a href="index.php?action=blog" class="nav-link">Blog</a></li>
-                        <li><a href="index.php?action=meteo" class="nav-link">Météo</a></li>
-                        <li><a href="index.php?action=contact" class="nav-link">Contact</a></li>
+                        <li><a href="home" class="nav-link active">Home</a></li>
+                        <li><a href="blog" class="nav-link">Blog</a></li>
+                        <li><a href="meteo" class="nav-link">Météo</a></li>
+                        <li><a href="contact" class="nav-link">Contact</a></li>
                         <?php
                         if (isset($_SESSION['role']) && ($_SESSION['role'] == "1")) :
                         ?>
                             <li><a href="indexAdmin.php">Mon Compte</a></li>
-                            <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
+                            <li><a href="deconnexion">Déconnexion</a></li>
                         <?php
 
                         elseif (isset($_SESSION['role']) && ($_SESSION['role'] == "0")) :
                             ?>
-                            <li><a href="">Mon Compte</a></li>
-                            <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
+                            <li><a href="dashboardUser">Mon Compte</a></li>
+                            <li><a href="deconnexion">Déconnexion</a></li>
                             <?php
                             
                         else :
                         ?>
-                            <li><a href="index.php?action=connexion" class="nav-link">Se connecter</a></li>
-                            <li><a href="index.php?action=createUser" class="nav-link">Créer un compte</a></li>
+                            <li><a href="connexion" class="nav-link">Se connecter</a></li>
+                            <li><a href="createUser" class="nav-link">Créer un compte</a></li>
 
                         <?php
                         endif;
@@ -81,7 +81,7 @@
                     <li><a href="#" title="snapchat"><i class="fa-brands fa-snapchat-square"></i></a></li>
                 </ul>
             </div>
-            <p class="copyright">Copyright &copy; <?= date("Y"); ?> - Islande en Tête - <a href="index.php?action=mentionsLegales">Mentions Légales</a> .</p>
+            <p class="copyright">Copyright &copy; <?= date("Y"); ?> - Islande en Tête - <a href="mentionsLegales" target="_blank">Mentions Légales</a> .</p>
         </div>
         </footer>
         

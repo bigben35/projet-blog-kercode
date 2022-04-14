@@ -8,7 +8,7 @@ ob_start();
 
 <section>
     <h1>Ajouter un Article :</h1>
-<form action="indexAdmin.php?action=validerAjoutArticle" method="POST" enctype="multipart/form-data">
+<form action="validerAjoutArticle" method="POST" enctype="multipart/form-data">
         
         <div class="bloc-form">
             <label for="title">Titre :</label>

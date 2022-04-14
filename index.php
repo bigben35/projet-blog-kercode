@@ -9,11 +9,11 @@ $dotenv->load();
 
 try{
     $frontController = new \ProjetBlogKercode\Controllers\FrontController();//objet controler
-    // $backController = new \ProjetBlogKercode\Controllers\AdminController();//objet controler, on instancie la class adminController (copie de la class adminController)
+    $backController = new \ProjetBlogKercode\Controllers\AdminController();//objet controler, on instancie la class adminController (copie de la class adminController)
     //on le stocke dans une variable pour pouvoir l'utiliser
 
-    if(isset($_GET['action'])){
-
+    if(isset($_GET['action']) && !empty($_GET['action'])){
+        
         
         if($_GET['action'] == 'home') {
             $frontController->home();
@@ -100,6 +100,50 @@ try{
             }
         }
 
+        elseif($_GET['action'] == 'error404'){
+            throw new Exception("La page n'existe pas, error 404");
+        }
+
+
+        // PARTIE ADMIN 
+         // dasboard Admin
+         if($_GET['action'] == 'dashboard'){
+            $backController->dashboard();
+        }
+
+        elseif($_GET['action'] == 'listeArticle'){
+            $backController->afficherListeArticle();
+        }
+
+        elseif($_GET['action'] == 'afficheArticle'){
+            $backController->afficherArticle($_GET['id']);
+        }
+
+        elseif($_GET['action'] == 'ajouterArticle'){
+            $backController->ajouterArticle();
+        }
+
+        elseif($_GET['action'] == 'validerAjoutArticle'){
+            $backController->validerAjoutArticle();
+        }
+
+        elseif($_GET['action'] == 'supprimerArticle'){
+            $backController->supprimerArticle($_GET['id']);
+        }
+
+        elseif($_GET['action'] == 'modifierArticle'){
+            $backController->modifierArticle($_GET['id']);
+        }
+
+        elseif($_GET['action'] == 'validerModifArticle'){
+            $backController->validerModifArticle();
+        }
+        
+
+    // } else {
+    //     $backController->dashboard();
+    // }
+
 
         
     }else{
@@ -107,5 +151,8 @@ try{
     }
 
 } catch(Exception $e){
-    header('Location: index.php');
+    $title = "Page d'erreur";
+    $description = "Page de gestion d'erreurs";
+    die('Erreur : ' . $e->getMessage());
+    require 'app/Views/front/errorLoading.php';
 }

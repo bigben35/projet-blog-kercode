@@ -67,7 +67,7 @@ class AdminController
         $this->articleManager->ajoutArticleBD($_POST['title'], $_POST['accroche'], $_POST['content'], $imageAjoute, $_POST['alt_image']);
       
     
-        header('Location: indexAdmin.php?action=listeArticle');
+        header('Location: listeArticle');
     
     }
 
@@ -78,7 +78,7 @@ class AdminController
         unlink("app/Public/images/".$dataArticle['url_image']);
         $this->articleManager->suppressionArticleBD($id);
 
-        header('Location: indexAdmin.php?action=listeArticle');
+        header('Location: listeArticle');
     }
 
 
@@ -107,7 +107,7 @@ class AdminController
         }
         $this->articleManager->modificationArticleBD($_POST['identifiant'],$_POST['title'],$_POST['accroche'],$_POST['content'],$imageAjoute,$_POST['alt_image']);
 
-        header('Location: indexAdmin.php?action=listeArticle');
+        header('Location: listeArticle');
     }
 
 

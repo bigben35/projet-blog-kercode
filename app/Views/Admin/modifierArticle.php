@@ -3,7 +3,7 @@ $title = "Page de modification article";
 ob_start(); 
 ?>
 
-<form method="POST" action="indexAdmin.php?action=validerModifArticle" enctype="multipart/form-data">
+<form method="POST" action="validerModifArticle" enctype="multipart/form-data">
     <div class="bloc-form">
         <label for="title">Titre : </label>
         <input type="text" id="title" name="title" value="<?= $article->getTitle(); ?>">
