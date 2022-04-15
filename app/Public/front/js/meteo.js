@@ -26,9 +26,9 @@ function drawWeather(data)
 {
     let temp = Math.round(parseFloat(data.main.temp));
     
-    document.querySelector('.temps').innerHTML = data.weather[0].description;    
+    document.querySelector('.temps').textContent = data.weather[0].description;    
     document.querySelector('.temperature').innerHTML = temp + " °C";    
-    document.querySelector('.localisation').innerHTML = data.name;        
+    document.querySelector('.localisation').textContent = data.name;        
 }
 
 function getIcon(data)
