@@ -39,17 +39,17 @@ ob_start();
                 <div class="bloc-form">
                     <label for="pseudo">Pseudo</label>
                     <input type="text" id="pseudo" name="pseudo" placeholder="Votre Pseudo"
-                        value="<?php if(isset($_POST['pseudo'])) echo $_POST['pseudo']?>" required>
+                        value="<?php if(isset($_POST['pseudo'])) echo htmlspecialchars($_POST['pseudo'])?>" required>
                 </div>
                 <div class="bloc-form">
                     <label for="mail">Email</label>
                     <input type="email" id="mail" name="mail" placeholder="Votre e-mail"
-                        value="<?php if(isset($_POST['mail'])) echo $_POST['mail']?>" required>
+                        value="<?php if(isset($_POST['mail'])) echo htmlspecialchars($_POST['mail'])?>" required>
                 </div>
                 <div class="bloc-form">
                     <label for="mailconf">Confirmation Email</label>
                     <input type="email" id="mailconf" name="mailconf" placeholder="Votre e-mail"
-                        value="<?php if(isset($_POST['mailconf'])) echo $_POST['mailconf']?>" required>
+                        value="<?php if(isset($_POST['mailconf'])) echo htmlspecialchars($_POST['mailconf'])?>" required>
                 </div>
                 <div class="bloc-form">
                     <label for="password">Mot de passe</label>
