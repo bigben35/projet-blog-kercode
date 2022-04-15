@@ -37,7 +37,7 @@
                         <?php
                         if (isset($_SESSION['role']) && ($_SESSION['role'] == "1")) :
                         ?>
-                            <li><a href="indexAdmin.php">Mon Compte</a></li>
+                            <li><a href="dashboard">Mon Compte</a></li>
                             <li><a href="deconnexion">Déconnexion</a></li>
                         <?php
 

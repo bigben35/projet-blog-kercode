@@ -85,15 +85,53 @@ class FrontController
     //création de l'utilisateur
     function createUser($pseudo, $mail, $password)
     {
+        extract($_POST);
+
         $userManager = new \ProjetBlogKercode\Models\UserModel();
         
-        if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+        $validation = true;
+        $erreur = [];
+
+        if (empty($pseudo) || empty($mail) || empty($mailconf) || empty($password) || empty($passwordconf)) {
+            $validation = false;
+            $erreur[] = "Tous les champs sont requis !";
+        }
+
+        if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+            $validation = false;
+            $erreur[] = "L'adresse email n'est pas valide !";
+         }
+
+         if($mailconf != $mail){
+            $validation = false;
+            $erreur[] = "L'email de confirmation n'est pas correcte !";
+        }
+    
+        if($passwordconf != $password){
+            $validation = false;
+            $erreur[] = "Le mot de passe de confirmation n'est pas correcte !";
+        }
+
+        if ($userManager->existe_pseudo($pseudo)) {
+            $validation = false;
+            $erreur[] = "Ce pseudo est déjà utilisé !";
+        }
+    
+        if ($userManager->existe_mail($mail)) {
+            $validation = false;
+            $erreur[] = "Cet email est déjà utilisé !";
+        }
+         
+        if ($validation && filter_var($mail, FILTER_VALIDATE_EMAIL)) {
         $user = $userManager->createUser($pseudo, $mail, $password);
 
         require 'app/Views/front/connect.php';
     } else {
-        header('Location: app/Views/front/errorLoading.php');
+        // var_dump($erreur);die;
+        throw new \Exception("Il y a une erreur de connexion !");
     }
+
+    return $erreur;
     }
 
     // connexion à la page de connexion
@@ -178,7 +216,7 @@ class FrontController
         $postMail = new \ProjetBlogKercode\Models\ContactModel();
 
         if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-            $mail = $postMail->postMail($lastname, $firstname, $mail, $phone, $objet, $msg);
+            $Mail = $postMail->postMail($lastname, $firstname, $mail, $phone, $objet, $msg);
             require 'app/Views/front/confirmSendMail.php';
         } else {
             header('Location: app/Views/front/errorLoading.php');

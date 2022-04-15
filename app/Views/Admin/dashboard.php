@@ -8,27 +8,27 @@ ob_start();
 <h2>Bonjour <?= $_SESSION['pseudo'] ?>!</h2>
 
 <section class="section-dashboard-admin container-admin">
-    <div class="bloc-section-admin">
+    <a href="listeArticle" class="bloc-section-admin">
         <i class="fa-solid fa-file"></i>
         <div class="bloc-info-admin">
             <h3>Articles</h3>
             <p class="count">32</p>
         </div>
-    </div>
-    <div class="bloc-section-admin">
+    </a>
+    <a href="listeCommentaire" class="bloc-section-admin">
         <i class="fa-solid fa-comment"></i>
         <div class="bloc-info-admin">
             <h3>Commentaires</h3>
             <p class="count">23</p>
         </div>
-    </div>
-    <div class="bloc-section-admin">
+</a>
+    <a href="listeMail" class="bloc-section-admin">
         <i class="fa-solid fa-envelope"></i>
         <div class="bloc-info-admin">
             <h3>E-mail</h3>
-            <p class="count">14</p>
+            <p class="count"><?php $mail = $nbrMail->fetch() ?><?= $mail[0] ?></p>
         </div>
-    </div>
+</a>
     <div class="bloc-section-admin">
         <a href="deconnexion"><i class="fa-solid fa-arrow-right-from-bracket"></i>
             <h3>Se déconnecter</h3>

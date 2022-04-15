@@ -22,6 +22,8 @@ class AdminController
     // tableau de bord 
     function dashboard()
     {
+        $countMail = new \ProjetBlogKercode\Models\ContactModel();
+        $nbrMail = $countMail->countMail();
         require 'app/Views/Admin/dashboard.php';
     }
 
@@ -143,6 +145,50 @@ class AdminController
             }
         }
     }
+
+
+    // GESTION DES COMMENTAIRES 
+    public function afficherListeCommentaire()
+    {
+        require 'app/Views/Admin/listeCommentaire.php';
+    }
+
+
+
+
+
+
+
+
+
+
+    // GESTION DES MAILS 
+    public function afficherListeMail()
+    {
+        $mails = new \ProjetBlogKercode\Models\ContactModel();
+        $allMails = $mails->getMails();
+
+        require 'app/Views/Admin/listeMail.php';
+    }
+
+    
+    function showMail($id)
+    {
+        $mail = new \ProjetBlogKercode\Models\ContactModel();
+        $mailOne = $mail->afficherMail($id);
+
+        require 'app/views/Admin/email.php';
+    }
+    /*=========================== supprimer un mail ==================================*/
+    function deleteMail($id)
+    {
+        $deleteMail = new \ProjetBlogKercode\Models\ContactModel();
+        $deleteEmail = $deleteMail->supprimerMail($id);
+
+        header('Location: listeMail');
+    }
+
+
 }
 
     

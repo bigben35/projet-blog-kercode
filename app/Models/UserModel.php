@@ -7,11 +7,36 @@ class UserModel extends Manager
     public function createUser($pseudo, $mail, $password)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('INSERT INTO user (pseudo, mail, password )  VALUES (?, ?, ?)');
+        $req = $bdd->prepare('INSERT INTO user (pseudo, mail, password )  VALUES (:pseudo, :mail, :password)');
         $req->execute(array($pseudo, $mail, $password));
     
         return $req;
     }
+
+    function existe_pseudo($pseudo){
+        
+        $bdd = $this->dbConnect();
+        $req = $bdd ->prepare("SELECT COUNT(*) FROM user WHERE pseudo=?");
+    
+        $req ->execute([$pseudo]);
+    
+        $resultat = $req ->fetch()[0];
+    
+        return $resultat;
+    }
+    
+    function existe_mail($mail){
+        
+        $bdd = $this->dbConnect();
+        $req = $bdd ->prepare("SELECT COUNT(*) FROM user WHERE mail=?");
+    
+        $req ->execute([$mail]);
+    
+        $resultat = $req ->fetch()[0];
+    
+        return $resultat;
+    }
+
 
     public function recupPassword($mail, $password)
     {
@@ -69,6 +94,7 @@ class UserModel extends Manager
         $req->execute([$id]);
 
         return $req->fetch();
+        // var_dump($req);die;
     }
 
 
@@ -137,7 +163,7 @@ class UserModel extends Manager
                     "created_at" => date('Y-m-d H:i:s')
                 ]);
 
-                header("Location: index.php?action=article&id=".$id);
+                header("Location: article&id=".$id);
             }
             else{
                 

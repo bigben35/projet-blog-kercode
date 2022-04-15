@@ -7,6 +7,19 @@ require_once __DIR__ . '/vendor/autoload.php';
 $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
+// GESTION DES ERREURS 
+// function errorHandler($errno, $errstr) {
+//     throw new Exception($errstr, $errno);
+//   }
+//   set_error_handler('errorHandler');
+  
+  function eCatcher($e) {
+    if($_ENV["APP_ENV"] == "development") {
+     var_dump($e);die;   //a commenter en production
+    }
+  }
+
+
 try{
     $frontController = new \ProjetBlogKercode\Controllers\FrontController();//objet controler
     $backController = new \ProjetBlogKercode\Controllers\AdminController();//objet controler, on instancie la class adminController (copie de la class adminController)
@@ -42,9 +55,9 @@ try{
 
         // creation d'un utilisateur 
         elseif($_GET['action'] == 'StoreUser'){
-            $pseudo = $_POST['pseudo'];
-            $mail = $_POST['mail'];
-            $pass = $_POST['password'];
+            $pseudo = htmlspecialchars($_POST['pseudo']);
+            $mail = htmlspecialchars($_POST['mail']);
+            $pass = htmlspecialchars($_POST['password']);
             $password = password_hash($pass, PASSWORD_DEFAULT); //crée une clé de hachage pour un password
             
             $frontController->createUser($pseudo, $mail, $password);
@@ -60,7 +73,7 @@ try{
 
         // // connexion utilisateur 
         elseif ($_GET['action'] == 'connectUser'){
-            $mail = htmlspecialchars($_POST['mail']);   //htmlspecialchars — Convertit les caractères spéciaux en entités HTML
+            $mail = htmlspecialchars($_POST['mail']);
             $password = $_POST['password'];
             if (!empty($mail) && !empty($password)){
                 $frontController->connexion($mail, $password); //on passe les 2 paramètres
@@ -72,7 +85,7 @@ try{
 
 
         elseif($_GET['action'] == 'dashboardUser'){
-            if(isset($_SESSION['id'])){
+            if(isset($_SESSION['id']) && (isset($_SESSION['role']) && ($_SESSION['role'] == "0"))){
 
                 $frontController->dashboardUser();
             }
@@ -105,11 +118,20 @@ try{
         }
 
 
-        // PARTIE ADMIN 
+        // ----------PARTIE ADMIN -----------------------
+
          // dasboard Admin
-         if($_GET['action'] == 'dashboard'){
-            $backController->dashboard();
+         elseif($_GET['action'] == 'dashboard'){
+            if(isset($_SESSION['id']) && (isset($_SESSION['role']) && ($_SESSION['role'] == "1"))){
+
+                $backController->dashboard();
+            }
+            else {
+                throw new Exception("Veuillez renseigner vos identifiants pour vous connecter à votre session");
+            }
         }
+
+        // ---------------ARTICLES -----------------
 
         elseif($_GET['action'] == 'listeArticle'){
             $backController->afficherListeArticle();
@@ -138,21 +160,45 @@ try{
         elseif($_GET['action'] == 'validerModifArticle'){
             $backController->validerModifArticle();
         }
+
+
+        // COMMENTAIRES 
+        elseif($_GET['action'] == 'listeCommentaire'){
+            $backController->afficherListeCommentaire();
+        }
+
+
+
+
+
+
+        // MAILS 
+        elseif($_GET['action'] == 'listeMail'){
+            $backController->afficherListeMail();
+        }
+
+        else {
+       throw new Exception("La page n'existe pas", 404);
+        }
+    
+    
+
         
-
-    // } else {
-    //     $backController->dashboard();
-    // }
-
-
-        
-    }else{
-        $frontController->home();
-    }
+}else{
+    throw new Exception("Mauvais formattage d'url", 404);
+}
 
 } catch(Exception $e){
-    $title = "Page d'erreur";
-    $description = "Page de gestion d'erreurs";
-    die('Erreur : ' . $e->getMessage());
-    require 'app/Views/front/errorLoading.php';
-}
+    // $title = "Page d'erreur";
+    // $description = "Page de gestion d'erreurs";
+    eCatcher($e);
+    if($e->getCode() === 404){
+        require "app/Views/front/errorLoading.php";
+  } else {
+    require "app/Views/front/errorLoading.php";
+  }
+} catch(Error $e) {
+  eCatcher($e);
+  require "app/Views/front/errorLoading.php";
+} 
+

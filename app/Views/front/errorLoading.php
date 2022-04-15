@@ -1,8 +1,3 @@
-<?php ob_start(); ?>
+<h1>rencontrre pb</h1>
 
-<h1>Error!</h1>
-
-<?php
-$content = ob_get_clean();
-require 'template/template.php';
-?>
+<a href="home">Retour à la page d'accueil</a>

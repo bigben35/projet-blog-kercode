@@ -4,10 +4,9 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteRule ^(.*)$ index.php?action=$1
-# RewriteRule ^(.*)$ indexAdmin.php?action=$1
 
 
-ErrorDocument 404 /blog/projet-blog-kercode/index.php?action=error404  
+# ErrorDocument 404 /blog/projet-blog-kercode/index.php?action=error404  
 # a changer quand mis en ligne
 
 # Activation du suivi des liens symboliques

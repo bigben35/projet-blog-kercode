@@ -16,7 +16,7 @@ ob_start();
         <p>Créé le : <?= $article['created_at']; ?></p>
     </div>
 </article>
-<a href="index.php?action=blog">Retour au blog</a>
+<a href="blog">Retour au blog</a>
 </section>
 <section class="commentaire">
     <div>

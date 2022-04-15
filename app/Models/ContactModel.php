@@ -25,4 +25,33 @@ class ContactModel extends Manager
         $request = $bdd->query("SELECT id, lastname, firstname, mail, phone, objet, msg FROM contacts ORDER BY id DESC");
         return $request;
     }
+
+     /*================================ nombres de mail  ====================================*/
+
+     public function countMail()
+     {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT COUNT(id) FROM contacts WHERE id');
+        $req->execute(array());
+        return $req;
+     }
+
+    //================== afficher un mail ================
+     public function afficherMail($id)
+     {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT *  FROM contacts WHERE id = ? ' );
+        $req->execute(array($id));
+        return $req->fetch();
+     }
+
+
+    //  ============supprimer un mail ==============
+    public function supprimerMail($id)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('DELETE FROM contacts WHERE id = ?');
+        $req->execute(array($id));
+        return $req;
+    }
 }
