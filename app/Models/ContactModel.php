@@ -47,7 +47,7 @@ class ContactModel extends Manager
 
 
     //  ============supprimer un mail ==============
-    public function supprimerMail($id)
+    public function supprimerUnMail($id)
     {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('DELETE FROM contacts WHERE id = ?');

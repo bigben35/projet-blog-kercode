@@ -17,18 +17,21 @@ ob_start();
             <th colspan="2">Actions</th>
         </tr>
     </thead>
-    <?php for($i=0; $i < count($articles); $i++) :?>
+    <tbody>
+    <?php foreach ($allMails as $allMail) :?>
     <tr>
-        <td><a href="afficheArticle&id=<?= $articles[$i]->getId(); ?>"><?= $articles[$i]->getTitle(); ?></a></td>
-        <td><img src="<?= $articles[$i]->getUrlImage(); ?>" alt="<?= $articles[$i]->getAltImage(); ?>"></td>
-        <td><?= $articles[$i]->getDateCreation(); ?></td>
-        <td><a href="modifierArticle&id=<?= $articles[$i]->getId(); ?>" class="btn-action-admin">Modifier</a></td>
+        <td><p><?= htmlspecialchars($allMail['lastname']) ?></p></td>
+        <td><p><?= htmlspecialchars($allMail['firstname']) ?></p></td>
+        <td><p><?= htmlspecialchars($allMail['mail']) ?></p></td>
+        <td><p><?= htmlspecialchars($allMail['phone']) ?></p></td>
+        
+        <td><a href="montrerMail&id=<?= $allMail['id'] ?>" class="btn-action-admin">Voir</a></td>
         <td>
-            <a href="supprimerArticle&id=<?= $articles[$i]->getId(); ?>">Supprimer</a>
+            <a href="supprimerMail&id=<?= $allMail['id'] ?>">Supprimer</a>
         </td>
     </tr>
-    <?php endfor; ?>
-
+    <?php endforeach; ?>
+    </tbody>
 </table>
 
 <?php $content = ob_get_clean(); ?>

@@ -172,22 +172,25 @@ class AdminController
     }
 
     
-    function showMail($id)
+    //============== montrer un mail =====================
+    function montrerMail($id)
     {
         $mail = new \ProjetBlogKercode\Models\ContactModel();
-        $mailOne = $mail->afficherMail($id);
+        $oneMail = $mail->afficherMail($id);
 
-        require 'app/views/Admin/email.php';
+        require 'app/Views/Admin/mail.php';
     }
     /*=========================== supprimer un mail ==================================*/
-    function deleteMail($id)
+    function supprimerMail($id)
     {
         $deleteMail = new \ProjetBlogKercode\Models\ContactModel();
-        $deleteEmail = $deleteMail->supprimerMail($id);
+        $deleteEmail = $deleteMail->supprimerUnMail($id);
 
         header('Location: listeMail');
     }
 
+
+   
 
 }
 

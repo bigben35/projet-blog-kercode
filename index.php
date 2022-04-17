@@ -173,8 +173,19 @@ try{
 
 
         // MAILS 
+        //voir la liste des mails
         elseif($_GET['action'] == 'listeMail'){
             $backController->afficherListeMail();
+        }
+
+        //supprimer un mail de la page listeMail
+        elseif($_GET['action'] == 'supprimerMail'){
+            $backController->supprimerMail($_GET['id']);
+        }
+
+        //voir un mail
+        elseif($_GET['action'] == 'montrerMail'){
+            $backController->montrerMail($_GET['id']);
         }
 
         else {
