@@ -118,7 +118,11 @@ try{
         }
 
 
-        // ----------PARTIE ADMIN -----------------------
+
+
+
+
+        // --------------------PARTIE ADMIN -----------------------
 
          // dasboard Admin
          elseif($_GET['action'] == 'dashboard'){
@@ -130,6 +134,25 @@ try{
                 throw new Exception("Veuillez renseigner vos identifiants pour vous connecter à votre session");
             }
         }
+
+
+        // ---------------UTILISATEURS --------------
+        // voir liste membre
+        elseif($_GET['action'] == 'listeMembre'){
+            $backController->afficherListeMembre();
+        }
+
+        // bannir un membre 
+        elseif($_GET['action'] == 'bannirMembre'){
+            $backController->bannirMembre($_GET['id']);
+        }
+
+        //voir un membre
+        elseif($_GET['action'] == 'montrerMembre'){
+            $backController->montrerMembre($_GET['id']);
+        }
+
+
 
         // ---------------ARTICLES -----------------
 
@@ -162,17 +185,26 @@ try{
         }
 
 
-        // COMMENTAIRES 
+        // ----------------COMMENTAIRES--------------
+        // voir liste commentaires 
         elseif($_GET['action'] == 'listeCommentaire'){
             $backController->afficherListeCommentaire();
+        }
+
+        // supprimer un commentaire 
+        elseif($_GET['action'] == 'supprimerComment'){
+            $backController->supprimerComment($_GET['id']);
+        }
+
+         //voir un commentaire
+        elseif($_GET['action'] == 'montrerComment'){
+            $backController->montrerComment($_GET['id']);
         }
 
 
 
 
-
-
-        // MAILS 
+        // -----------------MAILS ---------------------
         //voir la liste des mails
         elseif($_GET['action'] == 'listeMail'){
             $backController->afficherListeMail();
@@ -212,4 +244,3 @@ try{
   eCatcher($e);
   require "app/Views/front/errorLoading.php";
 } 
-

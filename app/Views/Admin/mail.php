@@ -8,7 +8,9 @@ ob_start();
 <section>
 
 
-
+<div>
+        <h3><?= $oneMail['created_at'] ?></h3>
+    </div>
     <div>
         <h3><?= $oneMail['lastname'] ?> <?= $oneMail['firstname'] ?></h3>
     </div>

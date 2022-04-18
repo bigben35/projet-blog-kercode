@@ -16,6 +16,17 @@ class ArticleManager extends Manager{
         return $this->articles;
     }
 
+    // nombre article 
+    public function countArticle()
+    {
+        {
+            $bdd = $this->dbConnect();
+            $req = $bdd->prepare('SELECT COUNT(id) FROM article WHERE id');
+            $req->execute(array());
+            return $req;
+        }
+    }
+
     public function chargementArticles()
     {
         $bdd = $this->dbConnect();

@@ -22,11 +22,55 @@ class AdminController
     // tableau de bord 
     function dashboard()
     {
+        // compter nombre utilisateur 
+        $countUser = new \ProjetBlogKercode\Models\ContactModel();
+        $nbrUser = $countUser->countUser();
+
+        // compter nombre article 
+        $countArticle = new \ProjetBlogKercode\Models\ArticleManager();
+        $nbrArticle = $countArticle->countArticle();
+
+        // compter nombre mail 
         $countMail = new \ProjetBlogKercode\Models\ContactModel();
         $nbrMail = $countMail->countMail();
+
+        // compter nombre commentaire 
+        $countComment = new \ProjetBlogKercode\Models\ContactModel();
+        $nbrComment = $countComment->countComment();
+
         require 'app/Views/Admin/dashboard.php';
+        
     }
 
+
+
+    // ------------------GESTION DES MEMBRES--------------
+
+    public function afficherListeMembre()
+    {
+        $users = new \ProjetBlogKercode\Models\ContactModel();
+        $allUsers = $users->getMembre();
+
+        require 'app/Views/Admin/listeMembre.php';
+    }
+
+
+    //============== montrer un membre =====================
+    function montrerMembre($id)
+    {
+        $user = new \ProjetBlogKercode\Models\ContactModel();
+        $oneUser = $user->afficherMembre($id);
+
+        require 'app/Views/Admin/membre.php';
+    }
+    /*=========================== bannir un membre ==================================*/
+    function bannirMembre($id)
+    {
+        $deleteUser = new \ProjetBlogKercode\Models\ContactModel();
+        $deleteOneUser = $deleteUser->bannirUnMembre($id);
+
+        header('Location: listeMembre');
+    } 
     
     
     // ----------------GESTION DES ARTICLES-----------------
@@ -150,15 +194,29 @@ class AdminController
     // GESTION DES COMMENTAIRES 
     public function afficherListeCommentaire()
     {
+        $comments = new \ProjetBlogKercode\Models\ContactModel();
+        $allComments = $comments->getComments();
+
         require 'app/Views/Admin/listeCommentaire.php';
     }
 
 
+    //============== montrer un commentaire =====================
+    function montrerComment($id)
+    {
+        $comment = new \ProjetBlogKercode\Models\ContactModel();
+        $oneComment = $comment->afficherCommentaire($id);
 
+        require 'app/Views/Admin/commentaire.php';
+    }
+    /*=========================== supprimer un commentaire ==================================*/
+    function supprimerComment($id)
+    {
+        $deleteComment = new \ProjetBlogKercode\Models\ContactModel();
+        $deleteOneComment = $deleteComment->supprimerUnCommentaire($id);
 
-
-
-
+        header('Location: listeCommentaire');
+    }
 
 
 

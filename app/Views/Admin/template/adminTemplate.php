@@ -24,6 +24,17 @@
                 <div class="nav-bloc n-1">
                     <i class="fa-solid fa-file"></i>
                     <div class="sub-nav">
+                        <h3>Membres</h3>
+                        <ul>
+                            <li><a href="listeMembre">Membres inscrits</a></li>
+                            <li><a href="">Membres bannis</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-bloc n-1">
+                    <i class="fa-solid fa-file"></i>
+                    <div class="sub-nav">
                         <h3>Articles</h3>
                         <ul>
                             <li><a href="ajouterArticle">Créer un article</a></li>
@@ -37,7 +48,7 @@
                     <div class="sub-nav">
                         <h3>Commentaire</h3>
                         <ul>
-                            <li><a href="">Commentaire reçu</a></li>
+                            <li><a href="listeCommentaire">Commentaire reçu</a></li>
                             <li><a href="">Commentaire à "valider</a></li>
 
                         </ul>
@@ -48,7 +59,7 @@
                     <div class="sub-nav">
                         <h3>E-mail</h3>
                         <ul>
-                            <li><a href="">Nombre e-mail</a></li>
+                            <li><a href="listeMail">Nombre e-mail</a></li>
                             <li><a href="">E-mail à lire</a></li>
 
                         </ul>

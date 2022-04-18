@@ -102,12 +102,12 @@ class FrontController
             $erreur[] = "L'adresse email n'est pas valide !";
          }
 
-         if($mailconf != $mail){
+        elseif($mailconf != $mail){
             $validation = false;
             $erreur[] = "L'email de confirmation n'est pas correcte !";
         }
     
-        if($passwordconf != $password){
+        elseif($passwordconf != $password){
             $validation = false;
             $erreur[] = "Le mot de passe de confirmation n'est pas correcte !";
         }
