@@ -1,10 +1,8 @@
-<div>
-            <form method="post" action="blog.php">
+<form method="GET" action="blog">
                 <div>
-                    <input type="text" name="query" placeholder="Rechercher un article ..." value="<?php if(isset($_POST['query'])) echo htmlspecialchars($_POST['query']) ?>">
+                    <input type="search" name="query" placeholder="Rechercher un article ..." value="<?php if(isset($_GET['query'])) echo $_GET['query'] ?>">
                 </div>
                 <div>
-                    <input type="submit" value="OK!">
+                    <input type="submit" value="Go!">
                 </div>
             </form>
-        </div>

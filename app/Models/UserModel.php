@@ -76,10 +76,24 @@ class UserModel extends Manager
     public function allArticles()
     {
         $bdd = $this->dbConnect();
-        
         $req = $bdd->query("SELECT id, title, url_image, alt_image, accroche, created_at FROM article ORDER BY id DESC LIMIT 6");
         
         return $req->fetchAll();
+    }
+
+    public function rechercheArticle()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare("SELECT id, title, accroche, url_image, created_at FROM article WHERE title LIKE :query OR content LIKE :query");
+
+        $query = htmlspecialchars($_GET['query']);
+        // var_dump($query);die;
+        $req->execute([':query' => '%'.$query.'%']);
+
+        $search = $req->fetchAll();
+        // var_dump($search);die;
+
+        return $search;
     }
 
  

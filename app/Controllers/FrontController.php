@@ -28,6 +28,11 @@ class FrontController
         // récupérer tous les articles 
         $getArticles = new \ProjetBlogKercode\Models\UserModel();
         $articles = $getArticles->allArticles();
+
+        //barre de recherche
+        $searchArticle = new \ProjetBlogKercode\Models\UserModel();
+        $search = $searchArticle->rechercheArticle();
+
         require "app/Views/front/blog.php";
     }
 

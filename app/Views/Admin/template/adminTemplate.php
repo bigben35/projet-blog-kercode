@@ -6,14 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?= $description ?>">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="app/Public/style.css">
     <title><?= $title ?></title>
 </head>
 
 <body>
 
-<!-- HEADER  -->
+    <!-- HEADER  -->
     <header id="dashboard-admin-header">
 
         <nav class="side-nav">
@@ -22,17 +24,15 @@
                     <h2>Admin</h2>
                 </div>
                 <div class="nav-bloc n-1">
-                    <i class="fa-solid fa-file"></i>
+                    <i class="fa-solid fa-users"></i>
                     <div class="sub-nav">
                         <h3>Membres</h3>
                         <ul>
                             <li><a href="listeMembre">Membres inscrits</a></li>
-                            <li><a href="">Membres bannis</a></li>
-
                         </ul>
                     </div>
                 </div>
-                <div class="nav-bloc n-1">
+                <div class="nav-bloc n-2">
                     <i class="fa-solid fa-file"></i>
                     <div class="sub-nav">
                         <h3>Articles</h3>
@@ -43,7 +43,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="nav-bloc n-2">
+                <div class="nav-bloc n-3">
                     <i class="fa-solid fa-comment"></i>
                     <div class="sub-nav">
                         <h3>Commentaire</h3>
@@ -54,18 +54,18 @@
                         </ul>
                     </div>
                 </div>
-                <div class="nav-bloc n-3">
+                <div class="nav-bloc n-4">
                     <i class="fa-solid fa-envelope"></i>
                     <div class="sub-nav">
                         <h3>E-mail</h3>
                         <ul>
-                            <li><a href="listeMail">Nombre e-mail</a></li>
+                            <li><a href="listeMail">E-mail reçu</a></li>
                             <li><a href="">E-mail à lire</a></li>
 
                         </ul>
                     </div>
                 </div>
-                <div class="nav-bloc n-4">
+                <div class="nav-bloc n-5">
                     <a href="deconnexion"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </div>
             </div>
@@ -73,14 +73,13 @@
 
     </header>
 
-      <!-- CONTENU DE LA PAGE  -->
-      <main id="main-dashboard-admin">
+    <!-- CONTENU DE LA PAGE  -->
+    <main id="main-dashboard-admin">
         <div class="container">
             <?= $content ?>
         </div>
     </main>
 
-    </body>
+</body>
 
 </html>
-
