@@ -22,7 +22,7 @@ ob_start();
 </section>
 
 <section id="bloc-articles">
-    <h2>Les Articles</h1>
+    <h1>Les Articles</h1>
         <article>
 
             <?php foreach ($articles as $article){
@@ -31,12 +31,12 @@ ob_start();
                 <img src="<?= $article['url_image']; ?>" alt="<?= $article['alt_image']; ?>">
             </div>
             <div class="content-article">
-                <p class="date">Posté le <time
+                <p class="date-article">Posté le <time
                         datetime="<?= $article['created_at']; ?>"><?= $article['created_at']; ?></time></p>
                 <h3><?= $article['title']; ?></h3>
                 <p class="accroche"><?= $article['accroche']; ?></p>
             </div>
-            <a href="article&id=<?= $article['id']; ?>">Voir l'Article</a>
+            <a class="btn-form" href="article&id=<?= $article['id']; ?>">Voir l'Article</a>
             <?php }; ?>
         </article>
 </section>

@@ -19,7 +19,7 @@ ob_start();
                     if ($erreur) :
                         foreach($erreur as $e):
              ?>
-                <div class="message erreur"><?= $e ?></div>
+                <div class="message-erreur"><?= $e ?></div>
                 <?php 
                 // var_dump($e);die;
                 ?>
@@ -28,7 +28,7 @@ ob_start();
         else:
             ?>
 
-                <div class="message confirmation">Votre compte a bien été créé !</div>
+                <div class="message-confirmation">Votre compte a bien été créé !</div>
 
 
                 <?php

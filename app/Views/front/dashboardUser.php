@@ -1,6 +1,6 @@
 <?php
 $title = "Tableau de bord utilisateur";
-$description = "";
+$description = "Tableau de bord utilisateur";
 
     // if(!isset($_SESSION['user'])){
     //     header("Location: app/Views/front/connect.php");
@@ -10,32 +10,20 @@ ob_start();
 ?>
 
 
-<h1>Dashboard User</h1>
-
-<div class="container commentaires">
+<div class="commentaires">
+    <h1>Bienvenue <?= $_SESSION['pseudo'] ?> !</h1>
+    <p class="user-mail">Adresse e-mail : <?= $_SESSION['mail'] ?></p>
+    <h2>Vos commentaires :</h2>
+    <div>
+        <?php  foreach($commentaires as $commentaire): ?>
         <div>
-            <div class="col-xs-12">
-                <h1>Bienvenue <?= $_SESSION['pseudo'] ?>!</h1>
-            </div>
+            <p class="date-com">Posté par <?= $_SESSION['pseudo'] ?> le <time
+                    datetime="<?=$commentaire['created_at'] ?>"><?= $commentaire['created_at']; ?></time> :</p>
+            <p class="comment-user"><?= $commentaire['commentaire'] ?></p>
         </div>
-        <div>
-            <div class="col-xs-12">
-                <p>Adresse e-mail : <?= $_SESSION['mail'] ?></p>
-            </div>
-        </div>
-        <div>
-            <div class="col-xs-12">
-                <h1>Vos commentaires :</h1>
-            </div>
-        </div>
-        <div>
-            <?php  foreach($commentaires as $commentaire): ?>
-            <div>
-                <p class="date">Posté par <?= $_SESSION['pseudo'] ?> le <time datetime="<?=$commentaire['created_at'] ?>"><?= $commentaire['created_at']; ?></time> :</p>
-                <p><?= $commentaire['commentaire'] ?></p>
-            </div>
-            <?php endforeach; ?>
-        </div>
+        <?php endforeach; ?>
+    </div>
+</div>
 
 
 <?php $content = ob_get_clean(); ?>

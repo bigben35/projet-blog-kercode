@@ -13,6 +13,10 @@ class ComposerStaticInitc27f4f7199df158e386223b47443b073
     );
 
     public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'Whoops\\' => 7,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -21,6 +25,7 @@ class ComposerStaticInitc27f4f7199df158e386223b47443b073
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'ProjetBlogKercode\\' => 18,
             'PhpOption\\' => 10,
         ),
@@ -35,6 +40,10 @@ class ComposerStaticInitc27f4f7199df158e386223b47443b073
     );
 
     public static $prefixDirsPsr4 = array (
+        'Whoops\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
+        ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
@@ -46,6 +55,10 @@ class ComposerStaticInitc27f4f7199df158e386223b47443b073
         'Symfony\\Polyfill\\Ctype\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/src',
         ),
         'ProjetBlogKercode\\' => 
         array (

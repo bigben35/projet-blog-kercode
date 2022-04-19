@@ -8,14 +8,20 @@ $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 // GESTION DES ERREURS 
-// function errorHandler($errno, $errstr) {
-//     throw new Exception($errstr, $errno);
-//   }
-//   set_error_handler('errorHandler');
+function errorHandler($errno, $errstr) {
+    throw new Exception($errstr, $errno);
+  }
+  set_error_handler('errorHandler');
   
   function eCatcher($e) {
     if($_ENV["APP_ENV"] == "development") {
-     var_dump($e);die;   //a commenter en production
+        $whoops = new \Whoops\Run;
+        $whoops->allowQuit(false);
+        $whoops->writeToOutput(false);
+        $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+        $html = $whoops->handleException($e);
+        echo $html;
+    //  var_dump($e);die;   //a commenter en production
     }
   }
 
@@ -31,9 +37,11 @@ try{
         if($_GET['action'] == 'home') {
             $frontController->home();
         }
+
         
         elseif($_GET['action'] == 'blog'){
-            $frontController->blog();
+            $query = $_GET['query'];
+            $frontController->blog($query);
         }
 
         elseif($_GET['action'] == 'article'){
@@ -187,7 +195,7 @@ try{
 
 
         // ----------------COMMENTAIRES--------------
-        
+
         // voir liste commentaires 
         elseif($_GET['action'] == 'listeCommentaire'){
             $backController->afficherListeCommentaire();
@@ -223,14 +231,17 @@ try{
         }
 
         else {
-       throw new Exception("La page n'existe pas", 404);
+            throw new Exception("La page n'existe pas", 404);
         }
     
     
 
         
 }else{
-    throw new Exception("Mauvais formattage d'url", 404);
+    // throw new Exception("Mauvais formattage d'url", 404);
+    
+        $frontController->home();
+    
 }
 
 } catch(Exception $e){
@@ -240,9 +251,9 @@ try{
     if($e->getCode() === 404){
         require "app/Views/front/errorLoading.php";
   } else {
-    require "app/Views/front/errorLoading.php";
+    require "app/Views/front/oups.php";
   }
 } catch(Error $e) {
   eCatcher($e);
-  require "app/Views/front/errorLoading.php";
+  require "app/Views/front/oups.php";
 } 

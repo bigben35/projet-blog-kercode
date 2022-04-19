@@ -5,7 +5,7 @@ const navbarLinks = document.querySelector('.navbar-links');
 btnBurger.addEventListener('click', (event) => {
     event.preventDefault();
     navbarLinks.classList.toggle('active');
-})
+});
 
 // CLASS ACTIVE NAVIGATION 
 
@@ -24,19 +24,19 @@ for (let i = 0; i < menuActive.length; i++) {
 // ---------------PAGE HOME ----------------------
 
 // ANIMATION SLIDER 
-let imgSlider = document.getElementsByClassName('imgSlider');
+// let imgSlider = document.getElementsByClassName('imgSlider');
 
-let step = 0;
-let imgNumber = imgSlider.length;
+// let step = 0;
+// let imgNumber = imgSlider.length;
 
 // let precedent = document.querySelector('.precedent');
 // let suivant = document.querySelector('.suivant');
 
-function enleverImageActive(){
-    for (let i = 0; i < imgNumber; i++) {
-        imgSlider[i].classList.remove('active'); 
-    }
-}
+// function enleverImageActive(){
+//     for (let i = 0; i < imgNumber; i++) {
+//         imgSlider[i].classList.remove('active'); 
+//     }
+// }
 
 // bouton suivant 
 // suivant.addEventListener('click', () => {
@@ -59,12 +59,12 @@ function enleverImageActive(){
 // })
 
 // défilement slider 
-setInterval( () => {
-    step++;
-    if(step >= imgNumber){
-        step = 0;
-    }
-    enleverImageActive();
-    imgSlider[step].classList.add('active');
-}, 3000)
+// setInterval( () => {
+//     step++;
+//     if(step >= imgNumber){
+//         step = 0;
+//     }
+//     enleverImageActive();
+//     imgSlider[step].classList.add('active');
+// }, 3000)
 

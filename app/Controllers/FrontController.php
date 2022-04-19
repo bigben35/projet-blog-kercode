@@ -23,15 +23,16 @@ class FrontController
     }
 
     
-    function blog()
+    function blog($query)
     {
         // récupérer tous les articles 
         $getArticles = new \ProjetBlogKercode\Models\UserModel();
         $articles = $getArticles->allArticles();
 
         //barre de recherche
+        
         $searchArticle = new \ProjetBlogKercode\Models\UserModel();
-        $search = $searchArticle->rechercheArticle();
+        $search = $searchArticle->rechercheArticle($query);
 
         require "app/Views/front/blog.php";
     }

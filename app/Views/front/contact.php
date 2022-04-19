@@ -5,7 +5,7 @@
 
 ob_start(); ?>
 
-<section class="bloc-create-user">
+<section class="bloc-contact-user">
 <div class="form-container">
     <h1>Contactez-nous</h1>
     <div class="main-bloc-form">
@@ -39,7 +39,7 @@ ob_start(); ?>
                 <label for="autorisation">&nbsp; En soumettant ce formulaire, j'autorise ce site à conserver mes données personnelles. Aucune exploitation commerciale ne sera faite des données conservées.</label>
             </div>
 
-            <button class="btn-form" type="submit" name="btn-submit">Envoyer</button>
+            <button class="btn-form send-contact" type="submit" name="btn-submit">Envoyer</button>
         </form>
     </div>
 </div>

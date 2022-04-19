@@ -25,7 +25,7 @@ class ContactModel extends Manager
     public function getMembre()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare("SELECT id, pseudo, mail, avatar, created_at FROM user WHERE role=0");
+        $req = $bdd->prepare("SELECT id, pseudo, mail, created_at FROM user WHERE role=0");
         $req->execute(array());
 
         return $req;

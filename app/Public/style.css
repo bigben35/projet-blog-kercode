@@ -24,6 +24,13 @@
 
 body{
     font-family: 'robotoregular', sans-serif;
+    height: 100%;
+    position: relative;
+}
+h1{
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    text-align: center;
 }
 a{
     text-decoration: none;
@@ -48,6 +55,7 @@ header{
 /* -------------------FOOTER ------------- */
 footer{
     background-color: var(--mainColor);
+    
 }
 .icons{
     display: flex;
@@ -184,7 +192,7 @@ footer{
 /* -----------------PAGE HOME-------------------  */
 
 /* ------------------SLIDER-----------------------  */
-#mainSlider{
+/* #mainSlider{
     height: 50vh;
     position: relative;
     margin: 2rem 0;
@@ -214,16 +222,12 @@ footer{
 }
 .precedent{
     left: 1rem;
-}
+} */
 
 /* PRESENTATION  */
 #presentation{
     margin: 10px;
     text-align: center;
-}
-.bloc-presentation h1{
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
 }
 .bloc-presentation img{
     width: 100%;
@@ -232,10 +236,15 @@ footer{
 
 /* DERNIERS ARTICLES  */
 #last-articles{
+    margin: 10px;
     text-align: center;
 }
 #last-articles h2{
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+}
+.bloc-article img{
+    width: 100%;
     margin-bottom: 1rem;
 }
 
@@ -257,6 +266,15 @@ footer{
 }
 
 
+/* -----------------------PAGE BLOG----------------------------  */
+.date-article {
+    font-style: italic;
+}
+#bloc-articles a{
+    display: block;
+    margin: 1rem auto 2rem;
+}
+
 
 /* ----------------------PAGE METEO  ---------------------*/
 .form-container{
@@ -266,7 +284,7 @@ footer{
 .bloc-app-meteo{
     display: grid;
     grid-template: 125px 260px 100px / repeat(8, 12.5%);
-    margin: 15px auto;
+    margin: 2rem auto 5rem;
     position: relative;
     border: 1px solid black;
     background-color: rgb(13, 143, 179);
@@ -281,20 +299,14 @@ footer{
 }
 .bloc-logo-info{
     grid-area: 2 / 1 / 3 / -1;
-    /* display: flex; */
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-/* .bloc-logo{
-    width: 50%;
-} */
+
 .bloc-logo img{
     width: 10rem;
 }
-/* .bloc-info{
-    width: 50%;
-} */
 .bloc-info .temps{
     font-size: 1.8rem;
 }
@@ -331,7 +343,29 @@ footer{
 }
 
 
-/* PAGE DASHBOARD ADMIN  */
+/* --------------------PAGE DASHBOARD USER ------------------- */
+.commentaires{
+    margin: 1rem;
+    text-align: center;
+}
+.user-mail{
+    font-style: italic;
+}
+.commentaires h2{
+    font-size: 1.4rem;
+    margin: 2rem 0 0.5rem;
+}
+.date-com{
+    font-style: italic;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+}
+.comment-user{
+    font-weight: 600;
+    padding: 0.5rem
+}
+
+/* -------------------PAGE DASHBOARD ADMIN--------------------------  */
 .side-nav {
     position: fixed;
     height: 100vh;
@@ -339,7 +373,6 @@ footer{
     top: 0;
   }
   
-  /* To hide the sub-nav */
 .wrapper {
     background-color: var(--mainColor);
     height: 100vh;
@@ -388,7 +421,7 @@ footer{
     background-color: var(--mainColor);
     z-index: -1;
     color: white;
-    /* Hidden at the left side */
+    /* cacher a gauche */
     transform: translateX(-100%);
     transition: transform 0.5s ease-in-out;
     border-right: 2px solid #222;
@@ -473,16 +506,13 @@ footer{
 }
 
 
-/* PAGE CREATE USER  */
-.bloc-create-user{
+/* ---------------------PAGE CONTACT----------------------------  */
+.bloc-contact-user{
     text-align: center;
-    margin: 1.5rem
-}
-.bloc-create-user h1{
-    margin-bottom: 1rem;
+    margin: 1.5rem auto;
 }
 .main-bloc-form form{
-    padding: 2.5rem;
+    padding: 0 1.5rem 2rem;
 }
 .bloc-form label{
     display: block;
@@ -509,6 +539,10 @@ footer{
     text-align: center;
     width: 67%;
     cursor: pointer;
+    font-size: 0.9rem;
+}
+.send-contact{
+    font-size: 1rem;
 }
 .btn-form:hover{
     background-color: var(--mainLightColor);
@@ -516,12 +550,37 @@ footer{
 .main-bloc-form a{
     color: var(--mainLightColor);
 }
-
-/* --------------------PAGE CONTACT--------------------------  */
 textarea{
     height: 100px;
     width: 100%;
     margin-bottom: 2rem;
+}
+
+
+/* -----------------PAGE SE CONNECTER-------------------  */
+.bloc-create-user{
+    text-align: center;
+    margin: 1.5rem auto;
+}
+.form-container img{
+   margin-bottom: 2rem;
+}
+
+
+/* ----------------PAGE CREER VOTRE COMPTE------------------  */
+.message-erreur{
+    background-color: #e73535;
+    color: white;
+    border-radius: 5px;
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+}
+.message-confirmation{
+    background-color: #15a753;
+    color: white;
+    border-radius: 5px;
+    margin: 1rem 0;
+    padding: 0.5rem 0;
 }
 
 
@@ -564,6 +623,7 @@ textarea{
 
 
 
+
     /* **********************ADMIN**********************  */
 
 /* ---------------PAGE LISTE ARTICLES------------- - */
@@ -589,6 +649,7 @@ table img{
     /* PAGE METEO  */
     .bloc-app-meteo{
         grid-template: 125px 260px / repeat(8, 12.5%);
+        margin: 4rem auto 8rem;
     }
     .bloc-logo-info{
         display: flex;
@@ -628,5 +689,8 @@ table img{
     .active, .navbar-links li:hover{
         background-color: var(--mainLightColor);
     }
+
+    /* PAGE CONTACT  */
+
     
 }

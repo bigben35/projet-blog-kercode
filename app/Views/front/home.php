@@ -6,24 +6,16 @@ ob_start();
 
 <!-- SLIDER  -->
 
-<section id="mainSlider">
-    <div class="slider">
-        <!-- <img src="app/Public/images/aurores-boreales_Islande.webp" alt="Magnifiques Aurores Boréales en Islande" class="imgSlider active" />
-        <img src="app/Public/images/cascade_Islande.webp" alt="Magnifiques Cascades au sud de l'Islande" class="imgSlider" />
-        <img src="app/Public/images/paysages-Porsmork_Islande.webp" alt="Parc naturel Porsmork en Islande" class="imgSlider" />
-        <img src="app/Public/images/route-n°1_Islande.webp" alt="Voici la Route n°1 en Islande. Cette route, qui est la principale du pays, fait le tour de l'île." class="imgSlider" /> -->
-        <?php foreach ($slides as $slide){
-            ?>
-            <img src="<?= $slide['url_image']; ?>" alt="<?= $slide['alt_image']; ?>" class="imgSlider" />
-        <?php }; ?>
-    </div>
+<!-- <section id="mainSlider">
+     <h1>Prêt à Voyager ?</h1> -->
+    
     <!-- <div class="suivant">
         <i class="fa-solid fa-circle-chevron-right"></i>
     </div>
     <div class="precedent">
             <i class="fa-solid fa-circle-chevron-left"></i>
     </div> -->
-</section>
+<!-- </section> -->
 
 <section id="presentation">
     <div class="bloc-presentation">
@@ -35,8 +27,8 @@ ob_start();
 </section>
 
 <section id="last-articles">
+    <h2>Derniers articles postés</h2>
     <article>
-        <h2>Derniers articles postés</h2>
         <?php foreach ($lastarticles as $lastarticle){
             ?>
             <div class="bloc-article">
@@ -49,7 +41,7 @@ ob_start();
             </div>
         <?php }; ?>
     </article>
-    <a class="" href="blog">Voir tous les articles</a>
+    <a href="blog">Voir tous les articles</a>
 </section>
 
 

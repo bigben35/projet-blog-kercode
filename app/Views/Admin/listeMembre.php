@@ -9,7 +9,6 @@ ob_start();
 <table border=1 frame=void rules=rows>
     <thead>
         <tr>
-            <th>Avatar</th>
             <th>Pseudo</th>
             <th>mail</th>
             <th>Créé le</th>
@@ -19,7 +18,6 @@ ob_start();
     <tbody>
     <?php foreach ($allUsers as $allUser) :?>
     <tr>
-        <td><p><?= htmlspecialchars($allUser['avatar']) ?></p></td>
         <td><p><?= htmlspecialchars($allUser['pseudo']) ?></p></td>
         <td><p><?= htmlspecialchars($allUser['mail']) ?></p></td>
         <td><p><?= htmlspecialchars($allUser['created_at']) ?></p></td>
