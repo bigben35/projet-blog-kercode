@@ -131,12 +131,14 @@ class FrontController
         $user = $userManager->createUser($pseudo, $mail, $password);
 
         require 'app/Views/front/connect.php';
+
     } else {
         // var_dump($erreur);die;
-        throw new \Exception("Il y a une erreur de connexion !");
+        // throw new \Exception("Il y a une erreur de connexion !");
+        require "app/Views/front/createUser.php";
+        return $erreur;
     }
 
-    return $erreur;
     }
 
     // connexion à la page de connexion

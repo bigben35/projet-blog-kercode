@@ -7,9 +7,14 @@ class UserModel extends Manager
     public function createUser($pseudo, $mail, $password)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('INSERT INTO user (pseudo, mail, password )  VALUES (:pseudo, :mail, :password)');
-        $req->execute(array($pseudo, $mail, $password));
-    
+        $req = $bdd->prepare('INSERT INTO user (pseudo, mail, password, created_at )  VALUES (:pseudo, :mail, :password, :created_at)');
+        var_dump($req);
+        $req->execute([
+            "pseudo" => htmlspecialchars($pseudo),
+            "mail" => htmlspecialchars($mail),
+            "password" => password_hash($password, PASSWORD_DEFAULT),
+            "created_at" => date('Y-m-d H:i:s')
+        ]);
         return $req;
     }
 

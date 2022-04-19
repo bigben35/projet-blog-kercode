@@ -60,7 +60,8 @@ try{
             $pass = htmlspecialchars($_POST['password']);
             $password = password_hash($pass, PASSWORD_DEFAULT); //crée une clé de hachage pour un password
             
-            $frontController->createUser($pseudo, $mail, $password);
+            $erreur = $frontController->createUser($pseudo, $mail, $password);
+            
         }
         
         elseif($_GET['action'] == 'connexion'){
@@ -186,6 +187,7 @@ try{
 
 
         // ----------------COMMENTAIRES--------------
+        
         // voir liste commentaires 
         elseif($_GET['action'] == 'listeCommentaire'){
             $backController->afficherListeCommentaire();
