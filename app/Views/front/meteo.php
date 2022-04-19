@@ -24,31 +24,31 @@ ob_start();
         <div class="jour-bloc-prevision">
             <div class="bloc-jour">
                 <p class="jour-prevision-nom"></p>
-                <p class="jour-prevision-temps"></p>
+                <p class="jour-prevision-temp"></p>
             </div>
             <div class="bloc-jour">
                 <p class="jour-prevision-nom"></p>
-                <p class="jour-prevision-temps"></p>
+                <p class="jour-prevision-temp"></p>
             </div>
             <div class="bloc-jour">
                 <p class="jour-prevision-nom"></p>
-                <p class="jour-prevision-temps"></p>
+                <p class="jour-prevision-temp"></p>
             </div>
             <div class="bloc-jour">
                 <p class="jour-prevision-nom"></p>
-                <p class="jour-prevision-temps"></p>
+                <p class="jour-prevision-temp"></p>
             </div>
             <div class="bloc-jour">
                 <p class="jour-prevision-nom"></p>
-                <p class="jour-prevision-temps"></p>
+                <p class="jour-prevision-temp"></p>
             </div>
             <div class="bloc-jour">
                 <p class="jour-prevision-nom"></p>
-                <p class="jour-prevision-temps"></p>
+                <p class="jour-prevision-temp"></p>
             </div>
             <div class="bloc-jour">
                 <p class="jour-prevision-nom"></p>
-                <p class="jour-prevision-temps"></p>
+                <p class="jour-prevision-temp"></p>
             </div>
         </div>
     </div>
