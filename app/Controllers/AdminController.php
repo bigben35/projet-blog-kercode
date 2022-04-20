@@ -141,11 +141,11 @@ class AdminController
     //modifier un article
     public function validerModifArticle()
     {
-        $imageActuelle = $this->articleManager->getArticleById($_POST['identifiant']);
+        $imageActuelle = $this->articleManager->getArticleById(filter_var($_POST['identifiant'], FILTER_SANITIZE_NUMBER_INT));
         $image = $_FILES['url_image'];
 
         if($image['size'] > 0){
-            realpath(unlink("app/Public/images/".$imageActuelle));
+            unlink("app/Public/images/".$imageActuelle);
             $repertoire = "app/Public/images/";
             $imageAjoute = $this->ajoutImageArticle($image, $repertoire);
         } else {
