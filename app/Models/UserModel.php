@@ -171,7 +171,7 @@ class UserModel extends Manager
             $erreur ="Vous devez entrer un commentaire !";
 
             if(!empty($commentaire)){
-                $id = (int)$_GET['id'];
+                $id = filter_var((int)$_GET['id'], FILTER_SANITIZE_NUMBER_INT);
 
                 $req = $bdd->prepare("INSERT INTO commentaires(id_user, id_article, commentaire, created_at) VALUES (:id_user, :id_article, :commentaire, :created_at)");
 
