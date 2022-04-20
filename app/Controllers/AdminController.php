@@ -178,8 +178,8 @@ class AdminController
     
                 $uniqueName = uniqid('', true);
         
-                $imageName = $uniqueName. '.' .$extension;
-                $imageAjoute = 'app/Public/images/' . $imageName;
+                $imageName = filter_var($uniqueName. '.' .$extension);
+                $imageAjoute = filter_var('app/Public/images/' . $imageName, FILTER_SANITIZE_SPECIAL_CHARS);
                 //mettre image dans dossier images du Blog avec nom unique
                 move_uploaded_file($tmpName, $imageAjoute);
                 return $imageAjoute;
