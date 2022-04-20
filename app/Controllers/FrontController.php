@@ -9,8 +9,8 @@ class FrontController
     function home()
     {
         // slider 
-        $slider = new \ProjetBlogKercode\Models\UserModel();
-        $slides = $slider->getSlides();
+        // $slider = new \ProjetBlogKercode\Models\UserModel();
+        // $slides = $slider->getSlides();
 
         // presentation Admin 
         $presentationAdmin = new \ProjetBlogKercode\Models\UserModel();

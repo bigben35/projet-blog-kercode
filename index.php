@@ -20,7 +20,7 @@ function errorHandler($errno, $errstr) {
         $whoops->writeToOutput(false);
         $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
         $html = $whoops->handleException($e);
-        echo $html;
+        require "app/Views/front/errorCatch.php";
     //  var_dump($e);die;   //a commenter en production
     }
   }
@@ -40,7 +40,7 @@ try{
 
         
         elseif($_GET['action'] == 'blog'){
-            $query = $_GET['query'];
+            $query = $_GET['query'] ?? ""; var_dump($_GET);die;
             $frontController->blog($query);
         }
 
@@ -125,7 +125,6 @@ try{
         elseif($_GET['action'] == 'error404'){
             throw new Exception("La page n'existe pas, error 404");
         }
-
 
 
 

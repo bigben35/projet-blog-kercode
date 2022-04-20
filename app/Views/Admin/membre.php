@@ -6,24 +6,24 @@ ob_start();
 ?>
 
 <section>
-
-    <div>
-        <h3><?= $oneUser['avatar'] ?></h3>
-    </div>
-
-    <div>
-        <h3><?= $oneUser['pseudo'] ?></h3>
-    </div>
-
-    <div>
-        <h3><?= $oneUser['mail'] ?></h3>
-    </div>
-
-    <div>
-        <h3><?= $oneUser['created_at'] ?></h3>
-    </div>
-
-
+    <table class="membre-table" border=1 frame=void rules=rows>
+        <thead>
+            <tr>
+                <th>Pseudo</th>
+                <th>Mail</th>
+                <th>Créé le</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><p><?= $oneUser['pseudo'] ?></p></td>
+            <td><p><?= $oneUser['mail'] ?></p></td>
+            <td><p><?= $oneUser['created_at'] ?></p></td>
+            </tr>
+        </tbody>
+    </table>
+    
 </section>
 
 

@@ -5,42 +5,42 @@ ob_start();
 ?>
 
 
-<h2>Bonjour <?= $_SESSION['pseudo'] ?>!</h2>
+<h1>Bonjour <?= $_SESSION['pseudo'] ?>!</h1>
 
 <section class="section-dashboard-admin container-admin">
     <a href="listeMembre" class="bloc-section-admin">
         <i class="fa-solid fa-users"></i>
         <div class="bloc-info-admin">
-            <h3>Utilisateurs</h3>
+            <h2>Utilisateurs</h2>
             <p class="count"><?php $user = $nbrUser->fetch() ?><?= $user[0] ?></p>
         </div>
     </a>
     <a href="listeArticle" class="bloc-section-admin">
         <i class="fa-solid fa-file"></i>
         <div class="bloc-info-admin">
-            <h3>Articles</h3>
+            <h2>Articles</h2>
             <p class="count"><?php $article = $nbrArticle->fetch() ?><?= $article[0] ?></p>
         </div>
     </a>
     <a href="listeCommentaire" class="bloc-section-admin">
         <i class="fa-solid fa-comment"></i>
         <div class="bloc-info-admin">
-            <h3>Commentaires</h3>
+            <h2>Commentaires</h2>
             <p class="count"><?php $comment = $nbrComment->fetch() ?><?= $comment[0] ?></p>
         </div>
     </a>
     <a href="listeMail" class="bloc-section-admin">
         <i class="fa-solid fa-envelope"></i>
         <div class="bloc-info-admin">
-            <h3>E-mail</h3>
+            <h2>E-mail</h2>
             <p class="count"><?php $mail = $nbrMail->fetch() ?><?= $mail[0] ?></p>
         </div>
     </a>
-    <div class="bloc-section-admin">
-        <a href="deconnexion"><i class="fa-solid fa-arrow-right-from-bracket"></i>
-            <h3>Se déconnecter</h3>
+    
+        <a href="deconnexion" class="bloc-section-admin"><i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <h2>Se déconnecter</h2>
         </a>
-    </div>
+    
 </section>
 
 <?php $content = ob_get_clean(); ?>
