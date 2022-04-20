@@ -145,7 +145,7 @@ class AdminController
         $image = $_FILES['url_image'];
 
         if($image['size'] > 0){
-            unlink("app/Public/images/".$imageActuelle);
+            realpath(unlink("app/Public/images/".$imageActuelle));
             $repertoire = "app/Public/images/";
             $imageAjoute = $this->ajoutImageArticle($image, $repertoire);
         } else {
