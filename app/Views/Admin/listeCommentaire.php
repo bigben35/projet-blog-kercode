@@ -14,7 +14,7 @@ ob_start();
             <th class="display-creation">Pseudo</th>
             <th class="display-creation">Posté le</th>
             <th class="display-creation">Article en question</th>
-            <th class="max-content">Commentaire</th>
+            <th>Commentaire</th>
             <th colspan="2">Actions</th>
         </tr>
     </thead>
@@ -24,7 +24,7 @@ ob_start();
         <td class="display-creation"><p><?= htmlspecialchars($allComment['pseudo']) ?></p></td>
         <td class="display-creation"><p><?= htmlspecialchars($allComment['created_at']) ?></p></td>
         <td class="display-creation"><p><?= htmlspecialchars($allComment['title']) ?></p></td>
-        <td><p><?= htmlspecialchars($allComment['commentaire']) ?></p></td>
+        <td><p class="max-content"><?= htmlspecialchars($allComment['commentaire']) ?></p></td>
         
         <td><a href="montrerComment&id=<?= $allComment['id'] ?>" class="btn-action-admin">Voir</a></td>
         <td>

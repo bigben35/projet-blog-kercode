@@ -68,7 +68,7 @@ ob_start();
 
                 <button class="btn-form" name="submit" type="submit">Créer un compte</button>
             </form>
-            <span>Vous avez déjà un compte? </span><a href="connexion">Login</a>
+            <span>Vous avez déjà un compte? </span><a class="login-user" href="connexion">Login</a>
         </div>
     </div>
 </section>

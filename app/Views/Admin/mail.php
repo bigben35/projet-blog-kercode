@@ -27,7 +27,7 @@ ob_start();
             <td><p><?= $oneMail['mail'] ?></p></td>
             <td class="display-creation"><p><?= $oneMail['phone'] ?></p></td>
             <td class="display-creation"><p><?= $oneMail['objet'] ?></p></td>
-            <td><p><?= $oneMail['msg'] ?></p></td>
+            <td><p class="max-content"><?= $oneMail['msg'] ?></p></td>
             </tr>
         </tbody>
     </table>
