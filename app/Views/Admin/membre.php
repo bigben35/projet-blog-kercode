@@ -5,13 +5,15 @@ $description = "Page montrant un membre inscrit sur le Blog 'Islande en tête'";
 ob_start();
 ?>
 
-<section>
-    <table class="membre-table" border=1 frame=void rules=rows>
+<section class="section-article-admin">
+<h1>Membre :</h1>
+<div class="centrer-tableau">
+    <table class="page-list-admin">
         <thead>
             <tr>
                 <th>Pseudo</th>
                 <th>Mail</th>
-                <th>Créé le</th>
+                <th class="display-creation">Créé le</th>
                 
             </tr>
         </thead>
@@ -19,11 +21,11 @@ ob_start();
             <tr>
             <td><p><?= $oneUser['pseudo'] ?></p></td>
             <td><p><?= $oneUser['mail'] ?></p></td>
-            <td><p><?= $oneUser['created_at'] ?></p></td>
+            <td class="display-creation"><p><?= $oneUser['created_at'] ?></p></td>
             </tr>
         </tbody>
     </table>
-    
+</div>
 </section>
 
 

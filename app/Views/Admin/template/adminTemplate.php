@@ -49,7 +49,7 @@
                         <h3>Commentaire</h3>
                         <ul>
                             <li><a href="listeCommentaire">Commentaire reçu</a></li>
-                            <li><a href="">Commentaire à "valider</a></li>
+                            <li><a href="#">Commentaire à "valider</a></li>
 
                         </ul>
                     </div>
@@ -60,7 +60,7 @@
                         <h3>E-mail</h3>
                         <ul>
                             <li><a href="listeMail">E-mail reçu</a></li>
-                            <li><a href="">E-mail à lire</a></li>
+                            <li><a href="#">E-mail à lire</a></li>
 
                         </ul>
                     </div>

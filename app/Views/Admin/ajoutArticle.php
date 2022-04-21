@@ -1,12 +1,12 @@
 <?php
 $title = "Page ajout d'un article";
-$description = "";
+$description = "Page ajout d'un article";
 ob_start();
 ?>
 
 
 
-<section>
+<section class="section-article-admin">
     <h1>Ajouter un Article :</h1>
 <form action="validerAjoutArticle" method="POST" enctype="multipart/form-data">
         

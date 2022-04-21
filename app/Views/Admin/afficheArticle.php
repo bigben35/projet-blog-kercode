@@ -4,7 +4,7 @@ $title = $article->getTitle();
 ob_start(); 
 ?>
 
-<section>
+<section class="section-article-admin">
 <h1>affiche article en fonction de son id</h1>
 <div>
     <div>

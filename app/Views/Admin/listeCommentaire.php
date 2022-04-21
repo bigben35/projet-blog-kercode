@@ -4,24 +4,26 @@ $title = "Page listant les commentaires du Blog 'Islande en tête'";
 $description = "Page listant les commentaires du Blog 'Islande en tête'";
 ob_start();
 ?>
-<h1>liste des commentaires :</h1>
 
-<table border=1 frame=void rules=rows>
+<section class="section-article-admin">
+<h1>liste des commentaires :</h1>
+<div class="centrer-tableau">
+<table class="page-list-admin">
     <thead>
         <tr>
-            <th>Posté le</th>
-            <th>Pseudo</th>
-            <th>Article en question</th>
-            <th>Commentaire</th>
+            <th class="display-creation">Pseudo</th>
+            <th class="display-creation">Posté le</th>
+            <th class="display-creation">Article en question</th>
+            <th class="max-content">Commentaire</th>
             <th colspan="2">Actions</th>
         </tr>
     </thead>
     <tbody>
     <?php foreach ($allComments as $allComment) :?>
     <tr>
-        <td><p><?= htmlspecialchars($allComment['created_at']) ?></p></td>
-        <td><p><?= htmlspecialchars($allComment['pseudo']) ?></p></td>
-        <td><p><?= htmlspecialchars($allComment['title']) ?></p></td>
+        <td class="display-creation"><p><?= htmlspecialchars($allComment['pseudo']) ?></p></td>
+        <td class="display-creation"><p><?= htmlspecialchars($allComment['created_at']) ?></p></td>
+        <td class="display-creation"><p><?= htmlspecialchars($allComment['title']) ?></p></td>
         <td><p><?= htmlspecialchars($allComment['commentaire']) ?></p></td>
         
         <td><a href="montrerComment&id=<?= $allComment['id'] ?>" class="btn-action-admin">Voir</a></td>
@@ -32,6 +34,7 @@ ob_start();
     <?php endforeach; ?>
     </tbody>
 </table>
-
+</div>
+</section>
 <?php $content = ob_get_clean(); ?>
 <?php require 'template/adminTemplate.php'; 

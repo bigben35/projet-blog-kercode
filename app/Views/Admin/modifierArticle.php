@@ -3,6 +3,8 @@ $title = "Page de modification article";
 ob_start(); 
 ?>
 
+<section class="section-article-admin">
+    <h1>Modifier un Article :</h1>
 <form method="POST" action="validerModifArticle" enctype="multipart/form-data">
     <div class="bloc-form">
         <label for="title">Titre : </label>
@@ -17,7 +19,7 @@ ob_start();
         <textarea name="content" id="content" cols="30" rows="10"></textarea>
     </div>
     <h3>Image actuelle : </h3>
-    <img src="<?= $article->getUrlImage(); ?>">
+    <img src="<?= $article->getUrlImage(); ?>" class="img-modif-article">
     <div class="bloc-form">
         <label for="url_image">Changer l'image : </label>
         <input type="file" id="url_image" name="url_image">
@@ -30,6 +32,7 @@ ob_start();
     
     <button type="submit" class="btn-form">Valider</button>
 </form>
+</section>
 
 <?php
 $content = ob_get_clean();

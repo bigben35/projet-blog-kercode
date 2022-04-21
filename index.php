@@ -8,10 +8,10 @@ $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 // GESTION DES ERREURS 
-function errorHandler($errno, $errstr) {
-    throw new Exception($errstr, $errno);
-  }
-  set_error_handler('errorHandler');
+// function errorHandler($errno, $errstr) {
+//     throw new Exception($errstr, $errno);
+//   }
+//   set_error_handler('errorHandler');
   
   function eCatcher($e) {
     if($_ENV["APP_ENV"] == "development") {

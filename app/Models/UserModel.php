@@ -8,7 +8,6 @@ class UserModel extends Manager
     {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('INSERT INTO user (pseudo, mail, password, created_at )  VALUES (:pseudo, :mail, :password, :created_at)');
-        var_dump($req);
         $req->execute([
             "pseudo" => htmlspecialchars($pseudo),
             "mail" => htmlspecialchars($mail),
