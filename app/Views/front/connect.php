@@ -1,10 +1,10 @@
 <?php
 $title = "Page de Connexion";
-$description = "";
+$description = "Page de Connexion";
 ob_start();
 ?>
 
-<section class="bloc-create-user">
+<section class="bloc-connect-user">
 <div class="form-container">
     <h1>Login</h1>
     <img src="app/Public/images/iconLogin.webp" alt="icône de l'utilisateur">
@@ -12,6 +12,21 @@ ob_start();
 <div class="main-bloc-form">
     <form action="connectUser" method="POST">
         
+ <!-- bloc confirmation || erreur  -->
+ <?php if (isset($erreur)): 
+                    if ($erreur) :
+                        foreach($erreur as $e):
+             ?>
+                <div class="message-erreur"><?= $e ?></div>
+                <?php 
+                // var_dump($e);die;
+                ?>
+                <?php 
+            endforeach;
+            endif;
+        endif;
+            ?>
+
         <div class="bloc-form">
             <label for="mail">Email</label>
             <input type="email" id="mail" name="mail" placeholder="Votre e-mail" required>

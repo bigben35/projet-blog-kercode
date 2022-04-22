@@ -42,7 +42,7 @@ class UserModel extends Manager
     }
 
 
-    public function recupPassword($mail, $password)
+    public function recupPassword($mail)
     {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('SELECT * FROM user WHERE mail = ?');
@@ -72,7 +72,7 @@ class UserModel extends Manager
     public function getLastArticles()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->query("SELECT title, url_image, alt_image, content, created_at FROM article ORDER BY id DESC LIMIT 4");
+        $req = $bdd->query("SELECT id, title, url_image, alt_image, accroche, created_at FROM article ORDER BY id DESC LIMIT 4");
         return $req->fetchAll();
     }
 

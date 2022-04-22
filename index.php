@@ -13,8 +13,8 @@ $dotenv->load();
 //   }
 //   set_error_handler('errorHandler');
   
-  function eCatcher($e) {
-    if($_ENV["APP_ENV"] == "development") {
+function eCatcher($e) {
+    if($_ENV["APP_ENV"] == "") {
         $whoops = new \Whoops\Run;
         $whoops->allowQuit(false);
         $whoops->writeToOutput(false);
@@ -24,6 +24,14 @@ $dotenv->load();
     //  var_dump($e);die;   //a commenter en production
     }
   }
+
+function restrictedAccess()
+{
+    if(empty($_SESSION))
+    {
+        throw new Exception("Vous n'avez pas l'accès", 401);
+    }
+}
 
 
 try{
@@ -40,7 +48,7 @@ try{
 
         
         elseif($_GET['action'] == 'blog'){
-            $query = $_GET['query'] ?? ""; var_dump($_GET);die;
+            $query = $_GET['query'] ?? ""; //var_dump($_GET);die;
             $frontController->blog($query);
         }
 
@@ -72,10 +80,14 @@ try{
             
         }
         
+
+        // aller page connect.php 
         elseif($_GET['action'] == 'connexion'){
             $frontController->connect();
         }
 
+
+        // aller page deconnexion 
         elseif($_GET['action'] == 'deconnexion'){
             $frontController->deconnexion();
         }
@@ -83,8 +95,9 @@ try{
         // // connexion utilisateur 
         elseif ($_GET['action'] == 'connectUser'){
             $mail = htmlspecialchars($_POST['mail']);
-            $password = $_POST['password'];
+            $password = htmlspecialchars($_POST['password']);
             if (!empty($mail) && !empty($password)){
+                // restrictedAccess();
                 $frontController->connexion($mail, $password); //on passe les 2 paramètres
             } else {
                 throw new Exception("Veuillez renseigner vos identifiants pour vous connecter à votre session");
@@ -95,7 +108,7 @@ try{
 
         elseif($_GET['action'] == 'dashboardUser'){
             if(isset($_SESSION['id']) && (isset($_SESSION['role']) && ($_SESSION['role'] == "0"))){
-
+                // restrictedAccess();
                 $frontController->dashboardUser();
             }
             else {

@@ -141,22 +141,6 @@ class FrontController
     }
 
     }
-
-    // connexion à la page de connexion
-    function connexionUser()
-    {
-        if($_SESSION['role'] === "0"){
-        require 'app/Views/front/dashboardUser.php';
-
-        }
-        else{
-        require 'app/Views/front/errorLoading';
-
-        }
-
-        // require 'app/Views/front/connect.php';
-    }
-
     
 
     // connexion au tableau de bord après comparaison du mdp
@@ -165,7 +149,7 @@ class FrontController
     // récupère le password
     {
         $userManager = new \ProjetBlogKercode\Models\UserModel();
-        $connectUser = $userManager->recupPassword($mail, $password);
+        $connectUser = $userManager->recupPassword($mail);
 
         $result = $connectUser->fetch();
         $isPasswordOk = password_verify($password, $result['password']);
@@ -187,6 +171,7 @@ class FrontController
         }
         else {
             echo 'Un problème avec vos identifiants?';
+            // header('Location: connexion');
             
         }
         

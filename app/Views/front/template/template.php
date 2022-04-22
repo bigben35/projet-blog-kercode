@@ -21,7 +21,7 @@
                 <!-- <div class="search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div> -->
-                <div class="blog-title">Islande en Tête</div>
+                <a href="home" class="blog-title">Islande en Tête</a>
                 <!-- MENU BURGER  -->
                 <a href="static_menu" id="btn-burger">
                     <span class="bar"></span>
