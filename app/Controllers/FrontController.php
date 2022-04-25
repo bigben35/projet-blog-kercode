@@ -148,29 +148,39 @@ class FrontController
     function connexion($mail, $password)
     // récupère le password
     {
+        extract($_POST);
+
         $userManager = new \ProjetBlogKercode\Models\UserModel();
-        $connectUser = $userManager->recupPassword($mail);
+        $connectUser = $userManager->recupPassword($mail, $password);
 
         $result = $connectUser->fetch();
         $isPasswordOk = password_verify($password, $result['password']);
 
+        $erreur = "Les identifiants sont erronés !";
+
+        
         // Les sessions permettent de conserver des variables sur toutes les pages de votre site même lorsque la page PHP a fini d'être générée.  
         $_SESSION['mail'] = $result['mail']; // transformation des variables recupérées en session
         $_SESSION['password'] = $result['password'];
         $_SESSION['id'] = $result['id'];
         $_SESSION['pseudo'] = $result['pseudo'];
-        $_SESSION['role'] = $result['role'];
+        
 
 
-        if($isPasswordOk && ($_SESSION['role'] === "0")){
-            
+        if($isPasswordOk){
+            $_SESSION['role'] = $result['role'];
+            if($result['role'] == 0){
             header("Location: dashboardUser");
+            }
+            else{
+                header('Location: dashboard');
         }
-        elseif($isPasswordOk && ($_SESSION['role'] === "1")){
-            header('Location: dashboard');
         }
+    
         else {
-            echo 'Un problème avec vos identifiants?';
+            // session_destroy();
+            require "app/Views/front/connect.php";
+            return $erreur;
             // header('Location: connexion');
             
         }

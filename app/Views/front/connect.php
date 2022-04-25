@@ -15,14 +15,12 @@ ob_start();
  <!-- bloc confirmation || erreur  -->
  <?php if (isset($erreur)): 
                     if ($erreur) :
-                        foreach($erreur as $e):
+                    
              ?>
-                <div class="message-erreur"><?= $e ?></div>
+                <div class="message-erreur"><?= $erreur ?></div>
+                
                 <?php 
-                // var_dump($e);die;
-                ?>
-                <?php 
-            endforeach;
+            
             endif;
         endif;
             ?>

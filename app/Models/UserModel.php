@@ -17,26 +17,28 @@ class UserModel extends Manager
         return $req;
     }
 
-    function existe_pseudo($pseudo){
+ 
+
+    public function existe_pseudo($pseudo){
         
         $bdd = $this->dbConnect();
-        $req = $bdd ->prepare("SELECT COUNT(*) FROM user WHERE pseudo=?");
+        $req = $bdd->prepare("SELECT COUNT(*) FROM user WHERE pseudo=?");
     
         $req ->execute([$pseudo]);
     
-        $resultat = $req ->fetch()[0];
+        $resultat = $req->fetch()[0];
     
         return $resultat;
     }
     
-    function existe_mail($mail){
+    public function existe_mail($mail){
         
         $bdd = $this->dbConnect();
-        $req = $bdd ->prepare("SELECT COUNT(*) FROM user WHERE mail=?");
+        $req = $bdd->prepare("SELECT COUNT(*) FROM user WHERE mail=?");
     
-        $req ->execute([$mail]);
+        $req->execute([$mail]);
     
-        $resultat = $req ->fetch()[0];
+        $resultat = $req->fetch()[0];
     
         return $resultat;
     }
@@ -45,8 +47,8 @@ class UserModel extends Manager
     public function recupPassword($mail)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT * FROM user WHERE mail = ?');
-        $req->execute(array($mail));
+        $req = $bdd->prepare('SELECT * FROM user WHERE mail =:mail');
+        $req->execute(array(':mail' => $mail));
 
         return $req;
     }
