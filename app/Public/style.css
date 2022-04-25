@@ -30,6 +30,7 @@ body{
     position: relative;
     background-color: #e3f4ff;
 }
+
 h1{
     font-size: 1.5rem;
     margin: 2rem 0;
@@ -46,7 +47,14 @@ li{
 header{
     width: 100%;
     background-color: var(--mainColor);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
     
+}
+#main-dashboard-user{
+    margin-top: 100px;
 }
 .container{
     max-width: 1200px;
@@ -488,20 +496,18 @@ footer{
     background-color: var(--mainLightColor);
 }
 .sub-nav li a {
-     color: white;
-     text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
 #main-dashboard-admin{
-      padding-left: 60px;
+    padding-left: 60px;
 }
 #main-dashboard-admin h1{
-      text-align: center;
-      font-size: 1.1rem;
-      padding: 5px;
-      font-style: italic;
-      /* border-bottom: 1px solid #222; */
-      background-color: white;
-        color: black;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 5px;
+    font-style: italic;
+    color: black;
 }
 .container-admin{
     max-width: 600px;

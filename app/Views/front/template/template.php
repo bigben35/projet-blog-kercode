@@ -63,7 +63,7 @@
     </header>
 
     <!-- CONTENU DE LA PAGE  -->
-    <main>
+    <main id="main-dashboard-user">
         <div class="container">
             <?= $content ?>
         </div>
