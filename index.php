@@ -40,7 +40,7 @@ try{
 
         
         elseif($_GET['action'] == 'blog'){
-            $query = $_GET['query'] ?? ""; //var_dump($_GET);die;
+            $query = $_POST['query'] ?? ""; //var_dump($_POST);die;
             $frontController->blog($query);
         }
 

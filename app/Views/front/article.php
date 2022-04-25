@@ -6,17 +6,17 @@ ob_start();
 
 
 <section class="article">
-<article>
+<article class="single-article">
+    <h1>Titre : <?= $article['title']; ?></h1>
     <div>
         <img src="<?= $article['url_image']; ?>" alt="<?= $article['alt_image']; ?>" >
     </div>
-    <div>
-        <p>Titre : <?= $article['title']; ?></p>
-        <p>Contenu : <?= $article['content']; ?></p>
-        <p>Créé le : <?= $article['created_at']; ?></p>
+    <div class="paragraphe-article">
+        <p><strong>Contenu : </strong><?= $article['content']; ?></p>
+        <p><strong>Créé le : </strong><?= $article['created_at']; ?></p>
     </div>
 </article>
-<a href="blog">Retour au blog</a>
+<a href="blog" class="btn-form">Retour au blog</a>
 </section>
 <section class="commentaire">
     <div>
@@ -26,9 +26,9 @@ ob_start();
     <?php
         foreach($commentaires as $commentaire) : ?>
         <div>
-            <p>Posté par <?= $commentaire['pseudo'] ?> le <time datetime="<? $commentaire['created_at']; ?>"><?= $commentaire['created_at']; ?></time> :</p>
+            <p><strong> Posté par <?= $commentaire['pseudo'] ?> le <time datetime="<? $commentaire['created_at']; ?>"><?= $commentaire['created_at']; ?></time> :</strong></p>
             
-            <p><?= $commentaire['commentaire'] ?></p>
+            <p class="p-commentaire"><?= $commentaire['commentaire'] ?></p>
         </div>
     <?php endforeach;
 

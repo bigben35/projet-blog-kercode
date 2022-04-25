@@ -33,7 +33,7 @@ class FrontController
         
         $searchArticle = new \ProjetBlogKercode\Models\UserModel();
         $search = $searchArticle->rechercheArticle($query);
-
+        // var_dump($search);die;
         require "app/Views/front/blog.php";
     }
 

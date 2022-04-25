@@ -91,7 +91,7 @@ class UserModel extends Manager
     {
         $bdd = $this->dbConnect();
         // $query = htmlspecialchars($_GET['query']);
-        $req = $bdd->prepare("SELECT id, title, accroche, url_image, created_at FROM article WHERE title LIKE :query OR content LIKE :query");
+        $req = $bdd->prepare("SELECT id, title, accroche, url_image, alt_image, created_at FROM article WHERE title LIKE :query OR content LIKE :query ORDER BY id DESC LIMIT 6");
 
         $req->execute([':query' => '%'.$query.'%']);
         // var_dump($query);die;

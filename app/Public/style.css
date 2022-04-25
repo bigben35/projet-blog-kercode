@@ -277,7 +277,7 @@ footer{
 }
 .article-image{
     overflow: hidden;
-    height: 200px;
+    /* height: 200px; */
 }
 .article-image img{
     max-width: 100%;
@@ -317,18 +317,51 @@ footer{
 
 
 /* -----------------------PAGE BLOG----------------------------  */
+.bar-search{
+    text-align: center;
+}
+.bar-search input{
+    height: 30px;
+    margin-right: 10px;
+}
+
 .date-article {
     font-style: italic;
     padding: 10px
 }
 #bloc-articles{
-    margin-bottom: 2rem;
+    margin: 1rem 2rem 2rem;
 }
 #bloc-articles a{
     display: block;
     margin: 1rem auto 2rem;
 }
 
+
+/* -------------PAGE ARTICLE---------------  */
+.article{
+    margin: 0 1rem;
+}
+.single-article img{
+    width: 100%;
+    border-radius: 10px;
+}
+.paragraphe-article{
+    margin: 1rem 0;
+}
+.paragraphe-article p:nth-child(1){
+    margin-bottom: 2rem;
+}
+.commentaire{
+    min-height: 180px;
+    margin: 0 1rem 2rem;
+}
+.commentaire h1{
+    text-align: start;
+}
+.p-commentaire{
+    padding: 5px 0 25px;
+}
 
 /* ----------------------PAGE METEO  ---------------------*/
 .form-container{
