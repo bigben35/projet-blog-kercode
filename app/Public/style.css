@@ -324,13 +324,14 @@ footer{
     height: 30px;
     margin-right: 10px;
 }
-
+.content-article{
+    padding: 10px;
+}
 .date-article {
     font-style: italic;
-    padding: 10px
 }
 #bloc-articles{
-    margin: 1rem 2rem 2rem;
+    margin: 1rem 1.5rem 2rem;
 }
 #bloc-articles a{
     display: block;
@@ -340,7 +341,7 @@ footer{
 
 /* -------------PAGE ARTICLE---------------  */
 .article{
-    margin: 0 1rem;
+    margin: 0 1.5rem;
 }
 .single-article img{
     width: 100%;
@@ -353,7 +354,7 @@ footer{
     margin-bottom: 2rem;
 }
 .commentaire{
-    min-height: 180px;
+    min-height: 150px;
     margin: 0 1rem 2rem;
 }
 .commentaire h1{
@@ -665,7 +666,7 @@ footer{
     background-color: var(--mainLightColor);
 }
 .main-bloc-form a{
-    color: var(--mainLightColor);
+    color: var(--mainColor);
 }
 textarea{
     height: 100px;
@@ -801,6 +802,21 @@ form{
         width: 40%;
     }
     
+
+    /* -------------PAGE ARTICLE---------------  */
+    .single-article img{
+        width: 75%;
+        display: block;
+        margin: 0 auto;
+    }
+    .paragraphe-article{
+        width: 75%;
+        margin: 1rem auto;
+    }
+    .commentaire{
+        width: 75%;
+        margin: 0 auto;
+    }
     
     /* PAGE METEO  */
     .bloc-app-meteo{

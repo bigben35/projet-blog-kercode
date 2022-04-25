@@ -1,3 +1,5 @@
+// ---------------PAGE HOME ----------------------
+
 //  ANIMATION MENU BURGER
 const btnBurger = document.getElementById('btn-burger');
 const navbarLinks = document.querySelector('.navbar-links');
@@ -20,8 +22,19 @@ for (let i = 0; i < menuActive.length; i++) {
     };
     
 
+    // ----------------PAGE CONTACT ----------------
 
-// ---------------PAGE HOME ----------------------
+    let button = document.querySelector('.send-msg');
+    // console.log(button);
+    let checkbox = document.getElementById('autorisation');
+    // console.log(checkbox);
+
+    checkbox.addEventListener('click', () => {
+    button.classList.toggle('activeBtn');
+    
+    // button.classList.remove('send-msg:hover');
+})
+
 
 // ANIMATION SLIDER 
 // let imgSlider = document.getElementsByClassName('imgSlider');

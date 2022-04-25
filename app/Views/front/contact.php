@@ -40,6 +40,8 @@ ob_start(); ?>
             </div>
 
             <button class="btn-form send-contact" type="submit" name="btn-submit">Envoyer</button>
+            <div id="notification">Votre message a bien été envoyé !</div>
+            <p class="asterix">* Champs obligatoires</p>
         </form>
     </div>
 </div>

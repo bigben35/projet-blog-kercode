@@ -81,7 +81,7 @@
                     <li><a href="#" title="snapchat"><i class="fa-brands fa-snapchat-square"></i></a></li>
                 </ul>
             </div>
-            <p class="copyright">Copyright &copy; <?= date("Y"); ?> - Islande en Tête - <a href="mentionsLegales" target="_blank">Mentions Légales</a> .</p>
+            <p class="copyright">Copyright &copy; <?= date("Y"); ?> - Islande en Tête - <a href="mentionsLegales" target="_blank">Mentions Légales</a></p>
         </div>
         </footer>
         

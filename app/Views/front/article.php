@@ -16,13 +16,12 @@ ob_start();
         <p><strong>Créé le : </strong><?= $article['created_at']; ?></p>
     </div>
 </article>
-<a href="blog" class="btn-form">Retour au blog</a>
 </section>
 <section class="commentaire">
     <div>
         <h1>Commentaires (<?= $nb_commentaires ?>)</h1>
     </div>
-
+    
     <?php
         foreach($commentaires as $commentaire) : ?>
         <div>
@@ -62,11 +61,12 @@ ob_start();
             </div>
         
 
-<?php
+            <?php
 endif;
 ?>
 </section>
 
+<a href="blog" class="btn-form">Retour au blog</a>
 
 <?php
 $content = ob_get_clean();
