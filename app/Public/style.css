@@ -71,6 +71,41 @@ footer{
     /* bottom: 0; */
     
 }
+
+/* bouton remonter haut de page  */
+.btn-arrow {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 5px 4px 2px rgba(0, 0, 0, 0.43);
+    color: #333;
+    opacity: 0;
+  }
+  .btn-arrow i {
+    font-size: 1.4rem;
+}
+.btn-arrow:hover{
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    transition:all ease-in 0.2s;
+}
+.btn-arrow.invisible{
+    bottom: -35px;
+    opacity: 0;
+    transition:all ease-in 0.5s;
+}
+.btn-arrow.visible{
+    bottom: 20px;
+    opacity: 1;
+}
 .icons{
     display: flex;
     justify-content: center;
@@ -659,12 +694,30 @@ footer{
     font-size: 0.9rem;
     display: block;
 }
-.send-contact{
-    font-size: 1rem;
-}
 .btn-form:hover{
     background-color: var(--mainLightColor);
 }
+.send-contact{
+    padding: 0.8rem 2rem;
+    background-color: grey;
+    color: white;
+    border: none;
+    font-weight: 600;
+    border-radius: 50px;
+    margin: 3rem auto 1.5rem;
+    text-align: center;
+    width: 67%;
+    cursor: pointer;
+    font-size: 1rem;
+    display: block;
+    transition: all 0.5s ease-in-out;
+}
+.send-contact:hover{
+    transform: scale(1.05);
+}
+.activeBtn{
+    background-color: var(--mainColor);
+  }
 .main-bloc-form a{
     color: var(--mainColor);
 }

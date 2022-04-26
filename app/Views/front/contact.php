@@ -39,8 +39,7 @@ ob_start(); ?>
                 <label for="autorisation">&nbsp; En soumettant ce formulaire, j'autorise ce site à conserver mes données personnelles. Aucune exploitation commerciale ne sera faite des données conservées.</label>
             </div>
 
-            <button class="btn-form send-contact" type="submit" name="btn-submit">Envoyer</button>
-            <div id="notification">Votre message a bien été envoyé !</div>
+            <button class="send-contact" type="submit" name="btn-submit">Envoyer</button>
             <p class="asterix">* Champs obligatoires</p>
         </form>
     </div>

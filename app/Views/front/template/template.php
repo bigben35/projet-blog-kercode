@@ -72,6 +72,9 @@
     <!-- FOOTER  -->
     <footer>
         <div class="container">
+        <div class="btn-arrow">
+            <i class="fas fa-arrow-up"></i>
+        </div>
 
             <div id="reseaux">
                 <ul class="icons">

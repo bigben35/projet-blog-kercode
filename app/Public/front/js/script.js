@@ -22,62 +22,41 @@ for (let i = 0; i < menuActive.length; i++) {
     };
     
 
-    // ----------------PAGE CONTACT ----------------
 
-    let button = document.querySelector('.send-msg');
-    // console.log(button);
+// ----------------BOUTON FLECHE POUR REMONTER EN HAUT DE LA PAGE / PRESENT DANS FOOTER-----------------
+
+const btnArrow = document.querySelector('.btn-arrow');
+const btnVisibility = () => {
+    if (window.scrollY > 200) {
+        btnArrow.classList.add('visible');
+    } else {
+        btnArrow.classList.remove('visible');
+    }
+};
+window.addEventListener('scroll', () => {
+   btnVisibility();
+})
+
+
+// console.log(btnArrow);
+btnArrow.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        left:0,
+        behavior: 'smooth'
+    })
+});
+
+
+
+    // ----------------PAGE CONTACT ----------------
+    // ANIMATION BOUTON ENVOYER     
+
+    let button = document.querySelector('.send-contact');
     let checkbox = document.getElementById('autorisation');
-    // console.log(checkbox);
 
     checkbox.addEventListener('click', () => {
     button.classList.toggle('activeBtn');
     
-    // button.classList.remove('send-msg:hover');
 })
-
-
-// ANIMATION SLIDER 
-// let imgSlider = document.getElementsByClassName('imgSlider');
-
-// let step = 0;
-// let imgNumber = imgSlider.length;
-
-// let precedent = document.querySelector('.precedent');
-// let suivant = document.querySelector('.suivant');
-
-// function enleverImageActive(){
-//     for (let i = 0; i < imgNumber; i++) {
-//         imgSlider[i].classList.remove('active'); 
-//     }
-// }
-
-// bouton suivant 
-// suivant.addEventListener('click', () => {
-//     step++;
-//     if(step >= imgNumber){
-//         step = 0;
-//     }
-//     enleverImageActive();
-//     imgSlider[step].classList.add('active');
-// })
-
-// // bouton precedent 
-// precedent.addEventListener('click', () => {
-//     step--;
-//     if (step < 0) {
-//         step = imgNumber - 1;
-//     }
-//     enleverImageActive();
-//     imgSlider[step].classList.add('active');
-// })
-
-// défilement slider 
-// setInterval( () => {
-//     step++;
-//     if(step >= imgNumber){
-//         step = 0;
-//     }
-//     enleverImageActive();
-//     imgSlider[step].classList.add('active');
-// }, 3000)
 
