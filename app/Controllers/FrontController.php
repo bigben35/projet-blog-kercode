@@ -107,9 +107,7 @@ class FrontController
     function createUser($pseudo, $mail, $password)
     {
         extract($_POST);
-
         $userManager = new \ProjetBlogKercode\Models\UserModel();
-        
         $validation = true;
         $erreur = [];
 
@@ -149,13 +147,12 @@ class FrontController
         require 'app/Views/front/connect.php';
 
     } else {
-        // var_dump($erreur);die;
+        
         // throw new \Exception("Il y a une erreur de connexion !");
         require "app/Views/front/createUser.php";
         return $erreur;
-    }
-
-    }
+    } 
+}
     
 
     // connexion au tableau de bord après comparaison du mdp
@@ -163,19 +160,14 @@ class FrontController
     function connexion($mail, $password)
     // récupère le password
     {
-        // extract($_POST);
-
+        extract($_POST);
         $userManager = new \ProjetBlogKercode\Models\UserModel();
         $connectUser = $userManager->recupPassword($mail, $password);
-
         $result = $connectUser->fetch();
-        
         $erreur = "Les identifiants sont erronés !";
         
         
         // Les sessions permettent de conserver des variables sur toutes les pages de votre site même lorsque la page PHP a fini d'être générée.  
-        
-        
         if(!empty($result)) {   
             $isPasswordOk = password_verify($password, $result['password']);
             if($isPasswordOk){
@@ -191,11 +183,8 @@ class FrontController
                     header('Location: dashboard');
             }
         } else {
-            // session_destroy();
             $erreur;
             require "app/Views/front/connect.php";
-            // header('Location: connexion');
-            
         }
         
     }else {
