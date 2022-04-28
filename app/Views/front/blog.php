@@ -68,7 +68,7 @@ if(isset($_GET['blog']) && !empty($_GET['blog'])){
                 <ul class="pagination">
                     <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
                     <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
-                        <a href="blog&page=<?= $currentPage - 1 ?>" class="page-link">Précédente</a>
+                        <a href="blog&page=<?= htmlspecialchars($currentPage - 1) ?>" class="page-link">Précédente</a>
                     </li>
                     <?php for($page = 1; $page <= $pages; $page++): ?>
                       <!-- Lien vers chacune des pages (activé si on se trouve sur la page correspondante) -->
