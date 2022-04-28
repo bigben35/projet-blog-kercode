@@ -78,7 +78,7 @@ if(isset($_GET['blog']) && !empty($_GET['blog'])){
                     <?php endfor ?>
                       <!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->
                       <li class="page-item <?= ($currentPage == $pages) ? "disabled" : "" ?>">
-                        <a href="blog&page=<?= $currentPage + 1 ?>" class="page-link">Suivante</a>
+                        <a href="blog&page=<?= htmlspecialchars($currentPage + 1) ?>" class="page-link">Suivante</a>
                     </li>
                 </ul>
             </nav>
