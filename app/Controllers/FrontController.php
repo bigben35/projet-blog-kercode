@@ -106,7 +106,7 @@ class FrontController
     //création de l'utilisateur
     function createUser($pseudo, $mail, $password)
     {
-        // extract($_POST);
+        extract($_POST);
 
         $userManager = new \ProjetBlogKercode\Models\UserModel();
         
