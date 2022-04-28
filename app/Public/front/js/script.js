@@ -27,7 +27,7 @@ for (let i = 0; i < menuActive.length; i++) {
 
 const btnArrow = document.querySelector('.btn-arrow');
 const btnVisibility = () => {
-    if (window.scrollY > 200) {
+    if (window.scrollY > 700) {
         btnArrow.classList.add('visible');
     } else {
         btnArrow.classList.remove('visible');
@@ -38,7 +38,6 @@ window.addEventListener('scroll', () => {
 })
 
 
-// console.log(btnArrow);
 btnArrow.addEventListener('click', () => {
     window.scrollTo({
         top: 0,

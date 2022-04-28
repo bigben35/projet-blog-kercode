@@ -40,8 +40,18 @@ try{
 
         
         elseif($_GET['action'] == 'blog'){
-            $query = $_POST['query'] ?? ""; //var_dump($_POST);die;
-            $frontController->blog($query);
+            $query = $_POST['query'] ?? "";
+            if (isset($_GET['page']) && !empty($_GET['page'])) {
+
+                $currentPage = (int) strip_tags($_GET['page']);
+
+            } else {
+
+                $currentPage = 1;
+
+            }
+
+            $frontController->blog($query, $currentPage);
         }
 
         elseif($_GET['action'] == 'article'){
@@ -89,7 +99,7 @@ try{
        
             $mail = htmlspecialchars($_POST['mail']);
             $password = $_POST['password'];
-            if (!empty($mail) && !empty($password)){
+            if (!empty($mail) && filter_var($mail, FILTER_VALIDATE_EMAIL) && !empty($password)){
                
                 $frontController->connexion($mail, $password); //on passe les 2 paramètres
             } else {
@@ -252,8 +262,6 @@ try{
 }
 
 } catch(Exception $e){
-    // $title = "Page d'erreur";
-    // $description = "Page de gestion d'erreurs";
     eCatcher($e);
     if($e->getCode() === 404){
         require "app/Views/front/errorLoading.php";

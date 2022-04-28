@@ -23,12 +23,27 @@ class FrontController
     }
 
     
-    function blog($query)
+    function blog($query, $currentPage)
     {
         // récupérer tous les articles 
-        $getArticles = new \ProjetBlogKercode\Models\UserModel();
-        $articles = $getArticles->allArticles();
+        // $getArticles = new \ProjetBlogKercode\Models\UserModel();
+        // $articles = $getArticles->allArticles();
 
+        // compter le nb d'article 
+        $countArticles = new \ProjetBlogKercode\Models\UserModel();
+        $nbarticles = $countArticles->countArticles();
+        // var_dump($nbarticles);die;
+        // nb article par page 
+        $parPage = 8;
+
+        // calcul nb pages total 
+        $pages = ceil($nbarticles / $parPage);
+        
+
+        $premierArticle = ($currentPage * $parPage) - $parPage;
+        $articlePage = new \ProjetBlogKercode\Models\UserModel();
+        $articles = $articlePage->articlePage($premierArticle, $parPage);
+        
         //barre de recherche
         
         $searchArticle = new \ProjetBlogKercode\Models\UserModel();
@@ -154,38 +169,40 @@ class FrontController
         $connectUser = $userManager->recupPassword($mail, $password);
 
         $result = $connectUser->fetch();
-        $isPasswordOk = password_verify($password, $result['password']);
-
+        
         $erreur = "Les identifiants sont erronés !";
-
+        
         
         // Les sessions permettent de conserver des variables sur toutes les pages de votre site même lorsque la page PHP a fini d'être générée.  
-        $_SESSION['mail'] = $result['mail']; // transformation des variables recupérées en session
-        $_SESSION['password'] = $result['password'];
-        $_SESSION['id'] = $result['id'];
-        $_SESSION['pseudo'] = $result['pseudo'];
         
-
-
-        if($isPasswordOk){
-            $_SESSION['role'] = $result['role'];
-            if($result['role'] == 0){
-            header("Location: dashboardUser");
+        
+        if(!empty($result)) {   
+            $isPasswordOk = password_verify($password, $result['password']);
+            if($isPasswordOk){
+                $_SESSION['mail'] = $result['mail']; // transformation des variables recupérées en session
+                $_SESSION['password'] = $result['password'];
+                $_SESSION['id'] = $result['id'];
+                $_SESSION['pseudo'] = $result['pseudo'];
+                $_SESSION['role'] = $result['role'];
+                if($result['role'] == 0){
+                header("Location: dashboardUser");
+                }
+                else{
+                    header('Location: dashboard');
             }
-            else{
-                header('Location: dashboard');
-        }
-        }
-    
-        else {
+        } else {
             // session_destroy();
+            $erreur;
             require "app/Views/front/connect.php";
-            return $erreur;
             // header('Location: connexion');
             
         }
         
+    }else {
+        $erreur = 'Le mail est inconnu';
+        require "app/Views/front/connect.php";
     }
+}
     
     
     function dashboardUser()

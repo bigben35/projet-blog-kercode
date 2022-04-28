@@ -22,7 +22,8 @@ ob_start();
         </thead>
         <tbody>
             <tr>
-            <td><p><?= $oneoneCommentUser['pseudo'] ?></p></td>
+                
+            <td><p><?= $oneComment['pseudo'] ?></p></td>
             <td class="display-creation"><p><?= $oneComment['created_at'] ?></p></td>
             <td class="display-creation"><p><?= $oneComment['title'] ?></p></td>
             <td><p class="max-content"><?= $oneComment['commentaire'] ?></p></td>

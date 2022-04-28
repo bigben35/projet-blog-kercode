@@ -93,9 +93,9 @@ class ContactModel extends Manager
     {
        $bdd = $this->dbConnect();
        $req = $bdd->prepare('SELECT commentaires.*, user.pseudo, article.title FROM commentaires 
-       INNER JOIN user ON commentaires.id_user = user.pseudo 
-       INNER JOIN article ON commentaires.id_article = article.title 
-       WHERE id = ?');
+       INNER JOIN user ON commentaires.id_user = user.id 
+       INNER JOIN article ON commentaires.id_article = article.id 
+       WHERE commentaires.id = ?');
        $req->execute(array($id));
        return $req->fetch();
     }
@@ -109,9 +109,6 @@ class ContactModel extends Manager
        $req->execute(array($id));
        return $req;
    }
-
-
-
 
 
     // afficher les mails 

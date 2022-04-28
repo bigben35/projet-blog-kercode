@@ -2,6 +2,8 @@
 
 namespace ProjetBlogKercode\Models;
 
+use PDO;
+
 class UserModel extends Manager
 {
     public function createUser($pseudo, $mail, $password)
@@ -22,24 +24,22 @@ class UserModel extends Manager
     public function existe_pseudo($pseudo){
         
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare("SELECT COUNT(*) FROM user WHERE pseudo=?");
+        $req = $bdd->prepare("SELECT COUNT(id) FROM user WHERE pseudo=?");
     
         $req ->execute([$pseudo]);
     
         $resultat = $req->fetch()[0];
-    
         return $resultat;
     }
     
     public function existe_mail($mail){
         
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare("SELECT COUNT(*) FROM user WHERE mail=?");
+        $req = $bdd->prepare("SELECT COUNT(id) FROM user WHERE mail=?");
     
         $req->execute([$mail]);
     
         $resultat = $req->fetch()[0];
-    
         return $resultat;
     }
 
@@ -47,7 +47,7 @@ class UserModel extends Manager
     public function recupPassword($mail)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT * FROM user WHERE mail =:mail');
+        $req = $bdd->prepare('SELECT id, pseudo, mail, password, role, created_at FROM user WHERE mail =:mail');
         $req->execute(array(':mail' => $mail));
 
         return $req;
@@ -74,19 +74,54 @@ class UserModel extends Manager
     public function getLastArticles()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->query("SELECT id, title, url_image, alt_image, accroche, created_at FROM article ORDER BY id DESC LIMIT 4");
+        $req = $bdd->prepare("SELECT id, title, url_image, alt_image, accroche, created_at FROM article ORDER BY id DESC LIMIT 4");
+        $req->execute();
         return $req->fetchAll();
     }
 
     // PAGE BLOG 
+    // affiche les articles 
     public function allArticles()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->query("SELECT id, title, url_image, alt_image, accroche, created_at FROM article ORDER BY id DESC LIMIT 6");
+        $req = $bdd->prepare("SELECT id, title, url_image, alt_image, accroche, created_at FROM article ORDER BY id DESC");
+        $req->execute();
         
-        return $req->fetchAll();
+        return $req->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+
+    // compte le nombre d'articles 
+    public function countArticles()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare("SELECT COUNT(id) AS nb_articles FROM article");
+        $req->execute();
+        // var_dump($req);die;
+        // $nbArticles = (int) $req['nb_articles'];
+        $result = $req->fetch();
+        $nbArticles = $result['nb_articles'];
+        // echo $nbArticles;
+        return $nbArticles;
+    }
+
+
+    public function articlePage($premierArticle, $parPage) {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT id, title, url_image, alt_image, accroche, created_at 
+        FROM article 
+        ORDER BY created_at 
+        DESC LIMIT :premierarticle, :parpage');
+        $req->bindValue(':premierarticle', $premierArticle, PDO::PARAM_INT);
+        $req->bindValue(':parpage', $parPage, PDO::PARAM_INT);
+        $req->execute();
+        $articles = $req->fetchAll(PDO::FETCH_ASSOC);
+        
+        return $articles;
+    }
+
+
+    // recherche un/des article(s) 
     public function rechercheArticle($query)
     {
         $bdd = $this->dbConnect();

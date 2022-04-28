@@ -28,7 +28,7 @@ body{
     font-family: 'robotoregular', sans-serif;
     height: 100%;
     position: relative;
-    background-color: #e3f4ff;
+    background-color: #e3ffff;
 }
 
 h1{
@@ -645,9 +645,6 @@ footer{
 }
 .page-list-admin tr:nth-child(even){
     background-color: var(--mainSuperLightColor);
-}
-.page-list-admin tr:hover{
-    background-color: #e6f4ff;
 }
 .display-creation{
     display: none;
