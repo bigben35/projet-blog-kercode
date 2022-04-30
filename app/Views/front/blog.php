@@ -2,14 +2,6 @@
 $title = "Blog-Les Articles";
 $description = "Page Blog du site Islande en Tête, recensant les articles sur L'Islande";
 ob_start();
-
-
-// On détermine sur quelle page on se trouve
-if(isset($_GET['blog']) && !empty($_GET['blog'])){
-    $currentPage = (int) strip_tags($_GET['blog']);
-}else{
-    $currentPage = 1;
-}
 ?>
 
 <section id="search">
@@ -64,10 +56,10 @@ if(isset($_GET['blog']) && !empty($_GET['blog'])){
             <?php }; ?>
         </div>
     </section>
-    <nav>
+    <nav id="nav-pagination">
                 <ul class="pagination">
                     <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
-                    <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
+                    <li class="page-item <?= ($currentPage == 1) ? "hidden" : "" ?>">
                         <a href="blog&page=<?= htmlspecialchars($currentPage - 1) ?>" class="page-link">Précédente</a>
                     </li>
                     <?php for($page = 1; $page <= $pages; $page++): ?>
@@ -77,7 +69,7 @@ if(isset($_GET['blog']) && !empty($_GET['blog'])){
                         </li>
                     <?php endfor ?>
                       <!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->
-                      <li class="page-item <?= ($currentPage == $pages) ? "disabled" : "" ?>">
+                      <li class="page-item <?= ($currentPage == $pages) ? "hidden" : "" ?>">
                         <a href="blog&page=<?= htmlspecialchars($currentPage + 1) ?>" class="page-link">Suivante</a>
                     </li>
                 </ul>

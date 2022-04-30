@@ -373,6 +373,29 @@ footer{
     margin: 1rem auto 2rem;
 }
 
+/* pagination  */
+#nav-pagination{
+    text-align: center;
+    margin: 1rem 0;
+}
+.pagination{
+    display: inline-flex;
+    margin-bottom: 2rem;
+}
+.pagination .page-item a{
+    transition: all 0.1s ease-in-out;
+    background-color: #F7F7F8;
+    padding: 10px;
+    border: solid 1px var(--mainSuperLightColor);
+}
+.pagination .active a, .pagination .page-item a:hover{
+    background-color: var(--mainColor);
+    color: white;
+}
+.hidden{
+    display: none;
+}
+
 
 /* -------------PAGE ARTICLE---------------  */
 .article{
@@ -914,7 +937,7 @@ form{
         margin: auto 5rem;
     }
     .btn-form{
-        width: 40%;
+        width: 55%;
     }
 
     /* PAGE LISTE MEMBRE  */
