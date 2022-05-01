@@ -326,11 +326,11 @@ footer{
 .article-title{
     margin: 1rem 0;
     color: var(--mainColor);
+    font-size: 1.3rem;
 }
 .accroche{
     font-size: 1rem;
     line-height: 1.5rem;
-    color: #6b82a7;
     margin: 0;
 }
 
@@ -457,6 +457,7 @@ footer{
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid #f1f1f1;
+    margin-top: 0rem;
 }
 .bloc-logo-info{
     grid-area: 2 / 1 / 3 / -1;
@@ -662,7 +663,7 @@ footer{
     background-color: dodgerblue;
 }
 .bloc-section-admin:nth-child(5){
-    background-color: rgb(158, 67, 177);
+    background-color: rgb(187 123 201);
 }
 
 /* PAGE LISTE MEMBRES    */
@@ -734,7 +735,7 @@ footer{
 }
 .send-contact{
     padding: 0.8rem 2rem;
-    background-color: grey;
+    background-color: #6E6E6E;
     color: white;
     border: none;
     font-weight: 600;
@@ -753,9 +754,7 @@ footer{
 .activeBtn{
     background-color: var(--mainColor);
   }
-.main-bloc-form a{
-    color: var(--mainColor);
-}
+
 textarea{
     height: 100px;
     width: 100%;
@@ -892,11 +891,8 @@ form{
         display: grid;
         grid-template-rows: 220px 1fr;
     }
-    #last-articles a{
-        width: 40%;
-    }
     
-
+    
     /* -------------------PAGE BLOG -------------- */
    .input-search{
        width: 40%;
@@ -967,7 +963,7 @@ form{
         margin: auto 5rem;
     }
     .btn-form{
-        width: 55%;
+        width: 57%;
     }
 
     /* PAGE LISTE MEMBRE  */
@@ -1003,7 +999,7 @@ form{
         flex-direction: row;
     }
     .active, .navbar-links li:hover{
-        background-color: var(--mainLightColor);
+        background-color: #074489;
     }
 
     /* last articles  */

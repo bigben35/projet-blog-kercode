@@ -80,7 +80,3 @@ for(let i = 0; i < ordreJours.length; i++){
 }
 
 
-// Température par jour
-
-// console.log(tempJour(data))
-

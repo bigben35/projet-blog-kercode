@@ -23,7 +23,7 @@ ob_start();
                 <div class="content-article">
                     <p class="date-article">Posté le <time
                             datetime="<?= $article['created_at']; ?>"><?= $article['created_at']; ?></time></p>
-                    <h3 class="article-title"><?= $article['title']; ?></h3>
+                    <h2 class="article-title"><?= $article['title']; ?></h2>
                     <p class="accroche"><?= $article['accroche']; ?></p>
                 </div>
                 <a class="btn-form" href="article&id=<?= $article['id']; ?>">Voir l'Article</a>
@@ -48,7 +48,7 @@ ob_start();
                 <div class="content-article">
                     <p class="date-article">Posté le <time
                             datetime="<?= $article['created_at']; ?>"><?= $article['created_at']; ?></time></p>
-                    <h3 class="article-title"><?= $article['title']; ?></h3>
+                    <h2 class="article-title"><?= $article['title']; ?></h2>
                     <p class="accroche"><?= $article['accroche']; ?></p>
                 </div>
                 <a class="btn-form" href="article&id=<?= $article['id']; ?>">Voir l'Article</a>

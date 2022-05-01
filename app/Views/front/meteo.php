@@ -7,7 +7,7 @@ ob_start();
 <section class="form-container">
     
     <div class="bloc-app-meteo">
-        <h2 class="titre-meteo">Météo du jour en Islande</h2>
+        <h1 class="titre-meteo">Météo du jour en Islande</h1>
         
         <div class="bloc-logo-info">
             <div class="bloc-logo">
@@ -15,9 +15,9 @@ ob_start();
             </div>
             
             <div class="bloc-info">
-                <p class="temps"></p>
-                <p class="temperature"></p>
-                <p class="localisation"></p>
+                <h2 class="temps"></h2>
+                <h2 class="temperature"></h2>
+                <h2 class="localisation"></h2>
             </div>
         </div>
 
