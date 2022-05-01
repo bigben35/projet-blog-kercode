@@ -19,6 +19,10 @@ for (let i = 0; i < menuActive.length; i++) {
         menuActive[0].classList.remove('active');
         menuActive[i].classList.add('active');
     }
+    else if (location.href.includes("blog&page=")){
+        menuActive[0].classList.remove('active');
+        menuActive[1].classList.add('active');
+    }
     };
     
 

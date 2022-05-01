@@ -2,10 +2,6 @@
 $title = "Tableau de bord utilisateur";
 $description = "Tableau de bord utilisateur";
 
-    // if(!isset($_SESSION['user'])){
-    //     header("Location: app/Views/front/connect.php");
-    // }
-
 ob_start();
 ?>
 

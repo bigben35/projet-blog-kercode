@@ -21,17 +21,7 @@ ob_start();
              ?>
                 <div class="message-erreur"><?= $e ?></div>
                 <?php 
-                // var_dump($e);die;
-                ?>
-                <?php 
             endforeach;
-        else:
-            ?>
-
-                <div class="message-confirmation">Votre compte a bien été créé !</div>
-
-
-                <?php
             endif;
         endif;
             ?>

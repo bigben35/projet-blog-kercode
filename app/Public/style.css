@@ -52,7 +52,6 @@ header{
     width: 100%;
     z-index: 1;
     top: 0;
-    
 }
 #main-dashboard-user{
     margin-top: 100px;
@@ -60,7 +59,6 @@ header{
 .container{
     max-width: 1200px;
     margin: 0 auto;
-
 }
 
 
@@ -69,8 +67,6 @@ footer{
     background-color: var(--mainColor);
     position: absolute;
     width: 100%;
-    /* bottom: 0; */
-    
 }
 
 /* bouton remonter haut de page  */
@@ -237,49 +233,16 @@ footer{
 }
 
 
-
-
-
-
 /* -----------------PAGE HOME-------------------  */
-
-/* ------------------SLIDER-----------------------  */
-/* #mainSlider{
-    height: 50vh;
-    position: relative;
-    margin: 2rem 0;
-}
-.slider img{
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-.slider img.active{
-    opacity: 1;
-}
-.suivant, .precedent{
-    color: white;
-    font-size: 3rem;
-    position: absolute;
-    top: 30%;
-    cursor: pointer;
-}
-.suivant{
-    right: 1rem;
-}
-.precedent{
-    left: 1rem;
-} */
 
 /* PRESENTATION  */
 #presentation{
     margin: 10px;
     text-align: center;
+}
+.bloc-presentation h1{
+    color: var(--mainColor);
+    font-size: 2rem;
 }
 .bloc-presentation img{
     width: 100%;
@@ -292,8 +255,8 @@ footer{
     text-align: center;
 }
 #last-articles h2{
-    font-size: 1.4rem;
-    margin: 2rem 0 1rem;
+    font-size: 1.6rem;
+    margin: 4rem 0 2rem;
 }
 .article-container{
     display: grid;
@@ -373,6 +336,11 @@ footer{
     font-size: 1rem;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+}
+.btn-search:hover{
+    transition: all 0.1s ease;
+    transform: scale(1.02);
 }
 .content-article{
     padding: 10px;
@@ -783,7 +751,7 @@ textarea{
 
 /* ----------------PAGE CREER VOTRE COMPTE------------------  */
 .message-erreur{
-    background-color: #e73535;
+    background-color: #E01A1A;
     color: white;
     border-radius: 5px;
     margin: 1rem 0;
@@ -797,9 +765,14 @@ textarea{
     padding: 0.5rem;
 }
 a.login-user{
-    color: var(--mainColor);
+    color: #0071C2;
 }
-
+a.login-user:hover{
+    color: white;
+    background-color: var(--mainColor);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
 
 /* --------PAGE CONFIRM MAIL-------  */
 #section-confirm-mail{
@@ -841,7 +814,7 @@ a.login-user{
 
 
 
-    /* **********************ADMIN**********************  */
+    /* **********************PARTIE ADMIN**********************  */
 
 /* ---------------PAGE LISTE ARTICLES------------- - */
 table img{
@@ -882,11 +855,21 @@ form{
 
 
 
-
 /* ----------------MEDIA QUERIES----------------- */
+
+
 @media screen and (min-width: 768px){
     /* ------------PAGE HOME ----------- */
-    /* DERNIERS ARTICLES  */
+    /* presentation */
+    .bloc-presentation img{
+        width: 80%;
+    }
+    .content-presentation{
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    /* derniers articles  */
     .article-card{
         display: grid;
         grid-template-rows: 220px 1fr;
@@ -1001,11 +984,6 @@ form{
     .active, .navbar-links li:hover{
         background-color: #074489;
     }
-
-    /* last articles  */
-
-
-    /* PAGE CONTACT  */
 
 
     /* PAGE DASBOARD ADMIN  */

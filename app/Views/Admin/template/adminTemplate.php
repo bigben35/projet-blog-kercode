@@ -21,7 +21,7 @@
         <nav class="side-nav">
             <div class="wrapper">
                 <div class="nav-bloc-black">
-                    <a href="dashboard" class="title-admin" >Admin</a>
+                    <a href="dashboard" class="title-admin">Admin</a>
                 </div>
                 <div class="nav-bloc n-1">
                     <i class="fa-solid fa-users"></i>

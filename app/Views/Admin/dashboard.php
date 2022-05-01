@@ -36,11 +36,11 @@ ob_start();
             <p class="count"><?php $mail = $nbrMail->fetch() ?><?= $mail[0] ?></p>
         </div>
     </a>
-    
-        <a href="deconnexion" class="bloc-section-admin"><i class="fa-solid fa-arrow-right-from-bracket"></i>
-            <h2>Se déconnecter</h2>
-        </a>
-    
+
+    <a href="deconnexion" class="bloc-section-admin"><i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <h2>Se déconnecter</h2>
+    </a>
+
 </section>
 
 <?php $content = ob_get_clean(); ?>

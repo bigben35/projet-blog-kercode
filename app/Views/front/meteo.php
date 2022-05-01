@@ -5,15 +5,15 @@ ob_start();
 ?>
 
 <section class="form-container">
-    
+
     <div class="bloc-app-meteo">
         <h1 class="titre-meteo">Météo du jour en Islande</h1>
-        
+
         <div class="bloc-logo-info">
             <div class="bloc-logo">
                 <img alt="logo météo islande nuageux" class="logo-meteo">
             </div>
-            
+
             <div class="bloc-info">
                 <h2 class="temps"></h2>
                 <h2 class="temperature"></h2>
@@ -55,5 +55,5 @@ ob_start();
 
 </section>
 
-    <?php $content = ob_get_clean(); ?>
+<?php $content = ob_get_clean(); ?>
 <?php require 'template/template.php';
