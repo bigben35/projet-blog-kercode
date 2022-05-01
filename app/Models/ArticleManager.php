@@ -30,7 +30,7 @@ class ArticleManager extends Manager{
     public function chargementArticles()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare("SELECT * FROM article ORDER BY id DESC LIMIT 8");
+        $req = $bdd->prepare("SELECT * FROM article ORDER BY id DESC");
         $req->execute();
         $mesArticles = $req->fetchAll(\PDO::FETCH_ASSOC);
         $req->closeCursor();
@@ -57,28 +57,10 @@ class ArticleManager extends Manager{
         $req->bindValue(':title',$title,\PDO::PARAM_STR);
         $req->bindValue(':accroche',$accroche,\PDO::PARAM_STR);
         $req->bindValue(':content',$contenu,\PDO::PARAM_STR);
-        // $req->bindValue(':id_category',$category,\PDO::PARAM_INT);
         $req->bindValue(':url_image',$imageAjoute,\PDO::PARAM_STR);
         $req->bindValue(':alt_image',$alt_image,\PDO::PARAM_STR);
        
-
-        // $data = [
-        //     ':title' => htmlspecialchars($title),
-        //     ':accroche' => htmlspecialchars($accroche),
-        //     ':content' => htmlspecialchars($content),
-        //     ':url_image' => htmlspecialchars($imageAjoute),
-        //     ':alt_image' => htmlspecialchars($alt_image)
-        // ];
-      
         $req->execute();
-        // return $req;
-        
-        // if($req > 0){
-        //     $article = new \ProjetBlogKercode\Models\Article($this->dbConnect()->lastInsertId(),$title, $accroche, $content, $imageAjoute, $alt_image,  $dateCreation);
-        //     var_dump($article);
-        //     $this->ajoutArticle($article);
-        // }
-        
     }
 
 
@@ -87,7 +69,6 @@ class ArticleManager extends Manager{
         $bdd = $this->dbConnect();
         $req = $bdd->prepare("DELETE FROM article WHERE id = ?");
 
-        // $req->bindValue(":id",$id,\PDO::PARAM_INT);
         $req->execute(array($id));
 
         return $req;
@@ -107,29 +88,14 @@ class ArticleManager extends Manager{
             ':title' => $title,
             ':accroche' => $accroche,
             ':content' => $contenu,
-            // ':id_category' => $category,
             ':url_image' => $url_image,
             ':alt_image' => $alt_image,
             ':id' => $id
         ];
 
-        // $req->bindValue(':id',$id,\PDO::PARAM_INT);
-        // $req->bindValue(':title',$title,\PDO::PARAM_STR);
-        // $req->bindValue(':accroche',$accroche,\PDO::PARAM_STR);
-        // $req->bindValue(':content',$contenu,\PDO::PARAM_STR);
-        // $req->bindValue(':url_image',$url_image,\PDO::PARAM_STR);
-        // $req->bindValue(':alt_image',$alt_image,\PDO::PARAM_STR);
-
         $req->execute($data);
         $req->closeCursor();
 
-        // if($result > 0){
-        //     $this->getArticleById($id)->setTitle($title);
-        //     $this->getArticleById($id)->setAccroche($accroche);
-        //     $this->getArticleById($id)->setContenu($contenu);
-        //     $this->getArticleById($id)->setUrlImage($url_image);
-        //     $this->getArticleById($id)->setAltImage($alt_image);
-        // }
     }
 
 

@@ -46,9 +46,7 @@ try{
                 $currentPage = (int) strip_tags($_GET['page']);
 
             } else {
-
                 $currentPage = 1;
-
             }
 
             $frontController->blog($query, $currentPage);
@@ -105,11 +103,7 @@ try{
             } else {
                 throw new Exception("Veuillez renseigner vos identifiants pour vous connecter à votre session");
             }
-                
-            }
-
-    
-
+        }
 
         elseif($_GET['action'] == 'dashboardUser'){
             if(isset($_SESSION['id']) && (isset($_SESSION['role']) && ($_SESSION['role'] == "0"))){
@@ -254,11 +248,9 @@ try{
     
 
         
-}else{
+} else{
     // throw new Exception("Mauvais formattage d'url", 404);
-    
-        $frontController->home();
-    
+    $frontController->home();
 }
 
 } catch(Exception $e){

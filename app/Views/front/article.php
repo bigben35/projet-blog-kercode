@@ -12,8 +12,8 @@ ob_start();
         <img src="<?= $article['url_image']; ?>" alt="<?= $article['alt_image']; ?>" >
     </div>
     <div class="paragraphe-article">
-        <p><strong>Contenu : </strong><?= $article['content']; ?></p>
         <p><strong>Créé le : </strong><?= $article['created_at']; ?></p>
+        <p><strong>Contenu : </strong><?= $article['content']; ?></p>
     </div>
 </article>
 </section>
@@ -33,37 +33,22 @@ ob_start();
 
     if(isset($_SESSION['id'])):
         ?>
-
-            <div">
-                <form method="POST" action="">
-                    <?php if(isset($erreur)):
-                        if($erreur):
-                         ?>
-                    
-                        
-                            <div class="message erreur"><?= $erreur ?></div>
-                        
-                    
-
-                    <?php 
-                else:
-                 ?>
-                    
-                            <div class="message confirmation">Votre commentaire a bien été posté !</div>
-                       
-                    <?php
+    
+        <form method="POST" action="article&id=<?= $article['id']; ?>">
+            <?php if(isset($erreur)):
+                if($erreur):
+            ?>
+                <div class="message-erreur"><?= $erreur ?></div>
+                <?php
                     endif;
                 endif;
                     ?>
-                    <textarea name="commentaire" placeholder="Votre commentaire"></textarea>
-                    <input type="submit" value="Commenter">
-                </form>
-            </div>
-        
-
-            <?php
-endif;
-?>
+                <textarea name="commentaire" placeholder="Votre commentaire" required></textarea>
+                <input type="submit" value="Commenter">
+            </form>
+    <?php
+    endif;
+    ?>
 </section>
 
 <a href="blog" class="btn-form">Retour au blog</a>

@@ -18,7 +18,7 @@ function weatherIceland()
         return resp.json()
     })
     .then((data) => {
-        console.log(data);
+        // console.log(data);
         drawWeather(data);
         getIcon(data);
     })
@@ -39,7 +39,7 @@ function drawWeather(data)
     
     // température jours suivants 
     for(let i = 0; i < 7; i++){
-        tempJourPrevision[i].innerText = innerHTML = temp + " °C";
+        tempJourPrevision[i].innerHTML = temp + " °C";
     }
 }
 

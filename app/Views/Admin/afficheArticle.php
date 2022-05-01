@@ -12,7 +12,6 @@ ob_start();
     </div>
     <div>
         <p>Titre : <?= $article->getTitle(); ?></p>
-        <p>Catégorie : <?= $article->getCategory(); ?></p>
         <p>Accroche : <?= $article->getAccroche(); ?></p>
         <p>Contenu : <?= $article->getContenu(); ?></p>
         <p>Créé le : <?= $article->getDateCreation(); ?></p>

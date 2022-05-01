@@ -53,14 +53,6 @@ class UserModel extends Manager
         return $req;
     }
 
-    
-    // SLIDER 
-    public function getSlides()
-    {
-        $bdd = $this->dbConnect();
-        $req = $bdd->query("SELECT url_image, alt_image FROM slider");
-        return $req->fetchAll(); //fetchAll pour boucle 
-    }
 
     // PRESENTATION 
     public function getPresentation()
@@ -97,11 +89,9 @@ class UserModel extends Manager
         $bdd = $this->dbConnect();
         $req = $bdd->prepare("SELECT COUNT(id) AS nb_articles FROM article");
         $req->execute();
-        // var_dump($req);die;
-        // $nbArticles = (int) $req['nb_articles'];
         $result = $req->fetch();
         $nbArticles = $result['nb_articles'];
-        // echo $nbArticles;
+        
         return $nbArticles;
     }
 
@@ -125,15 +115,10 @@ class UserModel extends Manager
     public function rechercheArticle($query)
     {
         $bdd = $this->dbConnect();
-        // $query = htmlspecialchars($_GET['query']);
         $req = $bdd->prepare("SELECT id, title, accroche, url_image, alt_image, created_at FROM article WHERE title LIKE :query OR content LIKE :query ORDER BY id DESC LIMIT 6");
-
         $req->execute([':query' => '%'.$query.'%']);
-        // var_dump($query);die;
-
+    
         $search = $req->fetchAll();
-        // var_dump($search);die;
-
         return $search;
     }
 
@@ -149,7 +134,6 @@ class UserModel extends Manager
         $req->execute([$id]);
 
         return $req->fetch();
-        // var_dump($req);die;
     }
 
 
@@ -162,7 +146,6 @@ class UserModel extends Manager
         $req ->execute([(int)$id]);
         $nb_commentaires = $req->fetch()[0];
         
-        // var_dump($nb_commentaires);die;
         return $nb_commentaires;
     }
     
@@ -176,8 +159,6 @@ class UserModel extends Manager
         $req ->execute([$id]);
         $commentaires = $req ->fetchAll();
     
-        // var_dump($commentaires);die;
-    
         return $commentaires;
     }
 
@@ -188,11 +169,9 @@ class UserModel extends Manager
         $req = $bdd->prepare("SELECT commentaires.* FROM commentaires WHERE commentaires.id_user = ?");
 
         $req->execute([$_SESSION['id']]);
-        // var_dump([$_SESSION['id']]);die;
         $commentaires = $req->fetchAll();
 
         return $commentaires;
-        // var_dump($commentaires);die;
     }
 
 
@@ -203,7 +182,6 @@ class UserModel extends Manager
             $bdd = $this->dbConnect();
             extract($_POST);
 
-            // $erreur ="";
             $erreur ="Vous devez entrer un commentaire !";
 
             if(!empty($commentaire)){
@@ -224,7 +202,6 @@ class UserModel extends Manager
                 
                 return $erreur;
             }
-            // var_dump($erreur);die;
         }
     }
 

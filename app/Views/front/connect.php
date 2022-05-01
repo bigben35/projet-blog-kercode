@@ -13,17 +13,13 @@ ob_start();
     <form action="connectUser" method="POST">
         
  <!-- bloc confirmation || erreur  -->
- <?php if (isset($erreur)): 
-                    if ($erreur) :
-                    
-             ?>
-                <div class="message-erreur"><?= $erreur ?></div>
-                
-                <?php 
-            
-            endif;
+    <?php if (isset($erreur)): 
+        if ($erreur) : ?>
+            <div class="message-erreur"><?= $erreur ?></div>
+    <?php 
         endif;
-            ?>
+          endif;
+    ?>
 
         <div class="bloc-form">
             <label for="mail">Email</label>
@@ -36,7 +32,7 @@ ob_start();
             <button class="btn-form" name="submit" type="submit">Se connecter</button>
         </div>
     </form>
-    <a href="home">Retour à l'accueil</a>
+    <a href="home" class="retourAccueil">Retour à l'accueil</a>
 </div>
 </div>
 </section>

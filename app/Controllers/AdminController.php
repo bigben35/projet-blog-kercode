@@ -23,20 +23,18 @@ class AdminController
     function dashboard()
     {
         // compter nombre utilisateur 
-        $countUser = new \ProjetBlogKercode\Models\ContactModel();
-        $nbrUser = $countUser->countUser();
+        $dashboardManager = new \ProjetBlogKercode\Models\ContactModel();
+        $nbrUser = $dashboardManager->countUser();
 
         // compter nombre article 
         $countArticle = new \ProjetBlogKercode\Models\ArticleManager();
         $nbrArticle = $countArticle->countArticle();
 
         // compter nombre mail 
-        $countMail = new \ProjetBlogKercode\Models\ContactModel();
-        $nbrMail = $countMail->countMail();
+        $nbrMail = $dashboardManager->countMail();
 
         // compter nombre commentaire 
-        $countComment = new \ProjetBlogKercode\Models\ContactModel();
-        $nbrComment = $countComment->countComment();
+        $nbrComment = $dashboardManager->countComment();
 
         require 'app/Views/Admin/dashboard.php';
         
@@ -85,7 +83,11 @@ class AdminController
     public function afficherListeArticle()
     {
         $articles = $this->articleManager->getArticles();
-        // var_dump($articles);die;
+
+        // compter le nb d'article 
+        $countArticles = new \ProjetBlogKercode\Models\UserModel();
+        $nbarticles = $countArticles->countArticles();
+    
         require 'app/Views/Admin/listeArticle.php';
     }
 
@@ -93,7 +95,6 @@ class AdminController
     {
         $articleData = $this->articleManager->getArticleById($id);
         $article = new \ProjetBlogKercode\Models\Article($articleData['id'], $articleData['title'], $articleData['url_image'], $articleData['alt_image'], $articleData['accroche'], $articleData['content'], $articleData['created_at']);
-        // var_dump($article); die;
         require "app/Views/Admin/afficheArticle.php";
     }
     

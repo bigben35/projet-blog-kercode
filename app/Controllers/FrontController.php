@@ -4,71 +4,53 @@ namespace ProjetBlogKercode\Controllers;
 
 class FrontController
 {
-    
-
     function home()
     {
-        // slider 
-        // $slider = new \ProjetBlogKercode\Models\UserModel();
-        // $slides = $slider->getSlides();
-
         // presentation Admin 
-        $presentationAdmin = new \ProjetBlogKercode\Models\UserModel();
-        $presentation = $presentationAdmin->getPresentation();
+        $homeManager = new \ProjetBlogKercode\Models\UserModel();
+        $presentation = $homeManager->getPresentation();
         
         //derniers articles
-        $lastArticle = new \ProjetBlogKercode\Models\UserModel();
-        $lastarticles = $lastArticle->getLastArticles();
+        $lastarticles = $homeManager->getLastArticles();
         require "app/Views/front/home.php";
     }
 
     
     function blog($query, $currentPage)
     {
-        // récupérer tous les articles 
-        // $getArticles = new \ProjetBlogKercode\Models\UserModel();
-        // $articles = $getArticles->allArticles();
-
         // compter le nb d'article 
-        $countArticles = new \ProjetBlogKercode\Models\UserModel();
-        $nbarticles = $countArticles->countArticles();
-        // var_dump($nbarticles);die;
+        $articlesManager = new \ProjetBlogKercode\Models\UserModel();
+        $nbarticles = $articlesManager->countArticles();
+    
         // nb article par page 
         $parPage = 8;
 
         // calcul nb pages total 
         $pages = ceil($nbarticles / $parPage);
         
-
         $premierArticle = ($currentPage * $parPage) - $parPage;
-        $articlePage = new \ProjetBlogKercode\Models\UserModel();
-        $articles = $articlePage->articlePage($premierArticle, $parPage);
+        $articles = $articlesManager->articlePage($premierArticle, $parPage);
         
         //barre de recherche
-        
-        $searchArticle = new \ProjetBlogKercode\Models\UserModel();
-        $search = $searchArticle->rechercheArticle($query);
-        // var_dump($search);die;
+        $search = $articlesManager->rechercheArticle($query);
+
         require "app/Views/front/blog.php";
     }
 
     function article($id)
     {
         // afficher un article 
-        $afficherArticle = new \ProjetBlogKercode\Models\UserModel();
-        $article = $afficherArticle->afficherArticle();
+        $articleManager = new \ProjetBlogKercode\Models\UserModel();
+        $article = $articleManager->afficherArticle();
     
         // nombre de commentaire par article
-        $allCommentaires = new \ProjetBlogKercode\Models\UserModel();
-        $nb_commentaires = $allCommentaires->countCommentaires($id);
+        $nb_commentaires = $articleManager->countCommentaires($id);
 
         //afficher les commentaires de l'article
-        $afficherCommentaire = new \ProjetBlogKercode\Models\UserModel();
-        $commentaires = $afficherCommentaire->getCommentaires();
+        $commentaires = $articleManager->getCommentaires();
 
         // créer commentaire article
-        $creationCommentaire = new \ProjetBlogKercode\Models\UserModel();
-        $commenterArticle = $creationCommentaire->commenter();
+        $commenterArticle = $articleManager->commenter();
 
         require "app/Views/front/article.php";
     }
