@@ -4,6 +4,8 @@ namespace ProjetBlogKercode\Models;
 
 class ContactModel extends Manager
 {
+
+    // envoi mail en bdd 
     public function postMail($lastname, $firstname, $mail, $phone, $objet, $msg)
     {
         $bdd = $this->dbConnect();
@@ -115,8 +117,9 @@ class ContactModel extends Manager
     public function getMails()
     {
         $bdd = $this->dbConnect();
-        $request = $bdd->query("SELECT id, lastname, firstname, mail, phone, objet, msg, created_at FROM contacts ORDER BY id DESC");
-        return $request;
+        $req = $bdd->prepare("SELECT id, lastname, firstname, mail, phone, objet, msg, created_at FROM contacts ORDER BY id DESC");
+        $req->execute();
+        return $req;
     }
 
      /*================================ nombres de mail  ====================================*/

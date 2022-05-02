@@ -1,6 +1,6 @@
 <?php
 $title = "Accueil";
-$description = "";
+$description = "Bienvenue sur le blog Islande en Tête! C'est un blog consacré à cette magnifiqe Île qu'est l'Islande, à ces paysages, montagnes, aurores boréales, gastronomie, culture...";
 ob_start();
 ?>
 

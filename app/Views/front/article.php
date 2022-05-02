@@ -46,7 +46,7 @@ ob_start();
                 endif;
                     ?>
         <textarea name="commentaire" placeholder="Votre commentaire" required></textarea>
-        <input type="submit" value="Commenter">
+        <input class="btn-comment" type="submit" value="Commenter">
     </form>
     <?php
     endif;

@@ -403,6 +403,19 @@ footer{
 .p-commentaire{
     padding: 5px 0 25px;
 }
+.btn-comment{
+    color: white;
+    background-color: darkcyan;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-comment:hover{
+    transition: all 0.1s ease;
+    transform: scale(1.05);
+}
+
 
 /* ----------------------PAGE METEO  ---------------------*/
 .form-container{

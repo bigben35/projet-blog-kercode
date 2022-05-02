@@ -58,7 +58,8 @@ class UserModel extends Manager
     public function getPresentation()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->query("SELECT url_image, alt_image, content FROM presentation");
+        $req = $bdd->prepare("SELECT url_image, alt_image, content FROM presentation");
+        $req->execute();
         return $req->fetch(); //fetch car juste un bloc
     }
 
@@ -72,17 +73,7 @@ class UserModel extends Manager
     }
 
     // PAGE BLOG 
-    // affiche les articles 
-    public function allArticles()
-    {
-        $bdd = $this->dbConnect();
-        $req = $bdd->prepare("SELECT id, title, url_image, alt_image, accroche, created_at FROM article ORDER BY id DESC");
-        $req->execute();
-        
-        return $req->fetchAll(\PDO::FETCH_ASSOC);
-    }
-
-
+  
     // compte le nombre d'articles 
     public function countArticles()
     {
@@ -95,8 +86,9 @@ class UserModel extends Manager
         return $nbArticles;
     }
 
-
-    public function articlePage($premierArticle, $parPage) {
+    // affiche les articles par page
+    public function articlePage($premierArticle, $parPage) 
+    {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('SELECT id, title, url_image, alt_image, accroche, created_at 
         FROM article 

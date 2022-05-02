@@ -9,10 +9,10 @@ ob_start(); ?>
     <div class="form-container">
         <h1>Contactez-nous</h1>
         <div class="main-bloc-form">
-            <form action="contactPost" method="post">
+            <form action="contactPost" method="POST">
                 <div class="bloc-form">
-                    <label for="name">Nom : *</label>
-                    <input type="text" id="name" name="lastname" placeholder="Votre Nom" required/>
+                    <label for="lastname">Nom : *</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Votre Nom" required/>
                 </div>
                 <div class="bloc-form">
                     <label for="firstname">Prénom : *</label>
