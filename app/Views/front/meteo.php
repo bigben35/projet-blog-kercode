@@ -56,4 +56,5 @@ ob_start();
 </section>
 
 <?php $content = ob_get_clean(); ?>
+<script src="app/Public/front/js/meteo.js" defer></script>
 <?php require 'template/template.php';

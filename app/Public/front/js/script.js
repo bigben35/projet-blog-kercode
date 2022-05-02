@@ -23,6 +23,10 @@ for (let i = 0; i < menuActive.length; i++) {
         menuActive[0].classList.remove('active');
         menuActive[1].classList.add('active');
     }
+    else if (location.href.includes("article&id=")){
+        menuActive[0].classList.remove('active');
+        menuActive[1].classList.add('active');
+    }
     };
     
 
@@ -52,14 +56,4 @@ btnArrow.addEventListener('click', () => {
 
 
 
-    // ----------------PAGE CONTACT ----------------
-    // ANIMATION BOUTON ENVOYER     
-
-    let button = document.querySelector('.send-contact');
-    let checkbox = document.getElementById('autorisation');
-
-    checkbox.addEventListener('click', () => {
-    button.classList.toggle('activeBtn');
-    
-})
 

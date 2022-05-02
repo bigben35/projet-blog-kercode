@@ -79,11 +79,11 @@
 
             <div id="reseaux">
                 <ul class="icons">
-                    <li><a href="www.facebook.com" title="facebook"><i class="fa-brands fa-facebook-square"></i></a>
+                    <li><a href="#"><i class="fa-brands fa-facebook-square"></i></a>
                     </li>
-                    <li><a href="#" title="twitter"><i class="fa-brands fa-twitter-square"></i></a></li>
-                    <li><a href="#" title="instagram"><i class="fa-brands fa-instagram-square"></i></a></li>
-                    <li><a href="#" title="snapchat"><i class="fa-brands fa-snapchat-square"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter-square"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram-square"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-snapchat-square"></i></a></li>
                 </ul>
             </div>
             <p class="copyright">Copyright &copy; <?= date("Y"); ?> - Islande en Tête - <a href="mentionsLegales"
@@ -92,7 +92,7 @@
     </footer>
 
     <script src="app/Public/front/js/script.js" defer></script>
-    <script src="app/Public/front/js/meteo.js" defer></script>
+    <!-- <script src="app/Public/front/js/meteo.js" defer></script> -->
 </body>
 
 </html>
