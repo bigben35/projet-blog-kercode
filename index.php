@@ -53,7 +53,11 @@ try{
         }
 
         elseif($_GET['action'] == 'article'){
+            $number = $_GET['id'];
+            // var_dump($id);die;
+            // if($number > max())
             $frontController->article($_GET['id']);
+        
         }
 
         elseif($_GET['action'] == 'meteo'){
@@ -66,7 +70,6 @@ try{
 
         elseif($_GET['action'] == 'createUser'){
             $frontController->createPageCreationCompte();
-
         }
 
         // creation d'un utilisateur 

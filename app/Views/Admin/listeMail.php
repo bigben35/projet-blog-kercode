@@ -37,11 +37,12 @@ ob_start();
                     <td class="display-creation">
                         <p><?= htmlspecialchars($allMail['phone']) ?></p>
                     </td>
-
-                    <td><a href="montrerMail&id=<?= $allMail['id'] ?>" class="btn-action-admin">Voir</a></td>
-                    <td>
-                        <a href="supprimerMail&id=<?= $allMail['id'] ?>">Supprimer</a>
-                    </td>
+                    <span class="display-action">
+                        <td><a href="montrerMail&id=<?= $allMail['id'] ?>"><i class="fa-solid fa-eye" title="Voir"></i></a>
+                        <a href="supprimerMail&id=<?= $allMail['id'] ?>"><i class="fa-solid fa-trash-can" title="supprimer"></i></a>
+                        
+                        </td>
+                </span>
                 </tr>
                 <?php endforeach; ?>
             </tbody>

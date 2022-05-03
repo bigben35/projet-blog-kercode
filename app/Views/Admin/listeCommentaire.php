@@ -36,7 +36,7 @@ ob_start();
 
                     <td><a href="montrerComment&id=<?= $allComment['id'] ?>" class="btn-action-admin">Voir</a></td>
                     <td>
-                        <a href="supprimerComment&id=<?= $allComment['id'] ?>">Supprimer</a>
+                        <a href="supprimerComment&id=<?= $allComment['id'] ?>" class="btn-action-admin-red">Supprimer</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

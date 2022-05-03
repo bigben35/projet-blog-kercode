@@ -82,9 +82,20 @@ class UserModel extends Manager
         $req->execute();
         $result = $req->fetch();
         $nbArticles = $result['nb_articles'];
-        
         return $nbArticles;
     }
+
+
+    // public function maxIdArticle()
+    // {
+    //     $bdd = $this->dbConnect();
+    //     $req = $bdd->prepare("SELECT MAX(id) AS max_id FROM article");
+    //     $req->execute();
+    //     $result = $req->fetch();
+    //     $maxId = $result['max_id'];
+    //     echo $maxId;
+    //     return $maxId;
+    // }
 
     // affiche les articles par page
     public function articlePage($premierArticle, $parPage) 

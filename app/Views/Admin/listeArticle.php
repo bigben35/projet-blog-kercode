@@ -27,7 +27,7 @@ ob_start();
                 <td class="action-list-admin"><a href="modifierArticle&id=<?= $articles[$i]->getId(); ?>"
                         class="btn-action-admin">Modifier</a>
 
-                    <a href="supprimerArticle&id=<?= $articles[$i]->getId(); ?>" class="btn-action-admin">Supprimer</a>
+                    <a href="supprimerArticle&id=<?= $articles[$i]->getId(); ?>" class="btn-action-admin-red">Supprimer</a>
                 </td>
             </tr>
             <?php endfor; ?>

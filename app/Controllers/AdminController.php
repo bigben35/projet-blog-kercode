@@ -248,9 +248,6 @@ class AdminController
         header('Location: listeMail');
     }
 
-
-   
-
 }
 
     

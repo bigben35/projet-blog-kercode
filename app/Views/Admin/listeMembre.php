@@ -31,7 +31,7 @@ ob_start();
                     <td class="action-list-admin"><a href="montrerMembre&id=<?= $allUser['id'] ?>"
                             class="btn-action-admin">Voir</a>
 
-                        <a href="bannirMembre&id=<?= $allUser['id'] ?>">Bannir</a>
+                        <a href="bannirMembre&id=<?= $allUser['id'] ?>" class="btn-action-admin-red">Bannir</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
