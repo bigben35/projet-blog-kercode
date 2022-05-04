@@ -34,6 +34,7 @@ ob_start();
     <?php endforeach;
 
     if(isset($_SESSION['id'])):
+        
         ?>
 
     <form method="POST" action="article&id=<?= $article['id']; ?>">

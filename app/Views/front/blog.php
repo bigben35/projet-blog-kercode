@@ -11,7 +11,7 @@ ob_start();
     <?php 
         if (isset($search) && !empty($search) && isset($_GET['isSearching'])) :
     ?>
-</section>
+
 
 <section id="bloc-articles">
     <h1>Votre Recherche</h1>
@@ -29,7 +29,7 @@ ob_start();
                 <h2 class="article-title"><?= $article['title']; ?></h2>
                 <p class="accroche"><?= $article['accroche']; ?></p>
             </div>
-            <a class="btn-form" href="article&id=<?= $article['id']; ?>">Voir l'Article</a>
+            <a class="btn-form" href="article&id=<?= $article['id'] ; ?>">Voir l'Article</a>
         </article>
         <?php }; ?>
 
@@ -58,6 +58,7 @@ ob_start();
         </article>
         <?php }; ?>
     </div>
+</section>
 </section>
 <nav id="nav-pagination">
     <ul class="pagination">

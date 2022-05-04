@@ -24,11 +24,11 @@ ob_start(); ?>
                 </div>
                 <div class="bloc-form">
                     <label for="phone">Téléphone : *</label>
-                    <input type="phone" id="phone" name="phone" placeholder="Votre Numéro de Téléphone" required/>
+                    <input type="tel" id="phone" name="phone" placeholder="Votre Numéro de Téléphone" required/>
                 </div>
                 <div class="bloc-form">
                     <label for="objet">Objet : *</label>
-                    <input type="objet" id="objet" name="objet" placeholder="objet de votre demande" required/>
+                    <input type="text" id="objet" name="objet" placeholder="objet de votre demande" required/>
                 </div>
                 <div class="bloc-form msg-form">
                     <label for="msg">Message : *</label>
@@ -48,6 +48,6 @@ ob_start(); ?>
     </div>
 </section>
 
+<script src="app/Public/front/js/contact.min.js" defer></script>
 <?php $content = ob_get_clean(); ?>
-<script src="app/Public/front/js/contact.js" defer></script>
-<?php require 'template/template.php'; ?>
+<?php require 'template/template.php';

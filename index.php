@@ -53,10 +53,13 @@ try{
         }
 
         elseif($_GET['action'] == 'article'){
-            $number = $_GET['id'];
-            // var_dump($id);die;
-            // if($number > max())
-            $frontController->article($_GET['id']);
+            $id = $_GET['id'];
+            if(!$id){
+                header('Location: blog');
+            }
+            else{
+                $frontController->article($_GET['id']);
+            }
         
         }
 

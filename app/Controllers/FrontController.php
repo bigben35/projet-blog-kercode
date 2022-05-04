@@ -18,13 +18,14 @@ class FrontController
     
     function blog($query, $currentPage)
     {
+
         // compter le nb d'article 
         $articlesManager = new \ProjetBlogKercode\Models\UserModel();
         $nbarticles = $articlesManager->countArticles();
-    
+        
         // nb article par page 
         $parPage = 8;
-
+        
         // calcul nb pages total 
         $pages = ceil($nbarticles / $parPage);
         
@@ -33,26 +34,34 @@ class FrontController
         
         //barre de recherche
         $search = $articlesManager->rechercheArticle($query);
-
+        
         require "app/Views/front/blog.php";
     }
-
+    
     function article($id)
     {
         // afficher un article 
         $articleManager = new \ProjetBlogKercode\Models\UserModel();
-        $article = $articleManager->afficherArticle();
+        if(isset($_GET['id']) && !empty($_GET['id'])){
+
+            $article = $articleManager->afficherArticle();
+            
+            // $idArticle = $articleManager->maxIdArticle();
+            // var_dump($idArticle);die;
+            // nombre de commentaire par article
+            $nb_commentaires = $articleManager->countCommentaires($id);
     
-        // nombre de commentaire par article
-        $nb_commentaires = $articleManager->countCommentaires($id);
-
-        //afficher les commentaires de l'article
-        $commentaires = $articleManager->getCommentaires();
-
-        // créer commentaire article
-        $commenterArticle = $articleManager->commenter();
-
-        require "app/Views/front/article.php";
+            //afficher les commentaires de l'article
+            $commentaires = $articleManager->getCommentaires();
+    
+            // créer commentaire article
+            $commenterArticle = $articleManager->commenter();
+    
+            require "app/Views/front/article.php";
+        }
+        else{
+            header('Location: blog');
+        }
     }
 
 

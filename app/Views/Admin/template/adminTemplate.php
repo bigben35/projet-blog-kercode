@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="nav-bloc n-5">
-                    <a href="deconnexion"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                    <a href="deconnexion" title="Se Déconnecter"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </div>
             </div>
         </nav>

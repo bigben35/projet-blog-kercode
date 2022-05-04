@@ -19,13 +19,20 @@ class ArticleManager extends Manager{
     // nombre article 
     public function countArticle()
     {
-        {
             $bdd = $this->dbConnect();
             $req = $bdd->prepare('SELECT COUNT(id) FROM article WHERE id');
             $req->execute(array());
             return $req;
-        }
     }
+
+
+    // public function allIdArticle()
+    // {
+    //     $bdd = $this->dbConnect();
+    //     $req = $bdd->prepare('SELECT id FROM article WHERE id');
+    //     $req->execute(array());
+    //     return $req;
+    // }
 
     public function chargementArticles()
     {
@@ -41,6 +48,8 @@ class ArticleManager extends Manager{
         }
     }
 
+
+    // article en fonction de son id 
     public function getArticleById($id)
     {
        $bdd = $this->dbConnect();

@@ -94,8 +94,8 @@
         </div>
     </footer>
 
-    <script src="app/Public/front/js/script.js" defer></script>
-    <!-- <script src="app/Public/front/js/meteo.js" defer></script> -->
+    <script src="app/Public/front/js/script.min.js" defer></script>
+    
 </body>
 
 </html>

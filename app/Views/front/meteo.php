@@ -11,7 +11,7 @@ ob_start();
 
         <div class="bloc-logo-info">
             <div class="bloc-logo">
-                <img alt="logo météo islande nuageux" class="logo-meteo">
+                <img src="#" alt="logo météo islande nuageux" class="logo-meteo">
             </div>
 
             <div class="bloc-info">
@@ -55,6 +55,6 @@ ob_start();
 
 </section>
 
+<script src="app/Public/front/js/meteo.min.js" defer></script>
 <?php $content = ob_get_clean(); ?>
-<script src="app/Public/front/js/meteo.js" defer></script>
 <?php require 'template/template.php';
