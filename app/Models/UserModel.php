@@ -54,7 +54,9 @@ class UserModel extends Manager
     }
 
 
-    // PRESENTATION 
+    // PAGE HOME 
+
+    // présentation 
     public function getPresentation()
     {
         $bdd = $this->dbConnect();
@@ -63,7 +65,7 @@ class UserModel extends Manager
         return $req->fetch(); //fetch car juste un bloc
     }
 
-    // LAST ARTICLES 
+    // last articles 
     public function getLastArticles()
     {
         $bdd = $this->dbConnect();

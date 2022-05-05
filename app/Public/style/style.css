@@ -8,12 +8,17 @@
 }
 
 /* Polices  */
+
 @font-face {
-    font-family: 'robotoregular';
-    src: url('app/Public/fonts/roboto-regular-webfont.woff2') format('woff2'),
-         url('app/Public/fonts/roboto-regular-webfont.woff') format('woff');
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.eot');
+    src: url('../fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Roboto-Regular.woff2') format('woff2'),
+        url('../fonts/Roboto-Regular.woff') format('woff'),
+        url('../fonts/Roboto-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 
@@ -26,7 +31,7 @@
 }
 
 body{
-    font-family: 'robotoregular', sans-serif;
+    font-family: 'Roboto', sans-serif;
     height: 100%;
     position: relative;
     background-color: var(--bodyColor);
@@ -489,6 +494,7 @@ footer{
 .commentaires{
     margin: 1rem;
     text-align: center;
+    min-height: 700px;
 }
 .user-mail{
     font-style: italic;

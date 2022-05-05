@@ -33,12 +33,13 @@ try{
 
     if(isset($_GET['action']) && !empty($_GET['action'])){
         
-        
+        // afficher page accueil 
         if($_GET['action'] == 'home') {
             $frontController->home();
         }
 
         
+        // afficher page blog 
         elseif($_GET['action'] == 'blog'){
             $query = $_POST['query'] ?? "";
             if (isset($_GET['page']) && !empty($_GET['page'])) {
@@ -52,6 +53,7 @@ try{
             $frontController->blog($query, $currentPage);
         }
 
+        // afficher page article 
         elseif($_GET['action'] == 'article'){
             $id = $_GET['id'];
             if(!$id){
@@ -63,6 +65,10 @@ try{
         
         }
 
+
+        elseif($_GET['action'] == 'article&id='){
+            $frontController->article($_GET['id']);
+        }
         elseif($_GET['action'] == 'meteo'){
             $frontController->meteo();
         }

@@ -56,12 +56,13 @@ ob_start();
                 </div>
 
 
-                <button class="btn-form" name="submit" type="submit">Créer un compte</button>
+                <button class="btn-form send-contact" name="submit" type="submit">Créer un compte</button>
             </form>
             <span>Vous avez déjà un compte? </span><a class="login-user" href="connexion">Login</a>
         </div>
     </div>
 </section>
 
+<script src="app/Public/front/js/createUser.js" defer></script>
 <?php $content = ob_get_clean(); ?>
 <?php require 'template/template.php';

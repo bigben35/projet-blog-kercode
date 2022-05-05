@@ -42,7 +42,7 @@ class FrontController
     {
         // afficher un article 
         $articleManager = new \ProjetBlogKercode\Models\UserModel();
-        if(isset($_GET['id']) && !empty($_GET['id'])){
+        // if(isset($_GET['id']) && !empty($_GET['id'])){
 
             $article = $articleManager->afficherArticle();
             
@@ -59,10 +59,10 @@ class FrontController
     
             require "app/Views/front/article.php";
         }
-        else{
-            header('Location: blog');
-        }
-    }
+    //     else{
+    //         header('Location: blog');
+    //     }
+    // }
 
 
     function temoignage()
