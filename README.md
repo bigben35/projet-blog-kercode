@@ -1,6 +1,12 @@
 # projet-blog-kercode
 <a href="https://codeclimate.com/github/bigben35/projet-blog-kercode/maintainability"><img src="https://api.codeclimate.com/v1/badges/045ee6b9abae0a5e06b6/maintainability" /></a>
 
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+    <img style="border:0;width:88px;height:31px"
+        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="CSS Valide !" />
+    </a>
+
 # Islande en Tête
 
 Projet de fin de formation Kercode. Réalisation d'un Blog de voyage sur l'Islande, en utilisant les langages HTML5, CSS3, JavaScript, PHP et SQL.
