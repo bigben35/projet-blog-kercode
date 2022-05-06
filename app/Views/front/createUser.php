@@ -64,6 +64,6 @@ ob_start();
     </div>
 </section>
 
-<script src="app/Public/front/js/createUser.js" defer></script>
+<script src="app/Public/front/js/createUser.min.js" defer></script>
 <?php $content = ob_get_clean(); ?>
 <?php require 'template/template.php';
