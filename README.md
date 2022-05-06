@@ -22,6 +22,7 @@ Dans votre terminal de commande, écrire composer pour savoir si le gestionnaire
 
 # Variables d'environnement:
 Possible avec Dotenv: faire un composer require vlucas/phpdotenv
+Créer un fichier .env à la racine du projet en prenant .env.example comme modèle pour vous connecter à votre base de donnée
 
 # Gestion des erreurs avec Whoops:
 faire un composer require filp/whoops
@@ -36,6 +37,12 @@ dans votre IDE (ex: VSCode).
 J'ai utilisé XAMPP pour mon serveur local et phpMyAdmin pour la gestion de la base de données.
 
 Utilisation de php 7.4 minimum
-Adaper le .env.exemple pour vous connecter à votre base de donnée et le renommer .env
-importer le dump.sql dans votre base de données
+importer le blog_islande.sql dans votre base de données
+
+Pour vous connecter en tant qu'Admin : mail:paulo@gmail.com et password: azerty ou modifier le role (par 1) dans la base de données
+
+
+# Extension VSCode:
+
+Pour lire mon UML présent dans dossier github, il faut installer l'extension Draw.io Integration dans VSCode
 

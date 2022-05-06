@@ -23,7 +23,7 @@ class AdminController
     function dashboard()
     {
         // compter nombre utilisateur 
-        $dashboardManager = new \ProjetBlogKercode\Models\ContactModel();
+        $dashboardManager = new \ProjetBlogKercode\Models\AdminModel();
         $nbrUser = $dashboardManager->countUser();
 
         // compter nombre article 
@@ -46,7 +46,7 @@ class AdminController
 
     public function afficherListeMembre()
     {
-        $users = new \ProjetBlogKercode\Models\ContactModel();
+        $users = new \ProjetBlogKercode\Models\AdminModel();
         $allUsers = $users->getMembre();
 
         require 'app/Views/Admin/listeMembre.php';
@@ -56,7 +56,7 @@ class AdminController
     //============== montrer un membre =====================
     function montrerMembre($id)
     {
-        $user = new \ProjetBlogKercode\Models\ContactModel();
+        $user = new \ProjetBlogKercode\Models\AdminModel();
         $oneUser = $user->afficherMembre($id);
 
         require 'app/Views/Admin/membre.php';
@@ -64,7 +64,7 @@ class AdminController
     /*=========================== bannir un membre ==================================*/
     function bannirMembre($id)
     {
-        $deleteUser = new \ProjetBlogKercode\Models\ContactModel();
+        $deleteUser = new \ProjetBlogKercode\Models\AdminModel();
         $deleteOneUser = $deleteUser->bannirUnMembre($id);
 
         header('Location: listeMembre');
@@ -195,7 +195,7 @@ class AdminController
     // GESTION DES COMMENTAIRES 
     public function afficherListeCommentaire()
     {
-        $comments = new \ProjetBlogKercode\Models\ContactModel();
+        $comments = new \ProjetBlogKercode\Models\AdminModel();
         $allComments = $comments->getComments();
 
         require 'app/Views/Admin/listeCommentaire.php';
@@ -205,7 +205,7 @@ class AdminController
     //============== montrer un commentaire =====================
     function montrerComment($id)
     {
-        $comment = new \ProjetBlogKercode\Models\ContactModel();
+        $comment = new \ProjetBlogKercode\Models\AdminModel();
         $oneComment = $comment->afficherCommentaire($id);
 
         require 'app/Views/Admin/commentaire.php';
@@ -213,7 +213,7 @@ class AdminController
     /*=========================== supprimer un commentaire ==================================*/
     function supprimerComment($id)
     {
-        $deleteComment = new \ProjetBlogKercode\Models\ContactModel();
+        $deleteComment = new \ProjetBlogKercode\Models\AdminModel();
         $deleteOneComment = $deleteComment->supprimerUnCommentaire($id);
 
         header('Location: listeCommentaire');
@@ -224,7 +224,7 @@ class AdminController
     // GESTION DES MAILS 
     public function afficherListeMail()
     {
-        $mails = new \ProjetBlogKercode\Models\ContactModel();
+        $mails = new \ProjetBlogKercode\Models\AdminModel();
         $allMails = $mails->getMails();
 
         require 'app/Views/Admin/listeMail.php';
@@ -234,7 +234,7 @@ class AdminController
     //============== montrer un mail =====================
     function montrerMail($id)
     {
-        $mail = new \ProjetBlogKercode\Models\ContactModel();
+        $mail = new \ProjetBlogKercode\Models\AdminModel();
         $oneMail = $mail->afficherMail($id);
 
         require 'app/Views/Admin/mail.php';
@@ -242,7 +242,7 @@ class AdminController
     /*=========================== supprimer un mail ==================================*/
     function supprimerMail($id)
     {
-        $deleteMail = new \ProjetBlogKercode\Models\ContactModel();
+        $deleteMail = new \ProjetBlogKercode\Models\AdminModel();
         $deleteEmail = $deleteMail->supprimerUnMail($id);
 
         header('Location: listeMail');

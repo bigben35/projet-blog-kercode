@@ -16,7 +16,7 @@ $dotenv->load();
 
 // GESTION DES ERREURS
 function eCatcher($e) {
-    if($_ENV["APP_ENV"] == "developm") {
+    if($_ENV["APP_ENV"] == "production") {
         $whoops = new \Whoops\Run;
         $whoops->allowQuit(false);
         $whoops->writeToOutput(false);

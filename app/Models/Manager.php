@@ -15,7 +15,6 @@ class Manager
           } else {
             
             $path = "mysql:host=" . $_ENV['DB_HOST'] . ":" . $_ENV['DB_PORT'] . ";dbname=" . $_ENV['DB_NAME'] . ";charset=utf8";
-            // self::$pdo->query("SET lc_time_names = 'fr_FR");
       
             self::$pdo = 	
               new \PDO(

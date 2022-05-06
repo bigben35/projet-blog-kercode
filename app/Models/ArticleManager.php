@@ -26,14 +26,6 @@ class ArticleManager extends Manager{
     }
 
 
-    // public function allIdArticle()
-    // {
-    //     $bdd = $this->dbConnect();
-    //     $req = $bdd->prepare('SELECT id FROM article WHERE id');
-    //     $req->execute(array());
-    //     return $req;
-    // }
-
     public function chargementArticles()
     {
         $bdd = $this->dbConnect();

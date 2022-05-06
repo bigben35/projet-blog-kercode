@@ -70,7 +70,7 @@ class FrontController
 
     function contact()
     {
-        $mails = new \ProjetBlogKercode\Models\ContactModel();
+        $mails = new \ProjetBlogKercode\Models\AdminModel();
         $allMails = $mails->getMails();
 
         require "app/Views/front/contact.php";
