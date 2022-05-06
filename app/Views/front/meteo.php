@@ -1,6 +1,6 @@
 <?php
 $title = "Météo Islande";
-$description = "";
+$description = "Page affichant la météo du jour à Reykjavik, capitale de l'Islande";
 ob_start();
 ?>
 

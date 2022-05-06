@@ -38,11 +38,13 @@ ob_start();
                         <p><?= htmlspecialchars($allMail['phone']) ?></p>
                     </td>
                     <span class="display-action">
-                        <td><a href="montrerMail&id=<?= $allMail['id'] ?>"><i class="fa-solid fa-eye" title="Voir"></i></a>
-                        <a href="supprimerMail&id=<?= $allMail['id'] ?>"><i class="fa-solid fa-trash-can" title="supprimer"></i></a>
-                        
+                        <td><a title="montrer mail" href="montrerMail&id=<?= $allMail['id'] ?>"><i
+                                    class="fa-solid fa-eye" title="Voir"></i></a>
+                            <a title="supprimer mail" href="supprimerMail&id=<?= $allMail['id'] ?>"><i
+                                    class="fa-solid fa-trash-can" title="supprimer"></i></a>
+
                         </td>
-                </span>
+                    </span>
                 </tr>
                 <?php endforeach; ?>
             </tbody>

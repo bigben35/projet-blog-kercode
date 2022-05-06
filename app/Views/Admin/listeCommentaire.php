@@ -34,9 +34,11 @@ ob_start();
                         <p class="max-content"><?= htmlspecialchars($allComment['commentaire']) ?></p>
                     </td>
 
-                    <td><a href="montrerComment&id=<?= $allComment['id'] ?>" class="btn-action-admin">Voir</a></td>
+                    <td><a title="montrer commentaire" href="montrerComment&id=<?= $allComment['id'] ?>"
+                            class="btn-action-admin">Voir</a></td>
                     <td>
-                        <a href="supprimerComment&id=<?= $allComment['id'] ?>" class="btn-action-admin-red">Supprimer</a>
+                        <a title="supprimer commentaire" href="supprimerComment&id=<?= $allComment['id'] ?>"
+                            class="btn-action-admin-red">Supprimer</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

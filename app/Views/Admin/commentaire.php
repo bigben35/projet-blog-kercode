@@ -5,8 +5,6 @@ $description = "Page montrant un commentaire reçu du Blog 'Islande en tête'";
 ob_start();
 ?>
 
-
-
 <section class="section-article-admin">
     <h1>Commentaire :</h1>
     <div class="centrer-tableau">
@@ -40,8 +38,6 @@ ob_start();
         </table>
     </div>
 </section>
-
-
 
 
 <?php $content = ob_get_clean(); ?>

@@ -17,7 +17,7 @@ ob_start();
             <p>Créé le : <?= $article->getDateCreation(); ?></p>
         </div>
     </div>
-    <a href="listeArticle">Retour à la liste des articles</a>
+    <a title="liste articles" href="listeArticle">Retour à la liste des articles</a>
 </section>
 
 

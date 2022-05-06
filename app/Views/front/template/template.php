@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="app/Public/style/style.css">
     <title><?= $title ?></title>
 </head>
@@ -25,36 +22,36 @@
             <!-- NAV  -->
             <nav class="navbar">
 
-                <a href="home" class="blog-title">Islande en Tête</a>
+                <a href="home" class="blog-title" title="home">Islande en Tête</a>
                 <!-- MENU BURGER  -->
-                <a href="static_menu" id="btn-burger">
+                <a href="static_menu" id="btn-burger" title="menu-burger">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </a>
                 <div class="navbar-links">
                     <ul class="nav-list">
-                        <li><a href="home" class="nav-link active">Home</a></li>
-                        <li><a href="blog" class="nav-link">Blog</a></li>
-                        <li><a href="meteo" class="nav-link">Météo</a></li>
-                        <li><a href="contact" class="nav-link">Contact</a></li>
+                        <li><a href="home" class="nav-link active" title="home">Home</a></li>
+                        <li><a href="blog" class="nav-link" title="blog">Blog</a></li>
+                        <li><a href="meteo" class="nav-link" title="meteo">Météo</a></li>
+                        <li><a href="contact" class="nav-link" title="contact">Contact</a></li>
                         <?php
                         if (isset($_SESSION['role']) && ($_SESSION['role'] == "1")) :
                         ?>
-                        <li><a href="dashboard">Mon Compte</a></li>
-                        <li><a href="deconnexion">Déconnexion</a></li>
+                        <li><a href="dashboard" title="dashboard">Mon Compte</a></li>
+                        <li><a href="deconnexion" title="deconnexion">Déconnexion</a></li>
                         <?php
 
                         elseif (isset($_SESSION['role']) && ($_SESSION['role'] == "0")) :
                             ?>
-                        <li><a href="dashboardUser">Mon Compte</a></li>
-                        <li><a href="deconnexion">Déconnexion</a></li>
+                        <li><a href="dashboardUser" title="dashboard utilisateur">Mon Compte</a></li>
+                        <li><a href="deconnexion" title="deconnexion">Déconnexion</a></li>
                         <?php
                             
                         else :
                         ?>
-                        <li><a href="connexion" class="nav-link">Se connecter</a></li>
-                        <li><a href="createUser" class="nav-link">Créer un compte</a></li>
+                        <li><a href="connexion" class="nav-link" title="connexion">Se connecter</a></li>
+                        <li><a href="createUser" class="nav-link" title="creer compte">Créer un compte</a></li>
 
                         <?php
                         endif;
@@ -90,12 +87,12 @@
                 </ul>
             </div>
             <p class="copyright">Copyright &copy; <?= date("Y"); ?> - Islande en Tête - <a href="mentionsLegales"
-                    target="_blank">Mentions Légales</a></p>
+                    title="mentions légales" target="_blank">Mentions Légales</a></p>
         </div>
     </footer>
 
     <script src="app/Public/front/js/script.min.js" defer></script>
-    
+
 </body>
 
 </html>

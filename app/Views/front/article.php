@@ -29,7 +29,7 @@ ob_start();
                     datetime="<? $commentaire['created_at']; ?>"><?= $commentaire['created_at']; ?></time> :</strong>
         </p>
 
-        <p class="p-commentaire"><?= $commentaire['commentaire'] ?></p>
+        <p class="p-commentaire"><?= rtrim($commentaire['commentaire']) ?></p>
     </div>
     <?php endforeach;
 
@@ -54,7 +54,7 @@ ob_start();
     ?>
 </section>
 
-<a href="blog" class="btn-form">Retour au blog</a>
+<a title="retour au blog" href="blog" class="btn-form">Retour au blog</a>
 
 <?php
 $content = ob_get_clean();

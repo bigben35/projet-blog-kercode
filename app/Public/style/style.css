@@ -4,6 +4,7 @@
     --mainLightColor: #58A2D4;
     --mainSuperLightColor: #a7d0ec;
     --bodyColor: #f4f7f7;
+    --icon-dark: #616161;
     
 }
 
@@ -130,7 +131,7 @@ footer{
     content: "";
     border-radius: 100%;
     display: block;
-    background: var(--gris-foncé);
+    background: var(--icon-dark);
   }
   .icons a:hover::before {
     transform: scale(0);
@@ -138,8 +139,8 @@ footer{
   }
   .icons a:hover i {
     transform: scale(2.2);
-    color: var(--gris-foncé);
-    background: var(--gris-foncé);
+    color: var(--icon-dark);
+    background: var(--icon-dark);
     -webkit-background-clip: text; /*l'arriere plan est limité au texte en premier plan*/
     -webkit-text-fill-color: white; /*définie la couleur utilisée pour dessiner le contenu des lettres qui forment un texte*/
     transition: all 0.3s ease-in;
@@ -893,7 +894,20 @@ form{
 }
 
 
-
+/* PAGE ERROR LOADING  */
+#page-error{
+    background-color: var(--mainColor);
+    color: white;
+    text-align: center;
+}
+#page-error a{
+    color: white;
+}
+#page-error a:hover{
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
 
 
 /* ----------------MEDIA QUERIES----------------- */

@@ -29,11 +29,11 @@ ob_start();
                 <h3 class="article-title"><?= $lastarticle['title']; ?></h3>
                 <p class="accroche"><?= $lastarticle['accroche']; ?></p>
             </div>
-            <a class="btn-form" href="article&id=<?= $lastarticle['id']; ?>">Voir l'Article</a>
+            <a title="article" class="btn-form" href="article&id=<?= $lastarticle['id']; ?>">Voir l'Article</a>
         </article>
         <?php }; ?>
     </div>
-    <a class="btn-form" href="blog">Voir tous les articles</a>
+    <a class="btn-form" href="blog" title="blog">Voir tous les articles</a>
 </section>
 
 

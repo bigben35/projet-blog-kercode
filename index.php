@@ -7,14 +7,16 @@ require_once __DIR__ . '/vendor/autoload.php';
 $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-// GESTION DES ERREURS 
+// GESTION DES WARNING 
 // function errorHandler($errno, $errstr) {
 //     throw new Exception($errstr, $errno);
 //   }
 //   set_error_handler('errorHandler');
   
+
+// GESTION DES ERREURS
 function eCatcher($e) {
-    if($_ENV["APP_ENV"] == "") {
+    if($_ENV["APP_ENV"] == "developm") {
         $whoops = new \Whoops\Run;
         $whoops->allowQuit(false);
         $whoops->writeToOutput(false);
@@ -111,7 +113,7 @@ try{
             $password = $_POST['password'];
             if (!empty($mail) && filter_var($mail, FILTER_VALIDATE_EMAIL) && !empty($password)){
                
-                $frontController->connexion($mail, $password); //on passe les 2 paramètres
+                $frontController->connexion($mail, $password); 
             } else {
                 throw new Exception("Veuillez renseigner vos identifiants pour vous connecter à votre session");
             }
@@ -154,7 +156,13 @@ try{
 
 
 
+
+
+
+
         // --------------------PARTIE ADMIN -----------------------
+
+
 
          // dasboard Admin
          elseif($_GET['action'] == 'dashboard'){
@@ -261,7 +269,7 @@ try{
 
         
 } else{
-    // throw new Exception("Mauvais formattage d'url", 404);
+
     $frontController->home();
 }
 

@@ -19,21 +19,23 @@ ob_start();
             </thead>
             <?php for($i=0; $i < count($articles); $i++) :?>
             <tr>
-                <td><a href="afficheArticle&id=<?= $articles[$i]->getId(); ?>"><?= $articles[$i]->getTitle(); ?></a>
+                <td><a title="afficher article"
+                        href="afficheArticle&id=<?= $articles[$i]->getId(); ?>"><?= $articles[$i]->getTitle(); ?></a>
                 </td>
                 <td class="display-creation"><img src="<?= $articles[$i]->getUrlImage(); ?>"
                         alt="<?= $articles[$i]->getAltImage(); ?>"></td>
                 <td class="display-creation"><?= $articles[$i]->getDateCreation(); ?></td>
-                <td class="action-list-admin"><a href="modifierArticle&id=<?= $articles[$i]->getId(); ?>"
-                        class="btn-action-admin">Modifier</a>
+                <td class="action-list-admin"><a title="modifier article"
+                        href="modifierArticle&id=<?= $articles[$i]->getId(); ?>" class="btn-action-admin">Modifier</a>
 
-                    <a href="supprimerArticle&id=<?= $articles[$i]->getId(); ?>" class="btn-action-admin-red">Supprimer</a>
+                    <a title="supprimer article" href="supprimerArticle&id=<?= $articles[$i]->getId(); ?>"
+                        class="btn-action-admin-red">Supprimer</a>
                 </td>
             </tr>
             <?php endfor; ?>
 
         </table>
-        <a href="ajouterArticle" class="btn-form">Ajouter</a>
+        <a title="ajouter article" href="ajouterArticle" class="btn-form">Ajouter</a>
     </div>
 </section>
 

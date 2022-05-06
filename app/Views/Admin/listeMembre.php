@@ -28,10 +28,11 @@ ob_start();
                         <p><?= htmlspecialchars($allUser['created_at']) ?></p>
                     </td>
 
-                    <td class="action-list-admin"><a href="montrerMembre&id=<?= $allUser['id'] ?>"
+                    <td class="action-list-admin"><a title="voir membre" href="montrerMembre&id=<?= $allUser['id'] ?>"
                             class="btn-action-admin">Voir</a>
 
-                        <a href="bannirMembre&id=<?= $allUser['id'] ?>" class="btn-action-admin-red">Bannir</a>
+                        <a title="bannir membre" href="bannirMembre&id=<?= $allUser['id'] ?>"
+                            class="btn-action-admin-red">Bannir</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

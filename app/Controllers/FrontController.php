@@ -42,12 +42,8 @@ class FrontController
     {
         // afficher un article 
         $articleManager = new \ProjetBlogKercode\Models\UserModel();
-        // if(isset($_GET['id']) && !empty($_GET['id'])){
-
-            $article = $articleManager->afficherArticle();
+        $article = $articleManager->afficherArticle();
             
-            // $idArticle = $articleManager->maxIdArticle();
-            // var_dump($idArticle);die;
             // nombre de commentaire par article
             $nb_commentaires = $articleManager->countCommentaires($id);
     
@@ -59,10 +55,7 @@ class FrontController
     
             require "app/Views/front/article.php";
         }
-    //     else{
-    //         header('Location: blog');
-    //     }
-    // }
+    
 
 
     function temoignage()

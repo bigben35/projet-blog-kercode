@@ -39,7 +39,8 @@ ob_start();
                 <div class="bloc-form">
                     <label for="mailconf">Confirmation Email</label>
                     <input type="email" id="mailconf" name="mailconf" placeholder="Votre e-mail"
-                        value="<?php if(isset($_POST['mailconf'])) echo htmlspecialchars($_POST['mailconf'])?>" required>
+                        value="<?php if(isset($_POST['mailconf'])) echo htmlspecialchars($_POST['mailconf'])?>"
+                        required>
                 </div>
                 <div class="bloc-form">
                     <label for="password">Mot de passe</label>
@@ -58,7 +59,7 @@ ob_start();
 
                 <button class="btn-form send-contact" name="submit" type="submit">Créer un compte</button>
             </form>
-            <span>Vous avez déjà un compte? </span><a class="login-user" href="connexion">Login</a>
+            <span>Vous avez déjà un compte? </span><a title="connexion" class="login-user" href="connexion">Login</a>
         </div>
     </div>
 </section>

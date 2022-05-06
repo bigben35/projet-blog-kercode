@@ -32,7 +32,7 @@ ob_start();
                     <button class="btn-form" name="submit" type="submit">Se connecter</button>
                 </div>
             </form>
-            <a href="home" class="retourAccueil">Retour à l'accueil</a>
+            <a title="accueil" href="home" class="retourAccueil">Retour à l'accueil</a>
         </div>
     </div>
 </section>

@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="app/Public/style/style.css">
     <title><?= $title ?></title>
 </head>
@@ -25,14 +22,14 @@
         <nav class="side-nav">
             <div class="wrapper">
                 <div class="nav-bloc-black">
-                    <a href="dashboard" class="title-admin">Admin</a>
+                    <a title="dashboard" href="dashboard" class="title-admin">Admin</a>
                 </div>
                 <div class="nav-bloc n-1">
                     <i class="fa-solid fa-users"></i>
                     <div class="sub-nav">
                         <h3>Membres</h3>
                         <ul>
-                            <li><a href="listeMembre">Membres inscrits</a></li>
+                            <li><a title="liste membres" href="listeMembre">Membres inscrits</a></li>
                         </ul>
                     </div>
                 </div>
@@ -41,8 +38,8 @@
                     <div class="sub-nav">
                         <h3>Articles</h3>
                         <ul>
-                            <li><a href="ajouterArticle">Créer un article</a></li>
-                            <li><a href="listeArticle">Liste des articles</a></li>
+                            <li><a title="creer un article" href="ajouterArticle">Créer un article</a></li>
+                            <li><a title="liste articles" href="listeArticle">Liste des articles</a></li>
 
                         </ul>
                     </div>
@@ -52,8 +49,8 @@
                     <div class="sub-nav">
                         <h3>Commentaire</h3>
                         <ul>
-                            <li><a href="listeCommentaire">Commentaire reçu</a></li>
-                            <li><a href="#">Commentaire à "valider</a></li>
+                            <li><a title="commentaire reçu" href="listeCommentaire">Commentaire reçu</a></li>
+                            <li><a title="commentaire à valider" href="#">Commentaire à "valider</a></li>
 
                         </ul>
                     </div>
@@ -63,14 +60,15 @@
                     <div class="sub-nav">
                         <h3>E-mail</h3>
                         <ul>
-                            <li><a href="listeMail">E-mail reçu</a></li>
-                            <li><a href="#">E-mail à lire</a></li>
+                            <li><a title="mail reçu" href="listeMail">E-mail reçu</a></li>
+                            <li><a title="mail à lire" href="#">E-mail à lire</a></li>
 
                         </ul>
                     </div>
                 </div>
                 <div class="nav-bloc n-5">
-                    <a href="deconnexion" title="Se Déconnecter"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                    <a title="deconnexion" href="deconnexion" title="Se Déconnecter"><i
+                            class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </div>
             </div>
         </nav>

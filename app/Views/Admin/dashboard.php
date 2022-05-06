@@ -8,28 +8,28 @@ ob_start();
 <h1>Bonjour <?= $_SESSION['pseudo'] ?>!</h1>
 
 <section class="section-dashboard-admin container-admin">
-    <a href="listeMembre" class="bloc-section-admin">
+    <a title="liste des membres" href="listeMembre" class="bloc-section-admin">
         <i class="fa-solid fa-users"></i>
         <div class="bloc-info-admin">
             <h2>Utilisateurs</h2>
             <p class="count"><?php $user = $nbrUser->fetch() ?><?= $user[0] ?></p>
         </div>
     </a>
-    <a href="listeArticle" class="bloc-section-admin">
+    <a title="liste articles" href="listeArticle" class="bloc-section-admin">
         <i class="fa-solid fa-file"></i>
         <div class="bloc-info-admin">
             <h2>Articles</h2>
             <p class="count"><?php $article = $nbrArticle->fetch() ?><?= $article[0] ?></p>
         </div>
     </a>
-    <a href="listeCommentaire" class="bloc-section-admin">
+    <a title="liste commentaire" href="listeCommentaire" class="bloc-section-admin">
         <i class="fa-solid fa-comment"></i>
         <div class="bloc-info-admin">
             <h2>Commentaires</h2>
             <p class="count"><?php $comment = $nbrComment->fetch() ?><?= $comment[0] ?></p>
         </div>
     </a>
-    <a href="listeMail" class="bloc-section-admin">
+    <a title="liste mail" href="listeMail" class="bloc-section-admin">
         <i class="fa-solid fa-envelope"></i>
         <div class="bloc-info-admin">
             <h2>E-mail</h2>
@@ -37,7 +37,8 @@ ob_start();
         </div>
     </a>
 
-    <a href="deconnexion" class="bloc-section-admin"><i class="fa-solid fa-arrow-right-from-bracket"></i>
+    <a title="deconnexion" href="deconnexion" class="bloc-section-admin"><i
+            class="fa-solid fa-arrow-right-from-bracket"></i>
         <h2>Se déconnecter</h2>
     </a>
 
